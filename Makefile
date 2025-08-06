@@ -5,7 +5,7 @@
 # --- Tools and Flags ---
 CC = gcc
 # CFLAGS: Add include paths for public API, core, and backend headers
-CFLAGS = -g -Wall -Wextra -std=c11 -Iinclude -Icore -Ibackends -I/usr/include/stlink -I/usr/include/libusb-1.0/
+CFLAGS = -g -fPIC -Wall -Wextra -std=c11 -Iinclude -Icore -Ibackends -I/usr/include/stlink -I/usr/include/libusb-1.0/
 LDFLAGS =
 LIBS = -lstlink
 
@@ -58,6 +58,13 @@ $(ODIR)/%.o: %.c $(PUBLIC_HEADER) $(PRIVATE_HEADER)
 	@echo "CC   ==> $<"
 	@mkdir -p $(ODIR)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+
+SHARED_LIB = libhw.so
+
+$(ODIR)/$(SHARED_LIB): $(LIB_OBJ)
+	@echo "LD   ==> $@"
+	$(CC) -shared -fPIC -o $@ $^ $(LIBS)
 
 
 # Rule to clean up all build artifacts

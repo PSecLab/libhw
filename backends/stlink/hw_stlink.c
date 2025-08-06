@@ -78,7 +78,7 @@ static hw_t* stlink_impl_connect(const char *host, int port) {
     }
 
     // Perform the actual connection using libstlink
-    pvt->sl = stlink_open_usb(UERROR, CONNECT_NORMAL, NULL, 0);
+    pvt->sl = stlink_open_usb(UERROR, CONNECT_UNDER_RESET, NULL, 0);
     if (!pvt->sl) {
         fprintf(stderr, "Failed to open ST-Link device\n");
         free(pvt);
@@ -86,7 +86,7 @@ static hw_t* stlink_impl_connect(const char *host, int port) {
     }
 
     // Put the target into a known state (halted) for stable access
-    if (stlink_force_debug(pvt->sl) != 0 || stlink_run(pvt->sl, RUN_NORMAL) != 0) {
+    if (stlink_force_debug(pvt->sl) != 0) {
         fprintf(stderr, "Failed to enter debug mode and halt core\n");
         stlink_close(pvt->sl);
         free(pvt);
