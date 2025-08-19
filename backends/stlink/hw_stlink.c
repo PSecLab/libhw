@@ -14,6 +14,7 @@
 
 // Include the ST-Link library's main header
 #include <stlink/stlink.h>
+#include <stlink/register.h>
 #include <read_write.h>
 
 // Include the public hardware abstraction layer API header
@@ -41,6 +42,10 @@ static hw_t* stlink_impl_connect(const char *host, int port);
 static void stlink_impl_close(hw_t *ctx);
 static int stlink_impl_write32(hw_t *ctx, unsigned int addr, unsigned int value);
 static int stlink_impl_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);
+static int stlink_impl_board_halted(hw_t *ctx);
+static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg);
+static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
+static int stlink_impl_board_run(hw_t *ctx);
 
 
 // --- The Static Dispatch Table (vtable) ---
@@ -57,6 +62,10 @@ const hw_ops_t stlink_ops = {
     .close   = stlink_impl_close,
     .write32 = stlink_impl_write32,
     .read32  = stlink_impl_read32,
+    .board_halted = stlink_impl_board_halted,
+	.board_run = stlink_impl_board_run,
+    .read_reg = stlink_impl_read_reg,
+    .write_reg = stlink_impl_write_reg,
 };
 
 
@@ -92,6 +101,9 @@ static hw_t* stlink_impl_connect(const char *host, int port) {
         free(pvt);
         return NULL;
     }
+    
+    stlink_run(pvt->sl, RUN_NORMAL);
+
 
     // Allocate the generic context struct that will be returned to the user
     hw_t *ctx = calloc(1, sizeof(hw_t));
@@ -160,3 +172,71 @@ static int stlink_impl_read32(hw_t *ctx, unsigned int addr, unsigned int *value_
     memcpy(value_out, pvt->sl->q_buf, sizeof(unsigned int));
     return 0; // Success
 }
+
+/**
+ * @brief The board_halted implementation for the stlink backend
+ */
+static int stlink_impl_board_halted(hw_t *ctx) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return 0;
+
+    stlink_status(pvt->sl);
+    return pvt->sl->core_stat == TARGET_HALTED;
+}
+
+static int stlink_impl_board_run(hw_t *ctx) {
+	hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+	stlink_run(pvt->sl, RUN_NORMAL);
+
+	// Check if still halted (e.g. right after a BKPT)
+    stlink_status(pvt->sl);
+    if (pvt->sl->core_stat == TARGET_HALTED) {
+        // Step once to clear the BKPT halt condition
+		stlink_impl_write_reg(ctx, 15, (stlink_impl_read_reg(ctx, 15) + 2));
+
+        // Try to run again
+        stlink_run(pvt->sl, RUN_NORMAL);
+    }
+
+	return 0;
+}
+
+
+
+/**
+ * @brief The read_reg implementation for the stlink backend
+ */
+static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return 0;
+
+    // The libstlink API for reading a single register requires passing a pointer
+    // to a `stlink_reg` struct. The library populates the appropriate field
+    // in the struct (e.g., .r[reg] for general purpose registers) with the value.
+    struct stlink_reg regp;
+    if (stlink_read_reg(pvt->sl, reg, &regp) != 0) {
+        fprintf(stderr, "stlink_read_reg failed\n");
+        return 0;
+    }
+
+    // The register index corresponds to the 'r' array in the stlink_reg struct.
+    if (reg >= 0 && reg < 16) {
+        return regp.r[reg];
+    }
+
+    // TODO: Add support for other registers like xpsr, msp, etc.
+    // if they are needed, by checking their specific indices.
+
+    return 0; // Return 0 for unsupported registers
+}
+
+/**
+ * @brief The write_reg implementation for the stlink backend
+ */
+static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return;
+
+    stlink_write_reg(pvt->sl, (uint32_t)val, reg);
+}
+

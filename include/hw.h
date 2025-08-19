@@ -1,5 +1,6 @@
 #ifndef HW_H
 #define HW_H
+#include <stdint.h>
 
 // Pre-declare the primary opaque types used in the API.
 typedef struct hw_context hw_t;
@@ -29,6 +30,18 @@ struct hw_ops {
 
     /** Reads a 32-bit value from the target memory at the given address. */
     int (*read32)(hw_t *ctx, unsigned int addr, unsigned int *value_out);
+
+	/* Tells if board is halted */
+	int (*board_halted)(hw_t *ctx);
+
+	int (*board_run)(hw_t *ctx);
+
+	/* Read a register */
+	uint64_t (*read_reg)(hw_t *ctx, int reg);
+
+	/* Write to a register */
+	void (*write_reg)(hw_t *ctx, int reg, uint64_t val);
+
 };
 
 /**
@@ -83,5 +96,16 @@ int hw_write32(hw_t *ctx, unsigned int addr, unsigned int value);
 
 /** Wrapper for the backend's read32 function. */
 int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);
+
+/* Tells if board is halted */
+int hw_board_halted(hw_t *ctx);
+
+int hw_board_run(hw_t *ctx);
+
+/* Read a register */
+uint64_t hw_read_reg(hw_t *ctx, int reg);
+
+/* Write to a register */
+void hw_write_reg(hw_t *ctx, int reg, uint64_t val);
 
 #endif // HW_H

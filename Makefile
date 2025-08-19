@@ -38,7 +38,7 @@ PRIVATE_HEADER = core/hw_priv.h
 # --- Build Rules ---
 .PHONY: all clean
 
-all: $(ODIR)/$(TARGET)
+all: out/libhw.so $(ODIR)/$(TARGET)
 
 # Rule to link the final executable
 $(ODIR)/$(TARGET): $(APP_OBJ) $(ODIR)/$(LIBRARY)

@@ -57,3 +57,39 @@ int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out) {
     }
     return -1;
 }
+
+/**
+ * @brief Generic wrapper to check if the board is halted.
+ */
+int hw_board_halted(hw_t *ctx) {
+    if (ctx && ctx->ops && ctx->ops->board_halted) {
+        return ctx->ops->board_halted(ctx);
+    }
+    return 0; // Return not halted on error
+}
+
+int hw_board_run(hw_t *ctx) {
+    if (ctx && ctx->ops && ctx->ops->board_run) {
+        return ctx->ops->board_run(ctx);
+    }
+    return 0; // Return not halted on error
+}
+
+/**
+ * @brief Generic wrapper to read a register.
+ */
+uint64_t hw_read_reg(hw_t *ctx, int reg) {
+    if (ctx && ctx->ops && ctx->ops->read_reg) {
+        return ctx->ops->read_reg(ctx, reg);
+    }
+    return 0; // Return 0 on error
+}
+
+/**
+ * @brief Generic wrapper to write to a register.
+ */
+void hw_write_reg(hw_t *ctx, int reg, uint64_t val) {
+    if (ctx && ctx->ops && ctx->ops->write_reg) {
+        ctx->ops->write_reg(ctx, reg, val);
+    }
+}
