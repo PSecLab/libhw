@@ -28,6 +28,8 @@ struct hw_ops {
     /** Writes a 32-bit value to the target memory at the given address. */
     int (*write32)(hw_t *ctx, unsigned int addr, unsigned int value);
 
+    int (*write8)(hw_t *ctx, unsigned int addr, uint8_t value);
+
     /** Reads a 32-bit value from the target memory at the given address. */
     int (*read32)(hw_t *ctx, unsigned int addr, unsigned int *value_out);
 
@@ -93,6 +95,9 @@ void hw_close(hw_t *ctx);
 
 /** Wrapper for the backend's write32 function. */
 int hw_write32(hw_t *ctx, unsigned int addr, unsigned int value);
+
+/** Wrapper for the backend's write32 function. */
+int hw_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 
 /** Wrapper for the backend's read32 function. */
 int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);

@@ -6,6 +6,8 @@
 CC = gcc
 # CFLAGS: Add include paths for public API, core, and backend headers
 CFLAGS = -g -fPIC -Wall -Wextra -std=c11 -Iinclude -Icore -Ibackends -I/usr/include/stlink -I/usr/include/libusb-1.0/
+CFLAGS += -I/usr/local/include/stlink	#in case, stlink is built from source.
+
 LDFLAGS =
 LIBS = -lstlink
 

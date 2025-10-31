@@ -48,6 +48,14 @@ int hw_write32(hw_t *ctx, unsigned int addr, unsigned int value) {
     return -1;
 }
 
+int hw_write8(hw_t *ctx, unsigned int addr, uint8_t value) {
+    if (ctx && ctx->ops && ctx->ops->write8) {
+        return ctx->ops->write8(ctx, addr, value);
+    }
+    return -1;
+}
+
+
 /**
  * Generic wrapper for the read32 operation.
  */

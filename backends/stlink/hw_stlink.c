@@ -46,7 +46,7 @@ static int stlink_impl_board_halted(hw_t *ctx);
 static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg);
 static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int stlink_impl_board_run(hw_t *ctx);
-
+static int stlink_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 
 // --- The Static Dispatch Table (vtable) ---
 
@@ -61,6 +61,8 @@ const hw_ops_t stlink_ops = {
     .connect = stlink_impl_connect,
     .close   = stlink_impl_close,
     .write32 = stlink_impl_write32,
+    .write8 = stlink_impl_write8,
+
     .read32  = stlink_impl_read32,
     .board_halted = stlink_impl_board_halted,
 	.board_run = stlink_impl_board_run,
@@ -101,7 +103,7 @@ static hw_t* stlink_impl_connect(const char *host, int port) {
         free(pvt);
         return NULL;
     }
-    
+
     stlink_run(pvt->sl, RUN_NORMAL);
 
 
@@ -152,6 +154,20 @@ static int stlink_impl_write32(hw_t *ctx, unsigned int addr, unsigned int value)
     // libstlink's API requires data to be placed in the internal buffer first.
     memcpy(pvt->sl->q_buf, &value, sizeof(unsigned int));
     if (stlink_write_mem32(pvt->sl, addr, sizeof(unsigned int)) != 0) {
+        return -1;
+    }
+    return 0; // Success
+}
+
+static int stlink_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return -1;
+
+    // Place the single byte into the buffer
+    pvt->sl->q_buf[0] = value;
+
+    // Write exactly 1 byte
+    if (stlink_write_mem8(pvt->sl, addr, 1) != 0) {
         return -1;
     }
     return 0; // Success
