@@ -3,7 +3,7 @@
 # ======================================================
 
 CC      := gcc
-CFLAGS  := -Wall -Wextra -O2 -I../../include
+CFLAGS  := -Wall -Wextra -O2 -I../../include -DTEST_OPENOCD_BACKEND
 LDFLAGS := 
 
 TARGET  := hw_openocd
