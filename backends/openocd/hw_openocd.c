@@ -35,6 +35,26 @@ static int openocd_impl_board_run(hw_t *ctx);
 static int openocd_impl_board_halted(hw_t *ctx);
 static int openocd_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 
+// --- Static Helper Functions ---
+static void block_until_halted(hw_openocd_pvt_t *pvt);
+
+static void block_until_halted(hw_openocd_pvt_t *pvt) {
+    if (!pvt || pvt->sockfd < 0) return;
+
+    char response[256];
+    while (1) {
+        if (openocd_tcl_exec(pvt->sockfd, "targets", response, sizeof(response)) != 0) {
+            fprintf(stderr, "Failed to poll target state from OpenOCD.\n");
+            return;
+        }
+
+        if (strstr(response, "halted")) {
+            break; // Target is halted
+        }
+        usleep(100000); // Sleep 100ms before polling again
+    }
+}
+
 // --- The Publicly Visible Dispatch Table ---
 const hw_ops_t openocd_ops = {
     .connect = openocd_impl_connect,
@@ -196,6 +216,10 @@ static uint64_t openocd_impl_read_reg(hw_t *ctx, int reg) {
     char command[128], response[128];
     snprintf(command, sizeof(command), "reg %d", reg);
 
+    openocd_tcl_exec(pvt->sockfd, "halt", response, sizeof(response));
+
+    block_until_halted(pvt);
+
     if (openocd_tcl_exec(pvt->sockfd, command, response, sizeof(response)) != 0) {
         return 0;
     }
@@ -224,6 +248,10 @@ static void openocd_impl_write_reg(hw_t *ctx, int reg, uint64_t val) {
 
     char command[128], response[128];
     snprintf(command, sizeof(command), "reg %d 0x%llx", reg, (unsigned long long)val);
+
+    openocd_tcl_exec(pvt->sockfd, "halt", response, sizeof(response));
+
+    block_until_halted(pvt);
 
     openocd_tcl_exec(pvt->sockfd, command, response, sizeof(response));
 }
