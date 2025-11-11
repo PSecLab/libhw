@@ -43,6 +43,8 @@ static void stlink_impl_close(hw_t *ctx);
 static int stlink_impl_write32(hw_t *ctx, unsigned int addr, unsigned int value);
 static int stlink_impl_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);
 static int stlink_impl_board_halted(hw_t *ctx);
+static int stlink_impl_board_halt(hw_t *ctx);
+static int stlink_impl_board_step(hw_t *ctx);
 static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg);
 static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int stlink_impl_board_run(hw_t *ctx);
@@ -66,6 +68,8 @@ const hw_ops_t stlink_ops = {
     .read32  = stlink_impl_read32,
     .board_halted = stlink_impl_board_halted,
 	.board_run = stlink_impl_board_run,
+	.board_halt = stlink_impl_board_halt,
+	.board_step = stlink_impl_board_step,
     .read_reg = stlink_impl_read_reg,
     .write_reg = stlink_impl_write_reg,
 };
@@ -216,8 +220,37 @@ static int stlink_impl_board_run(hw_t *ctx) {
 
 	return 0;
 }
+/**
+ * @brief The board_halt implementation for the stlink backend
+ */
+static int stlink_impl_board_halt(hw_t *ctx) {
+	hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
 
+    // Put the target into a known state (halted) for stable access
+    if (stlink_force_debug(pvt->sl) != 0) {
+        fprintf(stderr, "Failed to enter debug mode and halt core\n");
+        stlink_close(pvt->sl);
+        free(pvt);
+        return 1;
+    }
 
+    return 0; // Success
+}
+
+static int stlink_impl_board_step(hw_t *ctx) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+
+    // Put the target into a known state (halted) for stable access
+    if (stlink_step(pvt->sl) != 0) {
+        fprintf(stderr, "Failed to single step\n");
+        stlink_close(pvt->sl);
+        free(pvt);
+        return 1;
+    }
+
+    return 0; // Success
+
+}
 
 /**
  * @brief The read_reg implementation for the stlink backend
