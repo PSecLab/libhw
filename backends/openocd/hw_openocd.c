@@ -16,6 +16,7 @@
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <netdb.h>
+#include <unistd.h>
 
 #include "hw.h"
 
@@ -34,6 +35,7 @@ static void openocd_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int openocd_impl_board_run(hw_t *ctx);
 static int openocd_impl_board_halted(hw_t *ctx);
 static int openocd_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
+static int openocd_tcl_exec(int sockfd, const char* cmd, char* response_buf, size_t response_len);
 
 // --- Static Helper Functions ---
 static void block_until_halted(hw_openocd_pvt_t *pvt);
