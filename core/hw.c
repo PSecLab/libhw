@@ -83,6 +83,20 @@ int hw_board_run(hw_t *ctx) {
     return 0; // Return not halted on error
 }
 
+int hw_board_halt(hw_t *ctx) {
+    if (ctx && ctx->ops && ctx->ops->board_halt) {
+        return ctx->ops->board_halt(ctx);
+    }
+    return 0; // Return not halted on error
+}
+
+int hw_board_step(hw_t *ctx) {
+    if (ctx && ctx->ops && ctx->ops->board_step) {
+        return ctx->ops->board_step(ctx);
+    }
+    return 0; // Return not halted on error
+}
+
 /**
  * @brief Generic wrapper to read a register.
  */

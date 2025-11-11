@@ -38,6 +38,10 @@ struct hw_ops {
 
 	int (*board_run)(hw_t *ctx);
 
+	int (*board_halt)(hw_t *ctx);
+
+	int (*board_step)(hw_t *ctx);
+
 	/* Read a register */
 	uint64_t (*read_reg)(hw_t *ctx, int reg);
 
@@ -104,6 +108,10 @@ int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);
 
 /* Tells if board is halted */
 int hw_board_halted(hw_t *ctx);
+
+int hw_board_halt(hw_t *ctx);
+
+int hw_board_step(hw_t *ctx);
 
 int hw_board_run(hw_t *ctx);
 
