@@ -17,6 +17,7 @@
 #include <sys/time.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <netinet/tcp.h>
 
 #include "hw.h"
 
@@ -53,7 +54,7 @@ static void block_until_halted(hw_openocd_pvt_t *pvt) {
         if (strstr(response, "halted")) {
             break; // Target is halted
         }
-        usleep(100000); // Sleep 100ms before polling again
+        usleep(10000); // Sleep 10ms before polling again (more responsive)
     }
 }
 
@@ -134,10 +135,15 @@ static hw_t* openocd_impl_connect(const char *host, int port) {
     pvt->sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (pvt->sockfd < 0) { free(pvt); return NULL; }
 
-    // Set a 5-second receive timeout on the socket. This is crucial.
-    struct timeval tv; tv.tv_sec = 5; tv.tv_usec = 0;
+    // Disable Nagle to reduce small-packet latency and set a short recv timeout.
+    int flag = 1;
+    if (setsockopt(pvt->sockfd, IPPROTO_TCP, TCP_NODELAY, (char *)&flag, sizeof(int)) < 0) {
+        perror("setsockopt TCP_NODELAY failed"); close(pvt->sockfd); free(pvt); return NULL;
+    }
+    // Set a short receive timeout (200ms) to avoid blocking long on single-command replies.
+    struct timeval tv; tv.tv_sec = 0; tv.tv_usec = 200000; // 200ms
     if (setsockopt(pvt->sockfd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv) < 0) {
-        perror("setsockopt failed"); close(pvt->sockfd); free(pvt); return NULL;
+        perror("setsockopt SO_RCVTIMEO failed"); close(pvt->sockfd); free(pvt); return NULL;
     }
 
     struct sockaddr_in serv_addr; memset(&serv_addr, 0, sizeof(serv_addr));
