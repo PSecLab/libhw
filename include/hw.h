@@ -33,6 +33,8 @@ struct hw_ops {
     /** Reads a 32-bit value from the target memory at the given address. */
     int (*read32)(hw_t *ctx, unsigned int addr, unsigned int *value_out);
 
+    int (*read8)(hw_t *ctx, unsigned int addr, uint8_t *value_out);
+
 	/* Tells if board is halted */
 	int (*board_halted)(hw_t *ctx);
 
@@ -105,6 +107,9 @@ int hw_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 
 /** Wrapper for the backend's read32 function. */
 int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out);
+
+/** Wrapper for the backend's read8 function. */
+int hw_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out);
 
 /* Tells if board is halted */
 int hw_board_halted(hw_t *ctx);

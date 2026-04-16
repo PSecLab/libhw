@@ -66,6 +66,13 @@ int hw_read32(hw_t *ctx, unsigned int addr, unsigned int *value_out) {
     return -1;
 }
 
+int hw_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out) {
+    if (ctx && ctx->ops && ctx->ops->read8) {
+        return ctx->ops->read8(ctx, addr, value_out);
+    }
+    return -1;
+}
+
 /**
  * @brief Generic wrapper to check if the board is halted.
  */

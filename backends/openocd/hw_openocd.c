@@ -36,6 +36,7 @@ static void openocd_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int openocd_impl_board_run(hw_t *ctx);
 static int openocd_impl_board_halted(hw_t *ctx);
 static int openocd_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
+static int openocd_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out);
 static int openocd_tcl_exec(int sockfd, const char* cmd, char* response_buf, size_t response_len);
 
 // --- Static Helper Functions ---
@@ -69,6 +70,7 @@ const hw_ops_t openocd_ops = {
     .write_reg = openocd_impl_write_reg,
     .board_run = openocd_impl_board_run,
     .write8 = openocd_impl_write8,
+    .read8  = openocd_impl_read8,
 };
 
 // --- Helper Functions ---
@@ -300,6 +302,21 @@ static int openocd_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value) {
     if (openocd_tcl_exec(pvt->sockfd, command, response, sizeof(response)) != 0) {
         return -1;
     }
+    return 0;
+}
+
+static int openocd_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0 || !value_out) return -1;
+
+    char command[128], response[128];
+    snprintf(command, sizeof(command), "mrb 0x%x", addr);
+
+    if (openocd_tcl_exec(pvt->sockfd, command, response, sizeof(response)) != 0) {
+        return -1;
+    }
+
+    *value_out = (uint8_t)strtoul(response, NULL, 0);
     return 0;
 }
 

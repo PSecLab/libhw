@@ -49,6 +49,7 @@ static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg);
 static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int stlink_impl_board_run(hw_t *ctx);
 static int stlink_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
+static int stlink_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out);
 
 // --- The Static Dispatch Table (vtable) ---
 
@@ -66,6 +67,7 @@ const hw_ops_t stlink_ops = {
     .write8 = stlink_impl_write8,
 
     .read32  = stlink_impl_read32,
+    .read8   = stlink_impl_read8,
     .board_halted = stlink_impl_board_halted,
 	.board_run = stlink_impl_board_run,
 	.board_halt = stlink_impl_board_halt,
@@ -175,6 +177,18 @@ static int stlink_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value) {
         return -1;
     }
     return 0; // Success
+}
+
+static int stlink_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl || !value_out) return -1;
+
+    if (stlink_read_mem32(pvt->sl, addr & ~0x3u, sizeof(unsigned int)) != 0) {
+        return -1;
+    }
+
+    *value_out = pvt->sl->q_buf[addr & 0x3u];
+    return 0;
 }
 
 /**
