@@ -1,11 +1,38 @@
 #ifndef HW_H
 #define HW_H
 #include <stdint.h>
+#include <stddef.h>
 
 // Pre-declare the primary opaque types used in the API.
 typedef struct hw_context hw_t;
 typedef struct hw_backend hw_backend_t;
 typedef struct hw_ops hw_ops_t;
+
+/**
+ * Geometry of the target's program flash, filled in by hw_flash_info().
+ *
+ * 'page_size' is the *nominal* erase granularity. On parts with a uniform
+ * layout it is the real one; on parts with non-uniform sectors (STM32 F2/F4/F7)
+ * it is only a hint, and hw_flash_sector() must be used to find the true
+ * boundaries of the erase block containing a given address.
+ */
+typedef struct {
+    unsigned int base;        /* first address of the flash region */
+    unsigned int size;        /* total flash size, in bytes */
+    unsigned int page_size;   /* nominal erase granularity, in bytes */
+    unsigned int write_align; /* program granularity, in bytes */
+} hw_flash_info_t;
+
+/**
+ * Accounting for a hw_flash_patch() run, so callers can see how much of the
+ * flash the patch actually touched. Optional: pass NULL if not needed.
+ */
+typedef struct {
+    unsigned int sectors_total;   /* erase blocks spanned by the region */
+    unsigned int sectors_changed; /* blocks whose contents differ */
+    unsigned int sectors_erased;  /* blocks that needed an erase */
+    unsigned int bytes_written;   /* bytes actually programmed */
+} hw_flash_patch_stats_t;
 
 /**
  * The dispatch table (vtable) defines the complete set of operations
@@ -52,6 +79,34 @@ struct hw_ops {
 
 	/* Reset board */
 	int (*board_reset)(hw_t *ctx);
+
+	/* --- Flash operations ---
+	 *
+	 * Backends that cannot program flash simply leave these NULL; the
+	 * hw_flash_* wrappers then fail with -1 rather than dispatching.
+	 * None of these implicitly halt the target or erase before writing.
+	 */
+
+	/* Report the flash geometry. */
+	int (*flash_info)(hw_t *ctx, hw_flash_info_t *info_out);
+
+	/* Report the erase block containing 'addr'. Optional: when NULL the core
+	 * assumes a uniform layout of flash_info()'s page_size. */
+	int (*flash_sector)(hw_t *ctx, unsigned int addr,
+	                    unsigned int *sector_base, unsigned int *sector_size);
+
+	/* Bulk read from flash. Optional: when NULL the core falls back to
+	 * read32/read8, which is correct but one round trip per word. */
+	int (*flash_read)(hw_t *ctx, unsigned int addr, uint8_t *buf, size_t len);
+
+	/* Program flash *without* erasing first. Bits can only go 1 -> 0. */
+	int (*flash_write)(hw_t *ctx, unsigned int addr, const uint8_t *buf, size_t len);
+
+	/* Erase every block overlapping [addr, addr + len). */
+	int (*flash_erase)(hw_t *ctx, unsigned int addr, size_t len);
+
+	/* Erase the whole chip. */
+	int (*flash_mass_erase)(hw_t *ctx);
 };
 
 /**
@@ -130,5 +185,71 @@ void hw_write_reg(hw_t *ctx, int reg, uint64_t val);
 
 /* Reset target board */
 int hw_board_reset(hw_t *ctx);
+
+/* --- Flash API ---------------------------------------------------------
+ *
+ * All of these return 0 on success and -1 on failure, and all of them
+ * address flash by absolute target address (e.g. 0x08000000), not by offset.
+ *
+ * The four thin wrappers below dispatch straight to the backend and do
+ * nothing else -- in particular hw_flash_write() does NOT erase first, so a
+ * plain write can only clear bits. The composite calls (hw_flash_update,
+ * hw_flash_patch) are implemented once in the core on top of them.
+ */
+
+/* Report the flash geometry (base, size, erase and program granularity). */
+int hw_flash_info(hw_t *ctx, hw_flash_info_t *info_out);
+
+/* Report the base and size of the erase block containing 'addr'. Handles the
+ * non-uniform sector maps of STM32 F2/F4/F7; falls back to the uniform
+ * page_size from hw_flash_info() for backends that do not implement it. */
+int hw_flash_sector(hw_t *ctx, unsigned int addr,
+                    unsigned int *sector_base, unsigned int *sector_size);
+
+/* Read 'len' bytes of flash into 'buf'. */
+int hw_flash_read(hw_t *ctx, unsigned int addr, void *buf, size_t len);
+
+/* Program 'len' bytes at 'addr'. Does not erase: the affected blocks must
+ * already be erased, or the write must only clear bits. */
+int hw_flash_write(hw_t *ctx, unsigned int addr, const void *buf, size_t len);
+
+/* Erase every block overlapping [addr, addr + len). Note that this erases
+ * whole blocks, so it can destroy data outside the requested range --
+ * hw_flash_update() and hw_flash_patch() preserve those bytes for you. */
+int hw_flash_erase(hw_t *ctx, unsigned int addr, size_t len);
+
+/* Erase the entire flash. */
+int hw_flash_mass_erase(hw_t *ctx);
+
+/* Read back 'len' bytes at 'addr' and compare against 'buf'.
+ * Returns 0 if they match, -1 otherwise. */
+int hw_flash_verify(hw_t *ctx, unsigned int addr, const void *buf, size_t len);
+
+/* Erase-and-reprogram [addr, addr + len) with 'buf', then verify.
+ *
+ * Bytes that share an erase block with the region but fall outside it are
+ * read first and written back, so nothing outside [addr, addr + len) changes.
+ * Halts the target before programming and leaves it halted.
+ */
+int hw_flash_update(hw_t *ctx, unsigned int addr, const void *buf, size_t len);
+
+/* Apply the minimal set of flash operations that turns 'old_image' into
+ * 'new_image' over [addr, addr + len), then verify.
+ *
+ * Erase blocks whose bytes are identical in the two images are left entirely
+ * untouched. For a block that did change, the erase is skipped when every
+ * differing bit only goes 1 -> 0, in which case just the differing span is
+ * reprogrammed; otherwise the block is erased and rewritten in full.
+ *
+ * 'old_image' may be NULL, in which case the current flash contents are read
+ * back and used as the old image -- correct, but it costs a full read of the
+ * region. Passing the image you last flashed avoids that.
+ *
+ * Both images are 'len' bytes long and describe the same address range.
+ * 'stats_out' may be NULL. Halts the target and leaves it halted.
+ */
+int hw_flash_patch(hw_t *ctx, unsigned int addr,
+                   const void *old_image, const void *new_image, size_t len,
+                   hw_flash_patch_stats_t *stats_out);
 
 #endif // HW_H
