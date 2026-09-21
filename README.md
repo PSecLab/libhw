@@ -7,12 +7,102 @@ The primary goal is to abstract away the specific details of each debugging tool
 ## Features
 
 - **Unified API:** Simple `hw_connect`, `hw_close`, `hw_read32`, and `hw_write32` functions for all backends.
+- **Flash programming:** A common `hw_flash_*` API across every backend, including a differential `hw_flash_patch` that only touches the sectors that actually changed.
 - **Pluggable Backends:** Easily add support for new debug probes by implementing a standard interface.
 - **Central Registry:** A single, central file (`backends/hw_backends.c`) lists all available backends, making the system easy to understand and extend.
 - **No External Build Dependencies:** Relies only on standard `make` and a C compiler.
 - **Included Backends:**
   - `stlink`: Connects directly to ST-Link programmers via `libstlink`.
   - `openocd`: Connects to a running OpenOCD server via its TCL RPC interface (port 6666).
+  - `mock`: An in-memory target with no hardware attached, used by the test suite.
+
+## The Flash API
+
+Every backend exposes the same flash interface. Addresses are absolute target
+addresses (`0x08000000`, not an offset), and every call returns `0` on success
+and `-1` on failure.
+
+```c
+hw_flash_info_t info;
+hw_flash_info(hw, &info);      // base, size, erase and program granularity
+
+hw_flash_read(hw, addr, buf, len);
+hw_flash_erase(hw, addr, len); // erases whole sectors
+hw_flash_write(hw, addr, buf, len);
+hw_flash_mass_erase(hw);
+hw_flash_verify(hw, addr, buf, len);
+```
+
+These are thin: they dispatch straight to the backend and do nothing else. In
+particular `hw_flash_write` does **not** erase first, so on its own it can only
+clear bits. Two composite calls, implemented once in `core/hw.c` on top of those
+primitives, do the useful work:
+
+### `hw_flash_update` — write an image
+
+```c
+hw_flash_update(hw, 0x08004000, image, image_len);
+```
+
+Erases and reprograms the range, then verifies it. Bytes that share a sector
+with the range but fall outside it are read first and written back, so nothing
+outside `[addr, addr + len)` changes.
+
+### `hw_flash_patch` — write only what changed
+
+```c
+hw_flash_patch_stats_t stats;
+hw_flash_patch(hw, 0x08004000, old_image, new_image, len, &stats);
+
+printf("%u/%u sectors changed, %u erased, %u bytes written\n",
+       stats.sectors_changed, stats.sectors_total,
+       stats.sectors_erased, stats.bytes_written);
+```
+
+Given the image currently on the device and the one you want there, this applies
+the minimal set of operations that gets from one to the other:
+
+- A sector whose bytes are identical in both images is **never touched**, and
+  with `old_image` supplied it is never even read back over the wire.
+- A sector that did change is **erased only if some bit has to go 0 -> 1**.
+  Programming can always clear bits, so a change that only clears them is
+  written straight over the top, and only the differing span is reprogrammed
+  (widened out to the part's program granularity).
+- Otherwise the sector is erased and rewritten in full.
+
+`old_image` may be `NULL`, in which case the current contents are read back and
+used instead. That is always correct, but it costs a full read of the region;
+passing the image you last flashed avoids it.
+
+Both composite calls halt the target before programming and **leave it halted** —
+resuming a core whose code just changed underneath it is the caller's decision.
+
+### Backend notes
+
+- **stlink** reports the real geometry from `libstlink`, and handles the
+  non-uniform sector maps of F2/F4 and F7 (small sectors, then one medium, then
+  large ones, repeating per 1 MB bank). Writes drive the flash loader directly
+  rather than going through `stlink_write_flash`, which would erase every page
+  it touched and defeat the point of `hw_flash_patch`.
+- **openocd** reads its geometry from `flash banks` and `flash info 0`, so it
+  gets real sector boundaries too. Two caveats: the TCL interface cannot carry a
+  payload inline, so writes go through a temporary file that the OpenOCD server
+  must be able to open (fine for a local server, which is the default; a remote
+  one will not see it). And the interface does not report program granularity,
+  so the backend conservatively reports the sector size — patches still skip
+  erases, but they rewrite a changed sector whole.
+- **mock** models NOR semantics faithfully: erase sets `0xFF`, programming only
+  clears bits, and writes must respect the program granularity. Code that
+  forgets to erase fails against it exactly as it would against a board.
+
+## Testing
+
+`make check` builds and runs `tests/flash_test.c` against the `mock` backend. It
+needs no hardware:
+
+```bash
+make check
+```
 
 ## Building the Project
 
@@ -30,7 +120,7 @@ From the root of the project directory, simply run `make`:
 make
 ```
 
-This will compile the `libhw.a` static library and the `hw_test` executable, placing all output into the `out/` directory.
+This will compile the `libhw.a` static library, the `hw_test` benchmark and the `flash_test` test suite, placing all output into the `out/` directory.
 
 To clean up all build artifacts, run:
 
