@@ -6,6 +6,7 @@
 CC = gcc
 # CFLAGS: Add include paths for public API, core, and backend headers
 CFLAGS = -g -fPIC -Wall -Wextra -std=c11 -Iinclude -Icore -Ibackends -I/usr/include/stlink -I/usr/include/libusb-1.0/
+CFLAGS += -Igenerated
 CFLAGS += -I/usr/local/include/stlink	#in case, stlink is built from source.
 
 LDFLAGS =
@@ -27,7 +28,8 @@ LIB_SRC_NAMES = hw.c \
                 hw_backends.c \
                 hw_stlink.c \
                 hw_openocd.c \
-                hw_mock.c
+                hw_mock.c \
+                hw_state.c
 APP_SRC_NAME = example.c
 TEST_SRC_NAME = flash_test.c
 
@@ -42,7 +44,7 @@ PRIVATE_HEADER = core/hw_priv.h
 
 
 # --- Build Rules ---
-.PHONY: all clean check
+.PHONY: all clean check state-import state-gen state-coverage state-check
 
 all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET)
 
@@ -81,6 +83,29 @@ $(ODIR)/$(SHARED_LIB): $(LIB_OBJ)
 	@echo "LD   ==> $@"
 	$(CC) -shared -fPIC -o $@ $^ $(LIBS)
 
+
+# --- Architectural-state database -------------------------------------------
+# The .def files under generated/ are outputs. To change what state libhw knows
+# about, change the rules the importer reads and re-import; never edit the .def.
+STATE_ARCH = armv7m
+STATE_CPUS = cortex_m7_r0p2
+
+# Re-import from the pinned manuals. Needs the licensed documents present.
+state-import:
+	@python3 tools/state_import.py --target $(STATE_ARCH)
+	@for c in $(STATE_CPUS); do python3 tools/state_import.py --target $$c --arch-manifest $(STATE_ARCH); done
+
+# Regenerate the .def tables and coverage artifacts from the manifests.
+state-gen:
+	@python3 tools/state_gen.py
+
+# The accounting: every source entry classified, nothing unclassified.
+state-coverage:
+	@python3 tools/state_gen.py --coverage-only
+
+# CI invariants for the state database.
+state-check:
+	@python3 -m pytest tests/state -q
 
 # Rule to clean up all build artifacts
 clean:
