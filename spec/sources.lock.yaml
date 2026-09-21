@@ -1,0 +1,32 @@
+schema_version: 1
+generated_note: Pins the exact documents a completeness claim is made against. See tools/state/sources.py.
+sources:
+  armv7m_arm:
+    kind: pdf_manual
+    document: DDI0403
+    revision: E.e
+    title: Armv7-M Architecture Reference Manual
+    architecture: ARMv7-M
+    path: ~/Documents/DDI0403E_e_armv7m_arm.pdf
+    pages: 858
+    acquired: '2026-09-21'
+    redistributable: false
+    notes: Architectural authority for ARMv7-M state (sec 17). Licensed Arm document; not redistributed.
+      Pinned by SHA-256 only.
+    sha256: 76500176d20f897eaf05eeadb5a6202cef641e332073b107905c8898e0ee0747
+    bytes: 5957561
+  cortex_m7_trm:
+    kind: pdf_manual
+    document: DDI0489
+    revision: B
+    title: ARM Cortex-M7 Processor Technical Reference Manual
+    architecture: ARMv7-M
+    product_revision: r0p2
+    path: ~/Downloads/DDI0489B_cortex_m7_trm.pdf
+    pages: 145
+    acquired: '2026-09-21'
+    redistributable: false
+    notes: CPU overlay authority for Cortex-M7 r0p2 (sec 13). Issue B is the first release for r0p2. Licensed
+      Arm document; not redistributed.
+    sha256: 50b1c3e84dd1b75c7f40d528c5fd44927579788ae9f46a0b06b564718f43cb46
+    bytes: 1038821

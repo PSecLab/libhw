@@ -1,0 +1,335 @@
+schema_version: 1
+source: cortex_m7_trm
+architecture: ARMv7-M
+tables:
+  1-1:
+    caption: Implementation options
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  10-1:
+    caption: Trigger signals to the CTI
+    keep: false
+    reason: External signal description; not register state
+  10-2:
+    caption: Trigger signals from the CTI
+    keep: false
+    reason: External signal description; not register state
+  10-3:
+    caption: CTI register summary
+    keep: true
+    reason: CTI programmable registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: CTI
+  11-1:
+    caption: DWT register summary
+    keep: true
+    reason: DWT registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DWT
+  12-1:
+    caption: ITM register summary
+    keep: true
+    reason: ITM registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: ITM
+  12-2:
+    caption: ITM_TPR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  13-1:
+    caption: RAM protection summary
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  13-2:
+    caption: RAM configuration with or without ECC
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  2-1:
+    caption: Memory regions
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  3-1:
+    caption: System control registers
+    keep: true
+    reason: System control registers (SCS); mix of architectural and Cortex-M7 implementation-defined
+    profile: addr_name_type_reset
+    namespace: auto
+    component: SCS
+  3-2:
+    caption: SYST_CALIB inputs
+    keep: false
+    reason: Describes how the CFGSTCALIB input signal is reflected in SYST_CALIB; not a distinct register
+  3-3:
+    caption: ACTLR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-4:
+    caption: CPUID bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-5:
+    caption: CLIDR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-6:
+    caption: CCSIDR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-7:
+    caption: CCSIDR encodings
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  3-8:
+    caption: CSSELR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-9:
+    caption: CM7_ITCMCR and CM7_DTCMCR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-10:
+    caption: CM7_AHBPCR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-11:
+    caption: CM7_CACR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-12:
+    caption: CM7_ABFSR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-13:
+    caption: IEBR0-1 bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-14:
+    caption: DEBR0-1 bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-15:
+    caption: CM7_AHBSCR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  5-1:
+    caption: Types of faults
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  5-2:
+    caption: Memory types and associated behavior
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-3:
+    caption: High performance AXIM attributes and transactions
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-4:
+    caption: Area optimized AXIM attributes and transactions
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-5:
+    caption: Cortex-M7 mode and APROT values
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-6:
+    caption: LDRB from Strongly-ordered or Device
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-7:
+    caption: LDRH from Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-8:
+    caption: LDR or LDM1 from Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-9:
+    caption: LDM2, Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-10:
+    caption: STRB to Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-11:
+    caption: STRH to Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-12:
+    caption: STR or STM1 to Strongly-ordered or Device memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-13:
+    caption: STM5 to Strongly-ordered or Device memory to word 0 or 1
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-14:
+    caption: Linefill behavior on the AXI interface
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-15:
+    caption: Cache line write-back
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-16:
+    caption: STRH to Cacheable write-through or Non-cacheable Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-17:
+    caption: STR to Cacheable write-through or Non-cacheable Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-18:
+    caption: AXI transaction splitting, all six words in same cache line
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-19:
+    caption: AXI transaction splitting, data in two cache lines
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-20:
+    caption: Non-cacheable LDR or LDM1 crossing a cache line boundary
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-21:
+    caption: Non-cacheable STRH crossing a cache line boundary
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-22:
+    caption: AXI transactions for Strongly-ordered or Device type memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-23:
+    caption: AXI transactions for Non-cacheable Normal or Write-Through Cacheable
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  5-24:
+    caption: LDRB transfers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-25:
+    caption: LDRH transfers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-26:
+    caption: LDR or LDM of one register
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-27:
+    caption: LDM that transfers five registers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-28:
+    caption: STRB transfers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-29:
+    caption: STRH transfers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-30:
+    caption: STR of one register
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-31:
+    caption: STM of five registers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-32:
+    caption: LDRH transfers in Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-33:
+    caption: LDR transfers in Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-34:
+    caption: STRH transfers in Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-35:
+    caption: STR transfers in Normal memory
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  5-36:
+    caption: Transaction properties
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  6-1:
+    caption: MPU registers
+    keep: true
+    reason: MPU registers
+    profile: addr_name_type_reset
+    namespace: auto
+    feature_requirement: MPU
+    component: MPU
+  7-1:
+    caption: NVIC registers
+    keep: true
+    reason: NVIC registers
+    profile: addr_name_type_reset
+    namespace: auto
+    component: NVIC
+  7-2:
+    caption: ICTR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  8-1:
+    caption: Cortex-M7 ISA Support
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  8-2:
+    caption: Floating-point system registers
+    keep: true
+    reason: Floating-point system registers
+    profile: addr_name_type_reset
+    namespace: auto
+    feature_requirement: FP_EXTENSION
+    component: FP
+  9-1:
+    caption: Cortex-M7 Processor ROM table identification values
+    keep: true
+    reason: Processor ROM table identification registers
+    profile: addr_register_value
+    namespace: debug
+    component: ROMTABLE
+  9-2:
+    caption: Cortex-M7 Processor ROM table components
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  9-3:
+    caption: Cortex-M7 PPB ROM table identification values
+    keep: true
+    reason: PPB ROM table identification registers
+    profile: addr_register_value
+    namespace: debug
+    component: PPBROMTABLE
+  9-4:
+    caption: Cortex-M7 PPB ROM table components
+    keep: false
+    reason: Implementation configuration table; does not enumerate register state
+  9-5:
+    caption: SCS identification values
+    keep: true
+    reason: SCS CoreSight identification registers
+    profile: addr_register_value
+    namespace: debug
+    component: SCS
+  9-6:
+    caption: Debug registers
+    keep: true
+    reason: Debug Control Block registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DCB
+  9-7:
+    caption: FPB register summary
+    keep: true
+    reason: FPB registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: FPB
+crosscheck_indexes: []

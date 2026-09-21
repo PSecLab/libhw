@@ -1,0 +1,47 @@
+schema_version: 1
+registers:
+  MMFSR:
+    class: alias
+    alias_of: CFSR
+    bit_offset: 0
+    bit_width: 8
+    reason: MemManage Fault Status is CFSR[7:0]; not independent storage
+    declare: true
+    address: '0xE000ED28'
+    provenance_table: Table D8-2 Memory-mapped System register index
+    provenance_section: B3.2 System Control Space (SCS)
+  BFSR:
+    class: alias
+    alias_of: CFSR
+    bit_offset: 8
+    bit_width: 8
+    reason: BusFault Status is CFSR[15:8]; not independent storage
+    declare: true
+    address: '0xE000ED29'
+    provenance_table: Table D8-2 Memory-mapped System register index
+    provenance_section: B3.2 System Control Space (SCS)
+  UFSR:
+    class: alias
+    alias_of: CFSR
+    bit_offset: 16
+    bit_width: 16
+    reason: UsageFault Status is CFSR[31:16]; not independent storage
+    declare: true
+    address: '0xE000ED2A'
+    provenance_table: Table D8-2 Memory-mapped System register index
+    provenance_section: B3.2 System Control Space (SCS)
+  DWT_COMPn:
+    class: conditional_state
+    requires: IMPDEF:DWT_CTRL.NUMCOMP
+    reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at
+      runtime from DWT_CTRL.NUMCOMP, so the architecture cannot fix a count
+  DWT_MASKn:
+    class: conditional_state
+    requires: IMPDEF:DWT_CTRL.NUMCOMP
+    reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at
+      runtime from DWT_CTRL.NUMCOMP, so the architecture cannot fix a count
+  DWT_FUNCTIONn:
+    class: conditional_state
+    requires: IMPDEF:DWT_CTRL.NUMCOMP
+    reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at
+      runtime from DWT_CTRL.NUMCOMP, so the architecture cannot fix a count

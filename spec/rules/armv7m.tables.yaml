@@ -1,0 +1,659 @@
+schema_version: 1
+source: armv7m_arm
+architecture: ARMv7-M
+tables:
+  A1-1:
+    caption: Floating-point Extension full characterizations
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A2-1:
+    caption: Default NaN encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A2-2:
+    caption: Default NaN encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A2-3:
+    caption: Floating-point exception default results
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  A2-4:
+    caption: FP comparison flag values
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A3-1:
+    caption: Load-store and element size association
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A3-2:
+    caption: Effect of Exclusive instructions and write operations on local monitor
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A3-3:
+    caption: Effect of load/store operations on global monitor for processor(n)
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A3-4:
+    caption: Memory attribute summary
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  A4-1:
+    caption: Branch instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-2:
+    caption: Standard data-processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-3:
+    caption: Shift instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-4:
+    caption: General multiply instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-5:
+    caption: Signed multiply instructions, Armv7-M base architecture
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-6:
+    caption: Signed multiply instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-7:
+    caption: Unsigned multiply instructions, Armv7-M base architecture
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-8:
+    caption: Unsigned multiply instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-9:
+    caption: Saturating instructions, Armv7-M base architecture
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-1:
+    caption: 16-bit Thumb instruction encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-2:
+    caption: 16-bit shift (immediate), add, subtract, move and compare encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-3:
+    caption: 16-bit data processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-4:
+    caption: Special data instructions and branch and exchange
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-5:
+    caption: 16-bit Load/store instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-6:
+    caption: Miscellaneous 16-bit instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-7:
+    caption: If-Then and hint instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-8:
+    caption: Branch and Supervisor Call instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-9:
+    caption: 32-bit Thumb encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-1:
+    caption: Data type specification flexibility
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A6-2:
+    caption: Floating-point register specifier formats
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-3:
+    caption: Example register lists
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-4:
+    caption: Encoding of register numbers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-5:
+    caption: Three-register floating-point data-processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-6:
+    caption: Floating-point modified immediate constants
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A6-7:
+    caption: FP extension register load and store instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-8:
+    caption: Instructions for 32-bit data transfers to or from FP extension registers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A6-9:
+    caption: 64-bit data transfer instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A7-1:
+    caption: Condition codes
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A7-2:
+    caption: Effect of IT Execution state bits
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A7-3:
+    caption: Determination of mask a field
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  A7-4:
+    caption: MOV (shift, register shift) equivalences)
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-10:
+    caption: Halfword saturating instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-11:
+    caption: Saturating addition and subtraction instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-12:
+    caption: Packing and unpacking instructions, Armv7-M base architecture
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-13:
+    caption: Packing and unpacking instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-14:
+    caption: Parallel addition and subtraction instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-15:
+    caption: Miscellaneous data-processing instructions, Armv7-M base architecture
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-16:
+    caption: Miscellaneous data-processing instructions, Armv7-M DSP extension
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-17:
+    caption: Load and store instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-18:
+    caption: Load Multiple and Store Multiple instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-19:
+    caption: Miscellaneous instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-20:
+    caption: FP extension register load and store instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-21:
+    caption: FP extension register transfer instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A4-22:
+    caption: Floating-point data-processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-10:
+    caption: 32-bit modified immediate data processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-11:
+    caption: Encoding of modified immediates in Thumb data-processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-12:
+    caption: 32-bit unmodified immediate data processing instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-13:
+    caption: Branches and miscellaneous control instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-14:
+    caption: Change Processor State, and hint instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-15:
+    caption: Miscellaneous control instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-16:
+    caption: Load Multiple and Store Multiple instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-17:
+    caption: Load/store dual or exclusive, table branch
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-18:
+    caption: Load word
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-19:
+    caption: Load halfword, memory hints
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-20:
+    caption: Load byte, memory hints
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-21:
+    caption: show the allocation of encodings in this space. Other encodings in this space are UNDEFINED.
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-22:
+    caption: Data-processing (shifted register)
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-23:
+    caption: Move register and immediate shifts
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-24:
+    caption: Data processing (register)
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-25:
+    caption: Signed parallel addition and subtraction instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-26:
+    caption: Unsigned parallel addition and subtraction instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  A5-27:
+    caption: Miscellaneous operations
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-28:
+    caption: Multiply, multiply accumulate, and absolute difference operations
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-29:
+    caption: Long multiply, long multiply accumulate, and divide operations
+    keep: false
+    reason: Thumb instruction set encoding table (Chapter A5); enumerates instruction encodings, not register state
+  A5-30:
+    caption: Coprocessor instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B1-1:
+    caption: Mode, privilege and stack relationship
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  B1-2:
+    caption: ICI/IT bit allocation in the EPSR
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  B1-3:
+    caption: Mnemonics for combinations of xPSR registers
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B1-4:
+    caption: Exception numbers
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  B1-5:
+    caption: Vector table format
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  B1-6:
+    caption: Relation between number of priority bits and maximum priority value
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  B1-7:
+    caption: Priority grouping
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  B1-8:
+    caption: EXC_RETURN definition of exception return behavior, no FP extension
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  B1-9:
+    caption: EXC_RETURN definition of exception return behavior, with FP extension
+    keep: false
+    reason: Exception/fault behaviour table; not register state
+  B2-1:
+    caption: Cache and branch predictor maintenance operations
+    keep: true
+    reason: Cache and branch predictor maintenance operations, listed as registers in the D8-2 index
+    profile: addr_name_type_reset
+    namespace: arch
+    classification: non_state_operation
+    classification_reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an
+      action rather than storing state
+    component: CACHE
+  B3-1:
+    caption: Armv7-M address map
+    keep: false
+    reason: Address map / region table; the registers within are enumerated in their own summaries
+  B3-2:
+    caption: Subdivision of the System region of the Armv7-M address map
+    keep: false
+    reason: Address map / region table; the registers within are enumerated in their own summaries
+  B3-3:
+    caption: SCS address space regions
+    keep: false
+    reason: Address map / region table; the registers within are enumerated in their own summaries
+  B3-4:
+    caption: Summary of SCB registers
+    keep: true
+    reason: SCB registers
+    profile: addr_name_type_reset
+    namespace: arch
+    component: SCB
+  B3-5:
+    caption: Summary of additional SCB registers for the FP extension
+    keep: true
+    reason: Additional SCB registers present only with the FP extension
+    profile: addr_name_type_reset
+    namespace: arch
+    feature_requirement: FP_EXTENSION
+    component: SCB
+  B3-6:
+    caption: Summary of system control and ID registers not in the SCB
+    keep: true
+    reason: System control and ID registers outside the SCB
+    profile: addr_name_type_reset
+    namespace: arch
+    component: SCS
+  B3-7:
+    caption: SysTick register summary
+    keep: true
+    reason: SysTick registers
+    profile: addr_name_type_reset
+    namespace: arch
+    component: SYSTICK
+  B3-8:
+    caption: NVIC register summary
+    keep: true
+    reason: NVIC registers
+    profile: addr_name_type_reset
+    namespace: arch
+    component: NVIC
+  B3-9:
+    caption: Implemented NVIC registers, except NVIC_IPRs
+    keep: false
+    reason: Maps ICTR.INTLINESNUM to how many NVIC registers are implemented; constrains the registers enumerated
+      in Table B3-8 rather than enumerating new ones
+  B4-1:
+    caption: Processor Feature ID register support in the SCS
+    keep: true
+    reason: Processor Feature ID registers in the SCS (CPUID space)
+    profile: addr_type_reset_descname
+    namespace: arch
+    component: CPUID
+  B4-2:
+    caption: Supported synchronization primitives
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  B4-3:
+    caption: CtypeX bit assignment values
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  B4-4:
+    caption: WT, WB, RA and WA bit values
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  B5-1:
+    caption: Special register field encoding
+    keep: true
+    reason: MRS/MSR special-purpose register SYSm encodings
+    profile: special_register_sysm
+    namespace: arch
+    component: SPECIAL
+  B5-2:
+    caption: <bits> encoding on MSR APSR writes
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B1-10:
+    caption: FP common register block
+    keep: true
+    reason: FP common register block reached by VMRS/VMSR
+    profile: fp_common_block
+    namespace: arch
+    feature_requirement: FP_EXTENSION
+    component: FP
+  B3-10:
+    caption: Implemented NVIC_IPRs
+    keep: false
+    reason: Maps ICTR.INTLINESNUM to how many NVIC registers are implemented; constrains the registers enumerated
+      in Table B3-8 rather than enumerating new ones
+  B3-11:
+    caption: MPU register summary
+    keep: true
+    reason: MPU registers
+    profile: addr_name_type_reset
+    namespace: arch
+    feature_requirement: MPU
+    component: MPU
+  B3-12:
+    caption: Effect of MPU_CTRL settings on unprivileged instructions
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B3-13:
+    caption: TEX, C, B, and S Encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B3-14:
+    caption: Cache policy encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B3-15:
+    caption: Access permissions field encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  B3-16:
+    caption: Execute Never encoding
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  C1-1:
+    caption: PPB debug related regions
+    keep: false
+    reason: Address map / region table; the registers within are enumerated in their own summaries
+  C1-2:
+    caption: Determining the debug support in an Armv7-M implementation
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  C1-3:
+    caption: Armv7-M DAP accessible ROM table
+    keep: true
+    reason: Armv7-M DAP accessible ROM table entries
+    profile: offset_value_name
+    namespace: debug
+    component: ROMTABLE
+  C1-4:
+    caption: Halting debug authentication
+    keep: false
+    reason: Debug behaviour description; not a register enumeration
+  C1-5:
+    caption: Non-invasive debug authentication
+    keep: false
+    reason: Debug behaviour description; not a register enumeration
+  C1-6:
+    caption: and Table C1-7 on page C1-690 show the access permissions when either external debug is disabled or
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  C1-7:
+    caption: DAP PPB access permissions when DBGEN is deasserted
+    keep: false
+    reason: Memory model or bus behaviour table; not register state
+  C1-8:
+    caption: Debug events
+    keep: false
+    reason: Debug behaviour description; not a register enumeration
+  C1-9:
+    caption: Debug stepping control using the DHCSR
+    keep: false
+    reason: Debug behaviour description; not a register enumeration
+  C1-10:
+    caption: Debug register summary
+    keep: true
+    reason: Debug Control Block registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DCB
+  C1-11:
+    caption: Register summary
+    keep: true
+    reason: ITM registers in address order
+    profile: addr_name_type_reset
+    namespace: debug
+    component: ITM
+  C1-12:
+    caption: Mapping between ITM_TERs, stimulus ports, and ITM_STIMs
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  C1-13:
+    caption: DWT_FUNCTION register comparison type definition
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  C1-14:
+    caption: DWT address comparison functions
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  C1-15:
+    caption: DWT cycle count comparison functions
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  C1-16:
+    caption: DWT data value comparison functions
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  C1-17:
+    caption: CYCCNT tap bit for POSTCNT timer
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  C1-18:
+    caption: Effect of a CYCCNT tap bit transition when POSTCNT is zero
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  C1-19:
+    caption: CYCCNT tap bit for synchronization packet timer
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  C1-20:
+    caption: DWT_CTRL profile counter overflow event enable bits
+    keep: false
+    reason: Execution-model or register-field behaviour table; not a distinct state element
+  C1-21:
+    caption: DWT register summary
+    keep: true
+    reason: DWT registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DWT
+  C1-22:
+    caption: Required TPIU registers
+    keep: true
+    reason: TPIU registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: TPIU
+  C1-23:
+    caption: Flash Patch and Breakpoint register summary
+    keep: true
+    reason: Flash Patch and Breakpoint registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: FPB
+  D1-1:
+    caption: Component and Peripheral ID register formats
+    keep: false
+    reason: Describes the layout shared by CoreSight ID registers; individual registers enumerated elsewhere
+  D1-2:
+    caption: CoreSight Software Lock registers
+    keep: true
+    reason: CoreSight software lock registers
+    profile: offset_type_name
+    namespace: debug
+    component: CORESIGHT
+  D2-1:
+    caption: Pre-UAL assembly syntax
+    keep: false
+    reason: Documentation convention; not register state
+  D2-2:
+    caption: UAL equivalents of pre-UAL floating-point instruction mnemonics
+    keep: false
+    reason: Instruction encoding or behaviour table; does not enumerate persistent register state
+  D4-1:
+    caption: ITM and DWT protocol packet categories
+    keep: false
+    reason: Trace protocol packet format; wire format rather than register state
+  D4-2:
+    caption: ITM and DWT protocol packet formats
+    keep: false
+    reason: Trace protocol packet format; wire format rather than register state
+  D4-3:
+    caption: ITM and DWT Instrumentation and Hardware source packet formats
+    keep: false
+    reason: Trace protocol packet format; wire format rather than register state
+  D4-4:
+    caption: SS value and payload size
+    keep: false
+    reason: Trace protocol packet format; wire format rather than register state
+  D4-5:
+    caption: Event counter packet payload bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  D4-6:
+    caption: Exception trace packet payload bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  D4-7:
+    caption: Discriminator IDs for Data trace packets
+    keep: false
+    reason: Trace protocol packet format; wire format rather than register state
+  D6-1:
+    caption: Conventions for bitstrings with and without do not care bits
+    keep: false
+    reason: Documentation convention; not register state
+  D7-1:
+    caption: Pseudocode operators and keywords
+    keep: false
+    reason: Documentation convention; not register state
+  D7-2:
+    caption: Pseudocode functions and procedures
+    keep: false
+    reason: Feature/behaviour description table; not a register enumeration
+  D8-1:
+    caption: Arm core register index
+    keep: true
+    reason: Authoritative index of the Arm core registers defined in ARMv7-M
+    profile: core_register_index
+    namespace: arch
+    component: CORE
+  D8-2:
+    caption: Memory-mapped System register index
+    keep: false
+    reason: Document-internal completeness index; used to verify the imported set, not imported itself
+    crosscheck_index: true
+  D8-3:
+    caption: Memory-mapped debug register index
+    keep: false
+    reason: Document-internal completeness index; used to verify the imported set, not imported itself
+    crosscheck_index: true
+crosscheck_indexes:
+- D8-2
+- D8-3
