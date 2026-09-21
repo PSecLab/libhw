@@ -7,6 +7,8 @@
  * protocol designed for machine-to-machine communication.
  */
 
+#define _DEFAULT_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,12 +20,18 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <netinet/tcp.h>
+#include <ctype.h>
 
 #include "hw.h"
 
 // --- Private Data Structure ---
 typedef struct {
     int sockfd;
+    // Bank 0 geometry, cached after the first "flash banks" query so that
+    // walking a range sector by sector does not re-ask on every step.
+    unsigned int flash_base;
+    unsigned int flash_size;
+    int flash_known;
 } hw_openocd_pvt_t;
 
 // --- Forward declarations ---
@@ -38,6 +46,14 @@ static int openocd_impl_board_halted(hw_t *ctx);
 static int openocd_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 static int openocd_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out);
 static int openocd_tcl_exec(int sockfd, const char* cmd, char* response_buf, size_t response_len);
+static int openocd_tcl_exec_alloc(int sockfd, const char* cmd, char **response_out);
+static int openocd_impl_flash_info(hw_t *ctx, hw_flash_info_t *info_out);
+static int openocd_impl_flash_sector(hw_t *ctx, unsigned int addr,
+                                     unsigned int *sector_base, unsigned int *sector_size);
+static int openocd_impl_flash_read(hw_t *ctx, unsigned int addr, uint8_t *buf, size_t len);
+static int openocd_impl_flash_write(hw_t *ctx, unsigned int addr, const uint8_t *buf, size_t len);
+static int openocd_impl_flash_erase(hw_t *ctx, unsigned int addr, size_t len);
+static int openocd_impl_flash_mass_erase(hw_t *ctx);
 
 // --- Static Helper Functions ---
 static void block_until_halted(hw_openocd_pvt_t *pvt);
@@ -71,6 +87,12 @@ const hw_ops_t openocd_ops = {
     .board_run = openocd_impl_board_run,
     .write8 = openocd_impl_write8,
     .read8  = openocd_impl_read8,
+    .flash_info = openocd_impl_flash_info,
+    .flash_sector = openocd_impl_flash_sector,
+    .flash_read = openocd_impl_flash_read,
+    .flash_write = openocd_impl_flash_write,
+    .flash_erase = openocd_impl_flash_erase,
+    .flash_mass_erase = openocd_impl_flash_mass_erase,
 };
 
 // --- Helper Functions ---
@@ -416,3 +438,315 @@ close:
 }
 
 #endif
+
+// --- Flash operations ---
+
+/**
+ * @brief Like openocd_tcl_exec(), but for replies of unbounded length.
+ *
+ * A sector listing or a bulk 'mdw' runs to several kilobytes, well past the
+ * fixed 1 KB buffer the ordinary exec path uses. On success the caller owns
+ * the returned buffer and must free() it.
+ */
+static int openocd_tcl_exec_alloc(int sockfd, const char* cmd, char **response_out) {
+    const char TCL_TERMINATOR = '\x1a';
+    *response_out = NULL;
+
+    if (send(sockfd, cmd, strlen(cmd), 0) < 0 || send(sockfd, &TCL_TERMINATOR, 1, 0) < 0) {
+        perror("send");
+        return -1;
+    }
+
+    size_t cap = 4096, used = 0;
+    char *buf = malloc(cap);
+    if (!buf) return -1;
+
+    for (;;) {
+        if (used + 1 >= cap) {
+            char *bigger = realloc(buf, cap * 2);
+            if (!bigger) { free(buf); return -1; }
+            buf = bigger;
+            cap *= 2;
+        }
+
+        ssize_t bytes_read = recv(sockfd, buf + used, cap - used - 1, 0);
+        if (bytes_read < 0) { perror("recv"); free(buf); return -1; }
+        if (bytes_read == 0) {
+            fprintf(stderr, "OpenOCD connection closed.\n");
+            free(buf);
+            return -1;
+        }
+        used += (size_t)bytes_read;
+
+        char *terminator = memchr(buf, TCL_TERMINATOR, used);
+        if (terminator) {
+            *terminator = '\0';
+            *response_out = buf;
+            return 0;
+        }
+    }
+}
+
+/**
+ * @brief Best-effort failure detection for a TCL reply.
+ *
+ * The TCL RPC channel carries no status code -- a command that fails simply
+ * returns its error text -- so scanning for the usual markers is all we can do.
+ */
+static int openocd_reply_failed(const char *reply) {
+    static const char *markers[] = { "error", "fail", "invalid", "not found" };
+
+    for (const char *p = reply; *p; p++) {
+        for (unsigned int m = 0; m < sizeof(markers) / sizeof(markers[0]); m++) {
+            size_t n = strlen(markers[m]), k = 0;
+            while (k < n && p[k] && tolower((unsigned char)p[k]) == markers[m][k]) k++;
+            if (k == n) return 1;
+        }
+    }
+    return 0;
+}
+
+/**
+ * @brief Base and size of flash bank 0, from "flash banks".
+ *
+ * The reply looks like:
+ *   #0 : stm32f1x.flash (stm32f1x) at 0x08000000, size 0x00010000, buswidth 0, ...
+ *
+ * Only bank 0 is considered: the abstraction exposes a single flat flash
+ * region, so a target with several banks is described by its first one.
+ */
+static int openocd_flash_bank(hw_openocd_pvt_t *pvt) {
+    if (pvt->flash_known) return 0;
+
+    char *reply = NULL;
+    if (openocd_tcl_exec_alloc(pvt->sockfd, "flash banks", &reply) != 0) return -1;
+
+    int rc = -1;
+    const char *at   = strstr(reply, " at 0x");
+    const char *size = strstr(reply, "size 0x");
+    if (at && size) {
+        pvt->flash_base = (unsigned int)strtoul(at + 4, NULL, 0);
+        pvt->flash_size = (unsigned int)strtoul(size + 5, NULL, 0);
+        if (pvt->flash_size > 0) {
+            pvt->flash_known = 1;
+            rc = 0;
+        }
+    }
+
+    if (rc != 0) {
+        fprintf(stderr, "Could not parse OpenOCD's 'flash banks' reply: %s\n", reply);
+    }
+    free(reply);
+    return rc;
+}
+
+static int openocd_impl_flash_sector(hw_t *ctx, unsigned int addr,
+                                     unsigned int *sector_base, unsigned int *sector_size) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0 || !sector_base || !sector_size) return -1;
+    if (openocd_flash_bank(pvt) != 0) return -1;
+    if (addr < pvt->flash_base || (addr - pvt->flash_base) >= pvt->flash_size) return -1;
+
+    char *reply = NULL;
+    if (openocd_tcl_exec_alloc(pvt->sockfd, "flash info 0", &reply) != 0) return -1;
+
+    // Sector lines look like:  #  3: 0x00000c00 (0x400 1kB) not protected
+    // The bank header on the first line has no '(' after its address, which is
+    // what keeps it from being mistaken for a sector.
+    unsigned int want_offset = addr - pvt->flash_base;
+    int rc = -1;
+
+    for (char *line = strtok(reply, "\r\n"); line; line = strtok(NULL, "\r\n")) {
+        char *colon = strchr(line, ':');
+        if (!colon || strchr(line, '#') == NULL) continue;
+
+        char *offset_str = strstr(colon, "0x");
+        if (!offset_str) continue;
+        char *paren = strchr(offset_str, '(');
+        if (!paren) continue;
+        char *size_str = strstr(paren, "0x");
+        if (!size_str) continue;
+
+        unsigned int offset = (unsigned int)strtoul(offset_str, NULL, 0);
+        unsigned int size   = (unsigned int)strtoul(size_str, NULL, 0);
+        if (size == 0) continue;
+
+        if (want_offset >= offset && want_offset - offset < size) {
+            *sector_base = pvt->flash_base + offset;
+            *sector_size = size;
+            rc = 0;
+            break;
+        }
+    }
+
+    if (rc != 0) {
+        fprintf(stderr, "No sector covering 0x%08x in OpenOCD's 'flash info 0'.\n", addr);
+    }
+    free(reply);
+    return rc;
+}
+
+static int openocd_impl_flash_info(hw_t *ctx, hw_flash_info_t *info_out) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0 || !info_out) return -1;
+    if (openocd_flash_bank(pvt) != 0) return -1;
+
+    unsigned int sector_base = 0, sector_size = 0;
+    if (openocd_impl_flash_sector(ctx, pvt->flash_base, &sector_base, &sector_size) != 0) {
+        return -1;
+    }
+
+    info_out->base = pvt->flash_base;
+    info_out->size = pvt->flash_size;
+    info_out->page_size = sector_size;
+
+    // The TCL interface does not report program granularity, and it differs by
+    // family (2, 4, 8 or 32 bytes). Reporting the sector size is the only safe
+    // answer: it makes hw_flash_patch() rewrite a changed sector whole rather
+    // than risk a misaligned partial program. The erase is still skipped when
+    // the change only clears bits, which is where most of the cost sits.
+    info_out->write_align = sector_size;
+    return 0;
+}
+
+// 256 words per 'mdw' keeps each reply to a few KB.
+#define OPENOCD_READ_WORDS 256u
+
+static int openocd_impl_flash_read(hw_t *ctx, unsigned int addr, uint8_t *buf, size_t len) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0 || !buf) return -1;
+
+    size_t done = 0;
+    while (done < len) {
+        // 'mdw' reads whole words from a word-aligned address, so read the
+        // enclosing aligned window and copy the part the caller asked for.
+        unsigned int cur     = addr + (unsigned int)done;
+        unsigned int aligned = cur & ~3u;
+        unsigned int skip    = cur - aligned;
+
+        size_t want  = len - done;
+        size_t bytes = want + skip;
+        if (bytes > OPENOCD_READ_WORDS * 4) bytes = OPENOCD_READ_WORDS * 4;
+        unsigned int words = (unsigned int)((bytes + 3) / 4);
+
+        char cmd[64];
+        char *reply = NULL;
+        snprintf(cmd, sizeof(cmd), "mdw 0x%x %u", aligned, words);
+        if (openocd_tcl_exec_alloc(pvt->sockfd, cmd, &reply) != 0) return -1;
+
+        uint8_t *raw = malloc((size_t)words * 4);
+        if (!raw) { free(reply); return -1; }
+
+        // Each line is "0xADDRESS: w0 w1 w2 w3"; take the words in order.
+        unsigned int n = 0;
+        for (char *line = strtok(reply, "\r\n"); line && n < words; line = strtok(NULL, "\r\n")) {
+            char *p = strchr(line, ':');
+            if (!p) continue;
+            p++;
+
+            while (n < words) {
+                while (*p == ' ' || *p == '\t') p++;
+                if (!isxdigit((unsigned char)*p)) break;
+
+                uint32_t word = (uint32_t)strtoul(p, &p, 16);
+                raw[n * 4 + 0] = (uint8_t)(word & 0xFF);
+                raw[n * 4 + 1] = (uint8_t)((word >> 8) & 0xFF);
+                raw[n * 4 + 2] = (uint8_t)((word >> 16) & 0xFF);
+                raw[n * 4 + 3] = (uint8_t)((word >> 24) & 0xFF);
+                n++;
+            }
+        }
+        free(reply);
+
+        if (n < words) {
+            fprintf(stderr, "OpenOCD returned %u of %u words for a read at 0x%08x\n",
+                    n, words, aligned);
+            free(raw);
+            return -1;
+        }
+
+        size_t copy = (size_t)words * 4 - skip;
+        if (copy > want) copy = want;
+        memcpy(buf + done, raw + skip, copy);
+        free(raw);
+        done += copy;
+    }
+    return 0;
+}
+
+/**
+ * @brief Program flash through OpenOCD's "flash write_image".
+ *
+ * The TCL interface has no way to carry a payload inline, so the data goes via
+ * a temporary file. That means the OpenOCD server has to be able to open the
+ * path: fine when it runs on this machine, which is the default and the usual
+ * case, but a server on another host will not see the file. Note also that
+ * write_image does not erase, which is exactly the contract this op wants.
+ */
+static int openocd_impl_flash_write(hw_t *ctx, unsigned int addr, const uint8_t *buf, size_t len) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0 || !buf) return -1;
+    if (len == 0) return 0;
+
+    char path[] = "/tmp/libhw_flash_XXXXXX";
+    char cmd[256];
+    char reply[512];
+    FILE *f = NULL;
+    int rc = -1;
+
+    int fd = mkstemp(path);
+    if (fd < 0) { perror("mkstemp"); return -1; }
+
+    f = fdopen(fd, "wb");
+    if (!f) { perror("fdopen"); close(fd); goto cleanup; }
+    if (fwrite(buf, 1, len, f) != len) { perror("fwrite"); fclose(f); goto cleanup; }
+    if (fclose(f) != 0) { perror("fclose"); goto cleanup; }
+
+    snprintf(cmd, sizeof(cmd), "flash write_image %s 0x%x bin", path, addr);
+    if (openocd_tcl_exec(pvt->sockfd, cmd, reply, sizeof(reply)) != 0) goto cleanup;
+    if (openocd_reply_failed(reply)) {
+        fprintf(stderr, "OpenOCD refused a flash write of %zu bytes at 0x%08x: %s\n",
+                len, addr, reply);
+        goto cleanup;
+    }
+    rc = 0;
+
+cleanup:
+    unlink(path);
+    return rc;
+}
+
+static int openocd_impl_flash_erase(hw_t *ctx, unsigned int addr, size_t len) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0) return -1;
+    if (len == 0) return 0;
+
+    // erase_address wants a sector-aligned range; the core hands us exact
+    // sector bounds, so no padding flag is needed (and none is wanted -- 'pad'
+    // would quietly erase past the range it was given).
+    char cmd[128], reply[512];
+    snprintf(cmd, sizeof(cmd), "flash erase_address 0x%x %zu", addr, len);
+
+    if (openocd_tcl_exec(pvt->sockfd, cmd, reply, sizeof(reply)) != 0) return -1;
+    if (openocd_reply_failed(reply)) {
+        fprintf(stderr, "OpenOCD refused a flash erase of %zu bytes at 0x%08x: %s\n",
+                len, addr, reply);
+        return -1;
+    }
+    return 0;
+}
+
+static int openocd_impl_flash_mass_erase(hw_t *ctx) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0) return -1;
+
+    char reply[512];
+    if (openocd_tcl_exec(pvt->sockfd, "flash erase_sector 0 0 last", reply, sizeof(reply)) != 0) {
+        return -1;
+    }
+    if (openocd_reply_failed(reply)) {
+        fprintf(stderr, "OpenOCD refused a mass erase: %s\n", reply);
+        return -1;
+    }
+    return 0;
+}
