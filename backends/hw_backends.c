@@ -14,15 +14,14 @@
 
 // --- Step 1: Extern declarations for all backend vtables ---
 extern const hw_ops_t stlink_ops;
-extern const hw_ops_t openocd_ops; // Example for a future backend
+extern const hw_ops_t openocd_ops;
+extern const hw_ops_t mock_ops;
 
 // --- Step 2: The global, central registry of all known backends ---
 const backend_entry_t g_known_backends[] = {
-    // This is the line you would add/copy for a new backend
     { "stlink", &stlink_ops },
-
-    { "openocd", &openocd_ops }, // Example for a future backend
-
-    // A NULL entry marks the end of the array.
+    { "openocd", &openocd_ops },
+    { "mock", &mock_ops },
     { NULL, NULL }
 };
+

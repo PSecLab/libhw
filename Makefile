@@ -18,14 +18,15 @@ LIBRARY = libhw.a
 
 # VPATH: Tell 'make' where to look for source files.
 # --- CORRECTED: Added backends/openocd to the search path ---
-VPATH = core backends backends/stlink backends/openocd tests
+VPATH = core backends backends/stlink backends/openocd backends/mock tests
 
 # --- Source File Basenames ---
 # List only the basenames of the source files. VPATH will find them.
 LIB_SRC_NAMES = hw.c \
                 hw_backends.c \
                 hw_stlink.c \
-                hw_openocd.c
+                hw_openocd.c \
+                hw_mock.c
 APP_SRC_NAME = example.c
 
 # --- Generated File Paths ---
