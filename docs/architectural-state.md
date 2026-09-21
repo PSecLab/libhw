@@ -172,6 +172,26 @@ Registers whose presence or count is not fixed by the architecture carry a
 registers are modelled as one conditional array rather than an invented fixed
 expansion, because the architecture genuinely does not fix the count.
 
+## CI
+
+`make ci` is everything checkable without a board and without the licensed
+manuals: a `-Werror` build, the mock-backend C suites (`flash_test`,
+`state_test`), the state database invariants, and the coverage report. That is
+what `.github/workflows/ci.yml` runs, plus valgrind and a check that
+`generated/` is in step with `spec/arm/`.
+
+On a machine without the manuals, 49 of the 60 Python checks run and 11 skip
+with a stated reason. They skip rather than pass vacuously, and the skip is
+reported, because a check that silently succeeds when its input is missing is
+worse than no check.
+
+Needs inputs CI does not have, so run locally:
+
+| Command | Needs |
+|---|---|
+| `make state-import`, `state-sweep`, `state-prose` | the pinned manuals |
+| `./out/state_probe stlink` | a target board |
+
 ## Commands
 
 ```bash

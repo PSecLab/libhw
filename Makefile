@@ -17,6 +17,7 @@ ODIR = out
 TARGET = hw_test
 TEST_TARGET = flash_test
 PROBE_TARGET = state_probe
+STATE_TEST_TARGET = state_test
 LIBRARY = libhw.a
 
 # VPATH: Tell 'make' where to look for source files.
@@ -34,12 +35,14 @@ LIB_SRC_NAMES = hw.c \
 APP_SRC_NAME = example.c
 TEST_SRC_NAME = flash_test.c
 PROBE_SRC_NAME = state_probe.c
+STATE_TEST_SRC_NAME = state_test.c
 
 # --- Generated File Paths ---
 LIB_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(LIB_SRC_NAMES))
 APP_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(APP_SRC_NAME))
 TEST_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(TEST_SRC_NAME))
 PROBE_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(PROBE_SRC_NAME))
+STATE_TEST_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(STATE_TEST_SRC_NAME))
 
 # --- Header Files (for dependency tracking) ---
 PUBLIC_HEADER = include/hw.h
@@ -49,7 +52,7 @@ PRIVATE_HEADER = core/hw_priv.h
 # --- Build Rules ---
 .PHONY: all clean check state-import state-gen state-coverage state-check state-sweep state-prose
 
-all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET)
+all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET) $(ODIR)/$(STATE_TEST_TARGET)
 
 # Rule to link the final executable
 $(ODIR)/$(TARGET): $(APP_OBJ) $(ODIR)/$(LIBRARY)
@@ -62,11 +65,18 @@ $(ODIR)/$(TEST_TARGET): $(TEST_OBJ) $(ODIR)/$(LIBRARY)
 	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
 
 # Run the test suite. Needs no hardware.
-check: $(ODIR)/$(TEST_TARGET)
+check: $(ODIR)/$(TEST_TARGET) $(ODIR)/$(STATE_TEST_TARGET)
 	@$(ODIR)/$(TEST_TARGET)
+	@echo
+	@$(ODIR)/$(STATE_TEST_TARGET)
 
 # Rule to link the live-target state probe
 $(ODIR)/$(PROBE_TARGET): $(PROBE_OBJ) $(ODIR)/$(LIBRARY)
+	@echo "LD   ==> $@"
+	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
+
+# Rule to link the hardware-free state database test
+$(ODIR)/$(STATE_TEST_TARGET): $(STATE_TEST_OBJ) $(ODIR)/$(LIBRARY)
 	@echo "LD   ==> $@"
 	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
 
@@ -108,7 +118,7 @@ state-gen:
 	@python3 tools/state_gen.py
 
 # The accounting: every source entry classified, nothing unclassified.
-state-coverage: state-prose
+state-coverage:
 	@python3 tools/state_gen.py --coverage-only
 
 # Sweep the manuals for state documented outside their register tables.
@@ -124,6 +134,28 @@ state-prose:
 # CI invariants for the state database.
 state-check:
 	@python3 -m pytest tests/state -q
+
+# --- CI -----------------------------------------------------------------
+# Everything that can be checked without a board and without the licensed Arm
+# documents. The document-dependent checks skip rather than pass vacuously, and
+# a skip is visible in the output where a silent success would not be.
+#
+# Checks that need hardware (out/state_probe) or the manuals (state-import,
+# state-sweep, state-prose) are deliberately not part of this target.
+.PHONY: ci
+ci:
+	@echo "== build (warnings are errors) =="
+	@$(MAKE) --no-print-directory clean
+	@$(MAKE) --no-print-directory CFLAGS='$(CFLAGS) -Werror' all
+	@echo
+	@echo "== C tests against the mock backend =="
+	@$(MAKE) --no-print-directory check
+	@echo
+	@echo "== state database invariants =="
+	@python3 -m pytest tests/state -q -rs
+	@echo
+	@echo "== coverage report =="
+	@python3 tools/state_gen.py --coverage-only
 
 # Rule to clean up all build artifacts
 clean:

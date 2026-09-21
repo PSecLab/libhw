@@ -1,0 +1,543 @@
+{
+  "target": "cortex_m7_r0p2",
+  "source": "DDI0489 B",
+  "candidates": [
+    {
+      "cid": "comma_set:d318508982",
+      "kind": "comma_set",
+      "raw": "LDM, LDMDB, STM, STMDB, PUSH",
+      "names": [
+        "LDM",
+        "LDMDB",
+        "PUSH",
+        "STM",
+        "STMDB"
+      ],
+      "section": "1.1.1 Features",
+      "page": 13,
+      "context": "Supporting exception-continuable instructions, such as LDM, LDMDB, STM, STMDB, PUSH,",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:27c8518024",
+      "kind": "comma_set",
+      "raw": "LDM, LDMDB, STM, STMDB, PUSH, POP",
+      "names": [
+        "LDM",
+        "LDMDB",
+        "POP",
+        "PUSH",
+        "STM",
+        "STMDB"
+      ],
+      "section": "1.1.1 Features",
+      "page": 13,
+      "context": "Supporting exception-continuable instructions, such as LDM, LDMDB, STM, STMDB, PUSH, POP and VLDM, VSTM, VPUSH, VPOP if the processor has the Floati",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:0fc2535c41",
+      "kind": "comma_set",
+      "raw": "VLDM, VSTM, VPUSH, VPOP",
+      "names": [
+        "VLDM",
+        "VPOP",
+        "VPUSH",
+        "VSTM"
+      ],
+      "section": "1.1.1 Features",
+      "page": 13,
+      "context": "instructions, such as LDM, LDMDB, STM, STMDB, PUSH, POP and VLDM, VSTM, VPUSH, VPOP if the processor has the Floating Point Unit (FPU).",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:c6c2733f36",
+      "kind": "comma_set",
+      "raw": "ITM, FPU, MPU",
+      "names": [
+        "FPU",
+        "ITM",
+        "MPU"
+      ],
+      "section": "1.2 Component blocks",
+      "page": 16,
+      "context": "Optional components are Wake-up Interrupt Controller (WIC), ITM, FPU, MPU, instruction cache and data cache",
+      "classification": "block_name",
+      "reason": "Names optional component blocks (ITM, FPU, MPU); their registers are enumerated in their own summary tables.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:8ee8e5da9c",
+      "kind": "comma_set",
+      "raw": "DTCMCR, CACR, AHBSCR, ABFSR",
+      "names": [
+        "ABFSR",
+        "AHBSCR",
+        "CACR",
+        "DTCMCR"
+      ],
+      "section": "13.3 Logic protection",
+      "page": 144,
+      "context": "r0p2 DTCMCR, CACR, AHBSCR, ABFSR and AHBPCR",
+      "classification": "already_covered",
+      "reason": "The Cortex-M7 implementation-defined registers CM7_DTCMCR, CM7_CACR, CM7_AHBSCR, CM7_ABFSR and CM7_AHBPCR, written here without the CM7_ prefix Table 3-1 gives them. All are covered.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:a7b2a726e3",
+      "kind": "comma_set",
+      "raw": "LDR, LDRH, STR, STRH",
+      "names": [
+        "LDR",
+        "LDRH",
+        "STR",
+        "STRH"
+      ],
+      "section": "2.4.2 Unaligned accesses that cross regions",
+      "page": 31,
+      "context": "Unaligned support is only available for load/store singles (LDR, LDRH, STR, STRH). Load/store",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:5ce76a4772",
+      "kind": "comma_set",
+      "raw": "ARSHARE, AWSHARE, ARINNER",
+      "names": [
+        "ARINNER",
+        "ARSHARE",
+        "AWSHARE"
+      ],
+      "section": "5.4.5 AXI extensions",
+      "page": 70,
+      "context": "interface uses the ARCACHE and AWCACHE AXI signals and the ARSHARE, AWSHARE, ARINNER, and AWINNER extension signals to indicate the memory attri",
+      "classification": "false_positive",
+      "reason": "AXI/AHB bus signal names, not processor registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:12049ab59a",
+      "kind": "comma_set",
+      "raw": "ARADDR, ARBURST, ARSIZE",
+      "names": [
+        "ARADDR",
+        "ARBURST",
+        "ARSIZE"
+      ],
+      "section": "5.4.7 AXIM interface transfers",
+      "page": 72,
+      "context": "Table 5-6 shows the values of ARADDR, ARBURST, ARSIZE, and ARLEN for a LDRB from",
+      "classification": "false_positive",
+      "reason": "AXI/AHB bus signal names, not processor registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:004a2bf85b",
+      "kind": "comma_set",
+      "raw": "AWADDR, AWBURST, AWSIZE",
+      "names": [
+        "AWADDR",
+        "AWBURST",
+        "AWSIZE"
+      ],
+      "section": "5.4.7 AXIM interface transfers",
+      "page": 77,
+      "context": "back of the data must occur. Table 5-15 shows the values of AWADDR, AWBURST, AWSIZE, and AWLEN for",
+      "classification": "false_positive",
+      "reason": "AXI/AHB bus signal names, not processor registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:f588f110b0",
+      "kind": "comma_set",
+      "raw": "AWADDR, AWBURST, AWSIZE, AWLEN",
+      "names": [
+        "AWADDR",
+        "AWBURST",
+        "AWLEN",
+        "AWSIZE"
+      ],
+      "section": "5.4.7 AXIM interface transfers",
+      "page": 74,
+      "context": "Table 5-10 shows the values of AWADDR, AWBURST, AWSIZE, AWLEN, and WSTRB for",
+      "classification": "false_positive",
+      "reason": "AXI/AHB bus signal names, not processor registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:d57d4932bb",
+      "kind": "comma_set",
+      "raw": "LDM, STM, LDRD",
+      "names": [
+        "LDM",
+        "LDRD",
+        "STM"
+      ],
+      "section": "5.4.7 AXIM interface transfers",
+      "page": 72,
+      "context": "same size as implied by the instruction. All accesses using LDM, STM, LDRD, or",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:38ff262df6",
+      "kind": "comma_set",
+      "raw": "LDM, STM, LDRD",
+      "names": [
+        "LDM",
+        "LDRD",
+        "STM"
+      ],
+      "section": "5.5.1 AHBP interface transfers",
+      "page": 83,
+      "context": "of the size implied by the instruction. All accesses using LDM, STM, LDRD, or STRD",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:21543ca72a",
+      "kind": "comma_set",
+      "raw": "TEX, C, B, AP",
+      "names": [
+        "AP",
+        "B",
+        "C",
+        "TEX"
+      ],
+      "section": "6.2 MPU functional description",
+      "page": 101,
+      "context": "MPU functional description The access permission bits, TEX, C, B, AP, and XN, of the Region Attributes and Size Register,",
+      "classification": "field",
+      "reason": "Access permission and memory attribute fields of the MPU region attribute register; bit fields of a covered register, not independent state.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:acfd4a25b2",
+      "kind": "comma_set",
+      "raw": "FPIXC, FPUFC, FPOFC, FPDZC, FPIDC",
+      "names": [
+        "FPDZC",
+        "FPIDC",
+        "FPIXC",
+        "FPOFC",
+        "FPUFC"
+      ],
+      "section": "8.2.3 Exceptions",
+      "page": 111,
+      "context": "rt exception traps. The processor also has six output pins, FPIXC, FPUFC, FPOFC, FPDZC, FPIDC, and",
+      "classification": "false_positive",
+      "reason": "External output signals. They are named after the FPSCR cumulative exception bits but are pins, not state; FPSCR itself is covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "count:a926c11283",
+      "kind": "count",
+      "raw": "6   Processor core registers",
+      "names": [],
+      "section": "",
+      "page": 3,
+      "context": "..................................................... 2-7 2.6   Processor core registers ...........................................................",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:ab73f1103b",
+      "kind": "count",
+      "raw": "16 64-bit double-precision registers",
+      "names": [],
+      "section": "1.2.4 Floating Point Unit",
+      "page": 18,
+      "context": "\u2022      32 32-bit single-precision registers or 16 64-bit double-precision registers.",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:d428b9533a",
+      "kind": "count",
+      "raw": "32 32-bit single-precision registers",
+      "names": [],
+      "section": "1.2.4 Floating Point Unit",
+      "page": 18,
+      "context": "\u2022      32 32-bit single-precision registers or 16 64-bit double-precision registers.",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:c759132dc9",
+      "kind": "count",
+      "raw": "6     Processor core registers",
+      "names": [],
+      "section": "2.5 Exclusive monitor",
+      "page": 33,
+      "context": "2.6     Processor core registers",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:057defc5c5",
+      "kind": "count",
+      "raw": "13 general-purpose registers",
+      "names": [],
+      "section": "2.6 Processor core registers",
+      "page": 33,
+      "context": "The processor has the following 32-bit registers: \u2022    13 general-purpose registers, R0-R12.",
+      "classification": "covered_family",
+      "reason": "States the general-purpose file, R0-R12, covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "count:16ae4451fa",
+      "kind": "count",
+      "raw": "6     Processor core registers",
+      "names": [],
+      "section": "2.6 Processor core registers",
+      "page": 33,
+      "context": "2.6     Processor core registers The processor has the following 32-bit registers:",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:5474c58ce2",
+      "kind": "count",
+      "raw": "16 double-precision registers",
+      "names": [],
+      "section": "8.1 About the FPU",
+      "page": 109,
+      "context": "\u2022     16 double-precision registers. This is the same as for FPv4 and there are no additional",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as D0-D15",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:25fcadbbff",
+      "kind": "count",
+      "raw": "32 single-precision registers",
+      "names": [],
+      "section": "8.2 FPU functional description",
+      "page": 110,
+      "context": "The FPU provides an extension register file containing 32 single-precision registers. These can",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31 / D0-D15",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:c83e171c6d",
+      "kind": "count",
+      "raw": "Sixteen 64-bit doubleword registers",
+      "names": [],
+      "section": "8.2 FPU functional description",
+      "page": 110,
+      "context": "be viewed as: \u2022     Sixteen 64-bit doubleword registers, D0-D15.",
+      "classification": "covered_family",
+      "reason": "States the doubleword view D0-D15, covered by the architecture manifest as aliases of S0-S31.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "count:470fc3b23a",
+      "kind": "count",
+      "raw": "Thirty-two 32-bit single-word registers",
+      "names": [],
+      "section": "8.2 FPU functional description",
+      "page": 110,
+      "context": "\u2022     Sixteen 64-bit doubleword registers, D0-D15. \u2022     Thirty-two 32-bit single-word registers, S0-S31.",
+      "classification": "covered_family",
+      "reason": "States the single-word file S0-S31, covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:5eee419b74",
+      "kind": "phrase",
+      "raw": "register file",
+      "names": [],
+      "section": "1.2.1 Data Processing Unit",
+      "page": 17,
+      "context": "\u2022    Parallelized integer register file with six read ports and four write ports for large-scale",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "phrase:edf938d397",
+      "kind": "phrase",
+      "raw": "banked registers",
+      "names": [],
+      "section": "2.6 Processor core registers",
+      "page": 33,
+      "context": "se registers, R0-R12. \u2022    Stack Pointer (SP), R13 alias of banked registers, SP_process and SP_main.",
+      "classification": "covered_family",
+      "reason": "SP as an alias of the banked SP_main/SP_process; all three are covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:ca61eeeee7",
+      "kind": "phrase",
+      "raw": "extension register",
+      "names": [],
+      "section": "8.2 FPU functional description",
+      "page": 110,
+      "context": "The FPU provides an extension register file containing 32 single-precision registers. These can",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31 / D0-D15",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "range:bf18313936",
+      "kind": "range",
+      "raw": "R0-R5",
+      "names": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "section": "5.4.7 AXIM interface transfers",
+      "page": 79,
+      "context": "For example, LDMIA R10, {R0-R5} loads six words from Non-cacheable, Normal memory. The",
+      "classification": "false_positive",
+      "reason": "Register operands of an example LDMIA instruction, not a definition of state.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "range:cad4baccdc",
+      "kind": "range",
+      "raw": "NVIC_IABR0 - NVIC_IABR7",
+      "names": [
+        "NVIC_IABR0",
+        "NVIC_IABR1",
+        "NVIC_IABR2",
+        "NVIC_IABR3",
+        "NVIC_IABR4",
+        "NVIC_IABR5",
+        "NVIC_IABR6",
+        "NVIC_IABR7"
+      ],
+      "section": "7.3 NVIC programmers model",
+      "page": 106,
+      "context": "0xE000E300 - 0xE000E31C   NVIC_IABR0 - NVIC_IABR7         RO       0x00000000    Interrupt Active Bit Registe",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "range:4e0f4d35d8",
+      "kind": "range",
+      "raw": "NVIC_ICER0 - NVIC_ICER7",
+      "names": [
+        "NVIC_ICER0",
+        "NVIC_ICER1",
+        "NVIC_ICER2",
+        "NVIC_ICER3",
+        "NVIC_ICER4",
+        "NVIC_ICER5",
+        "NVIC_ICER6",
+        "NVIC_ICER7"
+      ],
+      "section": "7.3 NVIC programmers model",
+      "page": 106,
+      "context": "0xE000E180 - 0xE000E19C   NVIC_ICER0 - NVIC_ICER7         RW       0x00000000    Interrupt Clear-Enable Regis",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "range:b4dcf72e38",
+      "kind": "range",
+      "raw": "NVIC_ICPR0 - NVIC_ICPR7",
+      "names": [
+        "NVIC_ICPR0",
+        "NVIC_ICPR1",
+        "NVIC_ICPR2",
+        "NVIC_ICPR3",
+        "NVIC_ICPR4",
+        "NVIC_ICPR5",
+        "NVIC_ICPR6",
+        "NVIC_ICPR7"
+      ],
+      "section": "7.3 NVIC programmers model",
+      "page": 106,
+      "context": "0xE000E280 - 0xE000E29C   NVIC_ICPR0 - NVIC_ICPR7         RW       0x00000000    Interrupt Clear-Pending Regi",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "range:51614bf204",
+      "kind": "range",
+      "raw": "NVIC_ISER0 - NVIC_ISER7",
+      "names": [
+        "NVIC_ISER0",
+        "NVIC_ISER1",
+        "NVIC_ISER2",
+        "NVIC_ISER3",
+        "NVIC_ISER4",
+        "NVIC_ISER5",
+        "NVIC_ISER6",
+        "NVIC_ISER7"
+      ],
+      "section": "7.3 NVIC programmers model",
+      "page": 106,
+      "context": "0xE000E100 - 0xE000E11C   NVIC_ISER0 - NVIC_ISER7         RW       0x00000000    Interrupt Set-Enable Registe",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "range:af106edaa2",
+      "kind": "range",
+      "raw": "NVIC_ISPR0 - NVIC_ISPR7",
+      "names": [
+        "NVIC_ISPR0",
+        "NVIC_ISPR1",
+        "NVIC_ISPR2",
+        "NVIC_ISPR3",
+        "NVIC_ISPR4",
+        "NVIC_ISPR5",
+        "NVIC_ISPR6",
+        "NVIC_ISPR7"
+      ],
+      "section": "7.3 NVIC programmers model",
+      "page": 106,
+      "context": "0xE000E200 - 0xE000E21C   NVIC_ISPR0 - NVIC_ISPR7         RW       0x00000000    Interrupt Set-Pending Regist",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "through:7b5bc5a1ab",
+      "kind": "through",
+      "raw": "FP_COMP0 to FP_COMP7",
+      "names": [
+        "FP_COMP0",
+        "FP_COMP1",
+        "FP_COMP2",
+        "FP_COMP3",
+        "FP_COMP4",
+        "FP_COMP5",
+        "FP_COMP6",
+        "FP_COMP7"
+      ],
+      "section": "9.3.2 FPB programmers model",
+      "page": 121,
+      "context": "b. If eight instruction comparators are implemented. c. For FP_COMP0 to FP_COMP7, bit 0 is reset to 0. Other bits in these registers are not",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    }
+  ]
+}

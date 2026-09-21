@@ -1,5 +1,14 @@
 out
 cscope*
-build/
 __pycache__/
 *.pyc
+
+# Build outputs are not tracked, with one exception: the state-coverage
+# artifacts are reviewable outputs, and committing them is what lets CI
+# validate the classification on a machine that does not hold the licensed
+# Arm documents. A negation cannot reach inside an ignored directory, so the
+# directory itself is re-included first.
+build/*
+!build/state-coverage/
+build/state-coverage/*
+!build/state-coverage/*.json

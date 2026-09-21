@@ -1,0 +1,57 @@
+name: CI
+
+# Everything here runs without a debug probe and without the licensed Arm
+# manuals. The checks that need those inputs skip rather than pass vacuously,
+# and `-rs` reports every skip, so a missing input is visible in the log
+# instead of looking like success.
+#
+# Not run here, because they need inputs a runner does not have:
+#   make state-import / state-sweep / state-prose   need the pinned manuals
+#   out/state_probe                                 needs a target board
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential libstlink-dev libusb-1.0-0-dev \
+            llvm python3-yaml python3-pytest valgrind
+
+      - name: Tool versions
+        run: |
+          gcc --version | head -1
+          llvm-mc --version 2>/dev/null | head -2 || echo "llvm-mc unavailable: the encoding oracle will skip"
+          python3 --version
+
+      # Builds with -Werror, runs the mock-backend C suites, the state
+      # database invariants and the coverage report.
+      - name: make ci
+        run: make ci
+
+      - name: Generated tables are in step with the manifests
+        # The .def files are outputs. Regenerating must not change anything; if
+        # it does, either a generated file was edited by hand or someone
+        # forgot to re-run the generator after changing a manifest.
+        run: |
+          python3 tools/state_gen.py >/dev/null
+          if ! git diff --exit-code -- generated/ build/state-coverage/; then
+            echo "::error::generated output is out of step with spec/arm/. Run 'make state-gen' and commit."
+            exit 1
+          fi
+
+      - name: Memory check (flash suite)
+        run: valgrind --error-exitcode=9 --leak-check=full --errors-for-leak-kinds=all ./out/flash_test
+
+      - name: Memory check (state suite)
+        run: valgrind --error-exitcode=9 --leak-check=full --errors-for-leak-kinds=all ./out/state_test

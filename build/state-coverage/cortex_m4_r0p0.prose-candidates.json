@@ -1,0 +1,319 @@
+{
+  "target": "cortex_m4_r0p0",
+  "source": "DDI0439 B",
+  "candidates": [
+    {
+      "cid": "comma_set:889cb748b2",
+      "kind": "comma_set",
+      "raw": "ITM, DWT, ETM",
+      "names": [
+        "DWT",
+        "ETM",
+        "ITM"
+      ],
+      "section": "1.4 Configurable options",
+      "page": 16,
+      "context": "\u2022    ITM, DWT, and ETM \u2022    ITM, DWT, ETM, and HTM.",
+      "classification": "block_name",
+      "reason": "names debug/system blocks, not registers; their registers are enumerated in their own summary tables",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "comma_set:f252416b5d",
+      "kind": "comma_set",
+      "raw": "TDI, TDO, TMS",
+      "names": [
+        "TDI",
+        "TDO",
+        "TMS"
+      ],
+      "section": "11.3.10 TPIU_DEVID",
+      "page": 116,
+      "context": "TAG boundary-scan architecture. The mandatory terminals are TDI, TDO, TMS, and TCK. The optional terminal is TRST. This signal is man",
+      "classification": "false_positive",
+      "reason": "JTAG terminal names (TDI, TDO, TMS, TCK); external pins, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:f9279edccb",
+      "kind": "comma_set",
+      "raw": "LDM, STM, PUSH",
+      "names": [
+        "LDM",
+        "PUSH",
+        "STM"
+      ],
+      "section": "2.1 About the functions",
+      "page": 21,
+      "context": "s. \u2014       Support for interruptible-continued instructions LDM, STM, PUSH, and POP for low",
+      "classification": "false_positive",
+      "reason": "Instruction mnemonics named in prose, not registers.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:16e07f268d",
+      "kind": "comma_set",
+      "raw": "PC, PC, R",
+      "names": [
+        "PC",
+        "R"
+      ],
+      "section": "3.3.1 Cortex-M4 instructions",
+      "page": 29,
+      "context": "Add to PC                      ADD PC, PC, Rm              1+P",
+      "classification": "false_positive",
+      "reason": "named in an instruction-set section; instruction mnemonics, not registers",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "comma_set:5298a3327f",
+      "kind": "comma_set",
+      "raw": "TEX, C, B, AP",
+      "names": [
+        "AP",
+        "B",
+        "C",
+        "TEX"
+      ],
+      "section": "5.2 MPU functional description",
+      "page": 59,
+      "context": "MPU functional description The access permission bits, TEX, C, B, AP, and XN, of the Region Access Control Register",
+      "classification": "field",
+      "reason": "Access permission and memory attribute fields of the MPU region attribute register; bit fields of a covered register, not independent state.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "comma_set:78874c054f",
+      "kind": "comma_set",
+      "raw": "FPIXC, FPUFC, FPOFC, FPDZC, FPIDC",
+      "names": [
+        "FPDZC",
+        "FPIDC",
+        "FPIXC",
+        "FPOFC",
+        "FPUFC"
+      ],
+      "section": "7.2.7 Exceptions",
+      "page": 73,
+      "context": "writes are ignored. The processor also has six output pins, FPIXC, FPUFC, FPOFC, FPDZC, FPIDC, and FPIOC,",
+      "classification": "false_positive",
+      "reason": "External output signals. They are named after the FPSCR cumulative exception bits but are pins, not state; FPSCR itself is covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "count:4844a361d0",
+      "kind": "count",
+      "raw": "8    Processor core register",
+      "names": [],
+      "section": "",
+      "page": 3,
+      "context": ".................................................... 3-19 3.8    Processor core register summary ...................................................",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:129e635628",
+      "kind": "count",
+      "raw": "16 double-word registers",
+      "names": [],
+      "section": "2.1 About the functions",
+      "page": 22,
+      "context": "ated 32-bit single precision registers, also addressable as 16 double-word registers.",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:9bafc9b5cf",
+      "kind": "count",
+      "raw": "8     Processor core register",
+      "names": [],
+      "section": "3.7.2 Directly accessing a bit-band region",
+      "page": 46,
+      "context": "3.8     Processor core register summary",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:5a527c0625",
+      "kind": "count",
+      "raw": "13 general-purpose registers",
+      "names": [],
+      "section": "3.8 Processor core register summary",
+      "page": 46,
+      "context": "The processor has the following 32-bit registers: \u2022    13 general-purpose registers, r0-r12",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:6644aef439",
+      "kind": "count",
+      "raw": "32-bit instructions that specify a general-purpose register",
+      "names": [],
+      "section": "3.8 Processor core register summary",
+      "page": 46,
+      "context": "gh registers         Registers r8-r12 are accessible by all 32-bit instructions that specify a general-purpose register.",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:dc8268b385",
+      "kind": "count",
+      "raw": "8     Processor core register",
+      "names": [],
+      "section": "3.8 Processor core register summary",
+      "page": 46,
+      "context": "3.8     Processor core register summary The processor has the following 32-bit registers:",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:61d624d070",
+      "kind": "count",
+      "raw": "32 single-precision registers",
+      "names": [],
+      "section": "7.2.1 FPU views of the register bank",
+      "page": 68,
+      "context": "The FPU provides an extension register file containing 32 single-precision registers. These can",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31 / D0-D15",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:104f95b661",
+      "kind": "count",
+      "raw": "Sixteen 64-bit doubleword registers",
+      "names": [],
+      "section": "7.2.1 FPU views of the register bank",
+      "page": 68,
+      "context": "be viewed as: \u2022     Sixteen 64-bit doubleword registers, D0-D15.",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:4e1cdfb647",
+      "kind": "count",
+      "raw": "Thirty-two 32-bit single-word registers",
+      "names": [],
+      "section": "7.2.1 FPU views of the register bank",
+      "page": 68,
+      "context": "\u2022     Sixteen 64-bit doubleword registers, D0-D15. \u2022     Thirty-two 32-bit single-word registers, S0-S31.",
+      "classification": "false_positive",
+      "reason": "a count or phrase about registers that names none; no state identified",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "count:32a3e02449",
+      "kind": "count",
+      "raw": "two core registers",
+      "names": [],
+      "section": "7.2.3 FPU instruction set",
+      "page": 70,
+      "context": "two floats/one double to/from two core registers or one       VMOV          2",
+      "classification": "covered_family",
+      "reason": "Refers to the core register file R0-R12, covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "family:294400ea43",
+      "kind": "family",
+      "raw": "SYSRESETn",
+      "names": [
+        "SYSRESET"
+      ],
+      "section": "2.1 About the functions",
+      "page": 22,
+      "context": "is halted, and access to debug control registers even while SYSRESETn is asserted.",
+      "classification": "false_positive",
+      "reason": "SYSRESETn is a reset input signal, not a register.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:92f3b483a3",
+      "kind": "phrase",
+      "raw": "register bank",
+      "names": [],
+      "section": "",
+      "page": 7,
+      "context": ".................................... 6-4 Figure 7-1     FPU register bank ...........................................................",
+      "classification": "covered_family",
+      "reason": "Contents-listing reference to the FPU register bank figure; the bank is S0-S31/D0-D15, covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:1109204d6f",
+      "kind": "phrase",
+      "raw": "banked registers",
+      "names": [],
+      "section": "3.8 Processor core register summary",
+      "page": 46,
+      "context": "-purpose registers, r0-r12 \u2022    Stack Pointer (SP) alias of banked registers, SP_process and SP_main",
+      "classification": "covered_family",
+      "reason": "SP as an alias of the banked SP_main/SP_process; all three are covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:a78088a0f2",
+      "kind": "phrase",
+      "raw": "register bank",
+      "names": [],
+      "section": "7.2 FPU Functional Description",
+      "page": 68,
+      "context": "iption includes the following topics: \u2022    FPU views of the register bank",
+      "classification": "covered_family",
+      "reason": "The FPU register bank, S0-S31 with the D0-D15 view, covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "phrase:302b84261e",
+      "kind": "phrase",
+      "raw": "extension register",
+      "names": [],
+      "section": "7.2.1 FPU views of the register bank",
+      "page": 68,
+      "context": "The FPU provides an extension register file containing 32 single-precision registers. These can",
+      "classification": "covered_family",
+      "reason": "names a register file in words; already covered as S0-S31 / D0-D15",
+      "resolved_by": "auto"
+    },
+    {
+      "cid": "phrase:5fdf29e490",
+      "kind": "phrase",
+      "raw": "register bank",
+      "names": [],
+      "section": "7.2.1 FPU views of the register bank",
+      "page": 68,
+      "context": "7.2.1   FPU views of the register bank",
+      "classification": "covered_family",
+      "reason": "Section heading for the FPU's views of the register bank; S0-S31 and D0-D15 are covered by the architecture manifest.",
+      "resolved_by": "reviewed"
+    },
+    {
+      "cid": "through:efc2120ac2",
+      "kind": "through",
+      "raw": "FP_COMP0 to FP_COMP7",
+      "names": [
+        "FP_COMP0",
+        "FP_COMP1",
+        "FP_COMP2",
+        "FP_COMP3",
+        "FP_COMP4",
+        "FP_COMP5",
+        "FP_COMP6",
+        "FP_COMP7"
+      ],
+      "section": "8.3.2 FPB programmers model",
+      "page": 84,
+      "context": "a. For FP_COMP0 to FP_COMP7, bit 0 is reset to 0. Other bits in these registers are",
+      "classification": "already_covered",
+      "reason": "all 8 name(s) are already state entries in the manifest",
+      "resolved_by": "auto"
+    }
+  ]
+}
