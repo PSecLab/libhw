@@ -18,7 +18,7 @@ import yaml
 
 from .armpdf import Table, extract_tables
 from .model import Access, Alias, Classification, Namespace, Provenance, StateEntry
-from .profiles import PROFILES
+from .profiles import PROFILES, unparsed_rows
 from .sources import REPO_ROOT, SourceError, get_source
 
 RULES_DIR = REPO_ROOT / "spec" / "rules"
@@ -120,7 +120,8 @@ def _access_flags(typ: str) -> tuple[bool, bool]:
     return True, True
 
 
-def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list[StateEntry], ImportReport]:
+def import_target(target: str, arch_names: set[str] | None = None,
+                  arch_addrs: dict[str, str] | None = None) -> tuple[list[StateEntry], ImportReport]:
     rules_doc = _load_rules(target)
     overrides = _load_classify_rules(target)
     access_paths = _load_access_rules(target)
@@ -155,6 +156,17 @@ def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list
             raise SourceError(f"{target}: Table {tid} is marked keep but was not found in the document.")
 
         records = PROFILES[rule["profile"]](table)
+
+        # Section 14's balance: a source row that fails to parse is invisible,
+        # so refuse to finish while any row-like line produced no record.
+        if rule["profile"] == "addr_name_type_reset":
+            leftover = unparsed_rows(table)
+            if leftover:
+                raise SourceError(
+                    f"{target}: {len(leftover)} row(s) of {table.label} look like table rows "
+                    f"but produced no record. A silently dropped row is exactly what this "
+                    f"pipeline exists to prevent.\n  " +
+                    "\n  ".join(f"p{pg}: {ln[:100]}" for pg, ln in leftover[:5]))
         stats = {"rows": len(records), "emitted": 0, "conditional": 0, "alias": 0,
                  "architecture_defined": 0, "excluded": 0, "operation": 0}
 
@@ -185,10 +197,23 @@ def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list
             feature = rule.get("feature_requirement")
 
             if ns_raw == "auto":
+                addr = (rec.get("address") or "").strip().upper()
+                arch_alias = (arch_addrs or {}).get(addr)
                 if arch_names and name in arch_names:
                     namespace = Namespace.ARCH
                     classification = Classification.ARCHITECTURE_DEFINED
-                    reason = "Defined by the ARMv7-M architecture; accounted for in the architecture manifest"
+                    reason = ("Defined by the ARMv7-M architecture; accounted for in the "
+                              "architecture manifest")
+                elif arch_alias:
+                    # Same address, different spelling. A TRM may name an
+                    # architectural register differently -- the Cortex-M4 TRM
+                    # writes STCSR where the architecture writes SYST_CSR --
+                    # and matching on name alone would misreport it as
+                    # implementation-defined state.
+                    namespace = Namespace.ARCH
+                    classification = Classification.ARCHITECTURE_DEFINED
+                    reason = (f"Architectural register {arch_alias} at {addr}, named "
+                              f"{name} by this TRM")
                 else:
                     namespace = Namespace.CPU
             else:

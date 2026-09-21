@@ -35,6 +35,10 @@ ADDR_RE = re.compile(r"^(0x[0-9A-Fa-f]+)(?:\s*-\s*(0x[0-9A-Fa-f]+))?$")
 # Access types Arm prints, longest first so "RW or RO" wins over "RW".
 ACCESS_TOKENS = ("RW or RO", "RAZ/WI", "RAZ", "WI", "RO", "RW", "WO")
 
+# A table-of-contents entry: a caption trailed by leader dots and a page ref.
+# These appear before the real captions and must not be mistaken for them.
+TOC_LINE_RE = re.compile(r"\.{4,}\s*[A-Za-z0-9\-]*\s*$")
+
 # Page furniture that must never be mistaken for table content.
 FURNITURE_RE = re.compile(
     r"(Copyright\s+©|Non-Confidential|^\s*ARM\s+DDI\s|^\s*ID\d{6}|All rights reserved)"
@@ -76,6 +80,10 @@ class Table:
     rows: list[Row] = dataclasses.field(default_factory=list)
     # Verbatim body lines, for profiles that need to re-parse the raw shape.
     raw_lines: list[tuple[int, str]] = dataclasses.field(default_factory=list)
+    # Line indices absorbed as continuations of the row above them.
+    consumed_lines: set = dataclasses.field(default_factory=set)
+    # Rows that matched the row pattern but were discarded afterwards.
+    rejected_rows: list = dataclasses.field(default_factory=list)
 
     @property
     def label(self) -> str:
@@ -183,6 +191,12 @@ def extract_tables(path: str, keep_ids: set[str] | None = None) -> tuple[list[Ta
 
             tid = m.group("id")
             caption = m.group("caption").strip()
+
+            # Skip the contents listing; the real caption appears at the table.
+            if TOC_LINE_RE.search(line):
+                i += 1
+                continue
+            caption = re.sub(r"\s*\.{2,}.*$", "", caption).strip()
             # A reference like "Table 3-1 shows ..." is prose, not a caption.
             if re.match(r"^(shows|lists|summari[sz]es|describes|gives|provides|defines|on page)\b", caption, re.I):
                 i += 1
@@ -246,7 +260,7 @@ def _parse_table_body(lines: list[str], start: int, page_no: int, table: Table) 
         if re.match(r"^\s*[a-z]\.\s+\S", line):
             break
 
-        if FURNITURE_RE.search(line):
+        if FURNITURE_RE.search(line) or TOC_LINE_RE.search(line):
             i += 1
             continue
 

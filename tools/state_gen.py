@@ -11,7 +11,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 from state.generate import coverage, format_report, generate_def, write_coverage
 
-TARGETS = ["armv7m", "cortex_m7_r0p2"]
+TARGETS = ["armv7m", "cortex_m7_r0p2", "cortex_m4_r0p0"]
 
 
 def main() -> int:

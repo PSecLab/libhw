@@ -151,6 +151,470 @@ entries:
   debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIAPPPULSE
+- canonical_name: CTIINEN0
+  source_id: 10-3:CTIINEN0
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN0
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000020'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN0
+- canonical_name: CTIINEN1
+  source_id: 10-3:CTIINEN1
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN1
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000024'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN1
+- canonical_name: CTIINEN2
+  source_id: 10-3:CTIINEN2
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN2
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000028'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN2
+- canonical_name: CTIINEN3
+  source_id: 10-3:CTIINEN3
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN3
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x0000002C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN3
+- canonical_name: CTIINEN4
+  source_id: 10-3:CTIINEN4
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN4
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000030'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN4
+- canonical_name: CTIINEN5
+  source_id: 10-3:CTIINEN5
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN5
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000034'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN5
+- canonical_name: CTIINEN6
+  source_id: 10-3:CTIINEN6
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN6
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x00000038'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN6
+- canonical_name: CTIINEN7
+  source_id: 10-3:CTIINEN7
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIINEN7
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x0000003C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIINEN7
+- canonical_name: CTIOUTEN0
+  source_id: 10-3:CTIOUTEN0
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN0
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000A0'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN0
+- canonical_name: CTIOUTEN1
+  source_id: 10-3:CTIOUTEN1
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN1
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000A4'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN1
+- canonical_name: CTIOUTEN2
+  source_id: 10-3:CTIOUTEN2
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN2
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000A8'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN2
+- canonical_name: CTIOUTEN3
+  source_id: 10-3:CTIOUTEN3
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN3
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000AC'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN3
+- canonical_name: CTIOUTEN4
+  source_id: 10-3:CTIOUTEN4
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN4
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000B0'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN4
+- canonical_name: CTIOUTEN5
+  source_id: 10-3:CTIOUTEN5
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN5
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000B4'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN5
+- canonical_name: CTIOUTEN6
+  source_id: 10-3:CTIOUTEN6
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN6
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000B8'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN6
+- canonical_name: CTIOUTEN7
+  source_id: 10-3:CTIOUTEN7
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 10.3 CTI programmers model
+    table: Table 10-3 CTI register summary
+    row: CTIOUTEN7
+    page: 126
+  width: 32
+  access: memory_mapped
+  encoding: '0x000000BC'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: CTI
+  state_id: ARMv7-M:debug:CTI:CTIOUTEN7
 - canonical_name: CTITRIGINSTATUS
   source_id: 10-3:CTITRIGINSTATUS
   architecture: ARMv7-M
@@ -2094,6 +2558,934 @@ entries:
   debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:CID3
+- canonical_name: ITM_STIM0
+  source_id: 12-1:ITM_STIM0
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM0
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000000'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM0
+- canonical_name: ITM_STIM1
+  source_id: 12-1:ITM_STIM1
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM1
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000004'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM1
+- canonical_name: ITM_STIM2
+  source_id: 12-1:ITM_STIM2
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM2
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000008'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM2
+- canonical_name: ITM_STIM3
+  source_id: 12-1:ITM_STIM3
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM3
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000000C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM3
+- canonical_name: ITM_STIM4
+  source_id: 12-1:ITM_STIM4
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM4
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000010'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM4
+- canonical_name: ITM_STIM5
+  source_id: 12-1:ITM_STIM5
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM5
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000014'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM5
+- canonical_name: ITM_STIM6
+  source_id: 12-1:ITM_STIM6
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM6
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000018'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM6
+- canonical_name: ITM_STIM7
+  source_id: 12-1:ITM_STIM7
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM7
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000001C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM7
+- canonical_name: ITM_STIM8
+  source_id: 12-1:ITM_STIM8
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM8
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000020'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM8
+- canonical_name: ITM_STIM9
+  source_id: 12-1:ITM_STIM9
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM9
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000024'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM9
+- canonical_name: ITM_STIM10
+  source_id: 12-1:ITM_STIM10
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM10
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000028'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM10
+- canonical_name: ITM_STIM11
+  source_id: 12-1:ITM_STIM11
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM11
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000002C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM11
+- canonical_name: ITM_STIM12
+  source_id: 12-1:ITM_STIM12
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM12
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000030'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM12
+- canonical_name: ITM_STIM13
+  source_id: 12-1:ITM_STIM13
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM13
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000034'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM13
+- canonical_name: ITM_STIM14
+  source_id: 12-1:ITM_STIM14
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM14
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000038'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM14
+- canonical_name: ITM_STIM15
+  source_id: 12-1:ITM_STIM15
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM15
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000003C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM15
+- canonical_name: ITM_STIM16
+  source_id: 12-1:ITM_STIM16
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM16
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000040'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM16
+- canonical_name: ITM_STIM17
+  source_id: 12-1:ITM_STIM17
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM17
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000044'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM17
+- canonical_name: ITM_STIM18
+  source_id: 12-1:ITM_STIM18
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM18
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000048'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM18
+- canonical_name: ITM_STIM19
+  source_id: 12-1:ITM_STIM19
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM19
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000004C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM19
+- canonical_name: ITM_STIM20
+  source_id: 12-1:ITM_STIM20
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM20
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000050'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM20
+- canonical_name: ITM_STIM21
+  source_id: 12-1:ITM_STIM21
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM21
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000054'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM21
+- canonical_name: ITM_STIM22
+  source_id: 12-1:ITM_STIM22
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM22
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000058'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM22
+- canonical_name: ITM_STIM23
+  source_id: 12-1:ITM_STIM23
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM23
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000005C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM23
+- canonical_name: ITM_STIM24
+  source_id: 12-1:ITM_STIM24
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM24
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000060'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM24
+- canonical_name: ITM_STIM25
+  source_id: 12-1:ITM_STIM25
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM25
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000064'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM25
+- canonical_name: ITM_STIM26
+  source_id: 12-1:ITM_STIM26
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM26
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000068'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM26
+- canonical_name: ITM_STIM27
+  source_id: 12-1:ITM_STIM27
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM27
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000006C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM27
+- canonical_name: ITM_STIM28
+  source_id: 12-1:ITM_STIM28
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM28
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000070'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM28
+- canonical_name: ITM_STIM29
+  source_id: 12-1:ITM_STIM29
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM29
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000074'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM29
+- canonical_name: ITM_STIM30
+  source_id: 12-1:ITM_STIM30
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM30
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE0000078'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM30
+- canonical_name: ITM_STIM31
+  source_id: 12-1:ITM_STIM31
+  architecture: ARMv7-M
+  namespace: debug
+  classification: emitted_state
+  provenance:
+    document: DDI0489
+    revision: B
+    section: 12.3 ITM programmers model
+    table: Table 12-1 ITM register summary
+    row: ITM_STIM31
+    page: 136
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000007C'
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: false
+  source_family: ARM_TRM
+  source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ITM
+  state_id: ARMv7-M:debug:ITM:ITM_STIM31
 - canonical_name: ITM_TER
   source_id: 12-1:ITM_TER
   architecture: ARMv7-M

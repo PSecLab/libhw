@@ -30,6 +30,7 @@ RULES_DIR = REPO_ROOT / "spec" / "rules"
 TARGETS = {
     "armv7m": {"source": "armv7m_arm", "architecture": "ARMv7-M"},
     "cortex_m7_r0p2": {"source": "cortex_m7_trm", "architecture": "ARMv7-M"},
+    "cortex_m4_r0p0": {"source": "cortex_m4_trm", "architecture": "ARMv7-M"},
 }
 
 

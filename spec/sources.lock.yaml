@@ -30,3 +30,21 @@ sources:
       Arm document; not redistributed.
     sha256: 50b1c3e84dd1b75c7f40d528c5fd44927579788ae9f46a0b06b564718f43cb46
     bytes: 1038821
+  cortex_m4_trm:
+    kind: pdf_manual
+    document: DDI0439
+    revision: B
+    title: Cortex-M4 Technical Reference Manual
+    architecture: ARMv7-M
+    product_revision: r0p0
+    path: ~/Documents/DDI0439B_cortex_m4_r0p0_trm.pdf
+    pages: 117
+    acquired: '2026-09-21'
+    redistributable: false
+    url: https://documentation-service.arm.com/static/5f19da2a20b7cf4bc524d99a
+    sha256: f3f4b039116a0f9ea77c2788d6dfe657db45abc2b93ea1e3f3faaa4d511726d0
+    bytes: 895629
+    notes: 'CPU overlay authority for Cortex-M4 r0p0 (sec 13). Issue B is the second release for r0p0.
+      Marked Non-Confidential and served directly by Arm''s documentation service. NOTE: the board on
+      the bench reports CPUID 0x410FC241 = r0p1; this issue documents r0p0, so the overlay is pinned to
+      r0p0 and must not be claimed for r0p1.'

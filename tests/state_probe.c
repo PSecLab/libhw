@@ -104,9 +104,16 @@ int main(int argc, char *argv[]) {
 
     printf("\n=== Target identification ===\n");
     printf("  CPUID                0x%08X  (PARTNO 0x%03X)\n", f.cpuid, f.partno);
-    printf("  Part                 %s\n", f.cpu_name ? f.cpu_name : "not recognised");
+    printf("  Part                 %s r%up%u\n",
+           f.cpu_name ? f.cpu_name : "not recognised", f.variant, f.revision);
     printf("  CPU overlay          %s\n",
            f.overlay ? f.overlay : "none pinned - architecture manifest only");
+    if (f.overlay && !f.revision_matches) {
+        printf("  NOTE                 the pinned TRM documents %s; this part is r%up%u.\n",
+               f.overlay_revision, f.variant, f.revision);
+        printf("                       Differences introduced after %s are not covered.\n",
+               f.overlay_revision);
+    }
     printf("  FP extension         %s\n", f.fp_extension ? "implemented" : "not implemented");
     printf("  MPU regions          %u\n", f.mpu_regions);
     printf("  DWT comparators      %u\n", f.dwt_numcomp);

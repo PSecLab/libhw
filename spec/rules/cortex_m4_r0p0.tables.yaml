@@ -1,0 +1,183 @@
+schema_version: 1
+source: cortex_m4_trm
+architecture: ARMv7-M
+tables:
+  10-1:
+    caption: ITM register summary
+    keep: true
+    reason: ITM registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: ITM
+  10-2:
+    caption: ITM_TPR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-1:
+    caption: TPIU registers
+    keep: true
+    reason: TPIU registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: TPIU
+  11-2:
+    caption: TPIU_ACPR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-3:
+    caption: TPIU_FFSR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-4:
+    caption: TPIU_FFCR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-5:
+    caption: TRIGGER bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-6:
+    caption: Integration ETM Data bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-7:
+    caption: ITATBCTR2 bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-8:
+    caption: Integration ITM Data bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-9:
+    caption: ITATBCTR0 bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-10:
+    caption: TPIU_ITCTRL bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  11-11:
+    caption: TPIU_DEVID bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  3-1:
+    caption: 'uses the following abbreviations in the Cycles column:'
+    keep: false
+    reason: Notation key for the instruction timing tables; not register state
+  3-2:
+    caption: Cortex-M4 DSP instruction set summary
+    keep: false
+    reason: Instruction set or arithmetic behaviour table; not register state
+  3-3:
+    caption: Memory regions
+    keep: false
+    reason: Memory map table; the registers within are enumerated in their own summaries
+  4-1:
+    caption: System control registers
+    keep: true
+    reason: System control registers; mix of architectural and Cortex-M4 implementation-defined
+    profile: addr_name_type_reset
+    namespace: auto
+    component: SCS
+  4-2:
+    caption: ACTLR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  4-3:
+    caption: CPUID bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  4-4:
+    caption: AFSR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  5-1:
+    caption: MPU registers
+    keep: true
+    reason: MPU registers
+    profile: addr_name_type_reset
+    namespace: auto
+    component: MPU
+    feature_requirement: MPU
+  6-1:
+    caption: NVIC registers
+    keep: true
+    reason: NVIC registers
+    profile: addr_name_type_reset
+    namespace: auto
+    component: NVIC
+  6-2:
+    caption: ICTR bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  7-1:
+    caption: FPU instruction set
+    keep: false
+    reason: Instruction set or arithmetic behaviour table; not register state
+  7-2:
+    caption: Default NaN values
+    keep: false
+    reason: Instruction set or arithmetic behaviour table; not register state
+  7-3:
+    caption: QNaN and SNaN handling
+    keep: false
+    reason: Instruction set or arithmetic behaviour table; not register state
+  7-4:
+    caption: Cortex-M4F Floating Point system registers
+    keep: true
+    reason: Cortex-M4F floating-point system registers
+    profile: addr_name_type_reset
+    namespace: auto
+    component: FP
+    feature_requirement: FP_EXTENSION
+  8-1:
+    caption: Cortex-M4 ROM table identification values
+    keep: true
+    reason: Cortex-M4 ROM table identification registers
+    profile: addr_register_value
+    namespace: debug
+    component: ROMTABLE
+  8-2:
+    caption: Cortex-M4 ROM table components
+    keep: false
+    reason: Component offsets within the ROM table; the ID registers are enumerated in Table 8-1
+  8-3:
+    caption: SCS identification values
+    keep: true
+    reason: SCS CoreSight identification registers
+    profile: addr_register_value
+    namespace: debug
+    component: SCS
+  8-4:
+    caption: Debug registers
+    keep: true
+    reason: Debug Control Block registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DCB
+  8-5:
+    caption: AHB-AP register summary
+    keep: true
+    reason: AHB-AP registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: AHBAP
+  8-6:
+    caption: CSW bit assignments
+    keep: false
+    reason: Register field layout; the register itself is enumerated in a summary table
+  8-7:
+    caption: FPB register summary
+    keep: true
+    reason: FPB registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: FPB
+  9-1:
+    caption: DWT register summary
+    keep: true
+    reason: DWT registers
+    profile: addr_name_type_reset
+    namespace: debug
+    component: DWT
+crosscheck_indexes: []

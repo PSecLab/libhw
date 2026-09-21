@@ -20,17 +20,26 @@ which are a separate layer and are deliberately out of scope.
 
 ```
 Architecture: ARMv7-M            Source: DDI0403 E.e
-  source records accounted for   647
-  state                          589      conditional state    21
-  aliases                          3      non-state operations 10
-  explicit exclusions             24      unclassified          0
+  source records accounted for   709      unclassified          0
+  state                          601      conditional state    53
+  aliases                         19      non-state operations 10
+  explicit exclusions             26
 
 CPU: Cortex-M7 r0p2              Source: DDI0489 B
-  source records accounted for   351
-  CPU-specific state              10      debug state         154
+  source records accounted for   399      unclassified          0
+  CPU-specific state              10      debug state         202
   architecture-defined duplicates 179     explicit exclusions   8
-  unclassified                     0
+
+CPU: Cortex-M4 r0p0              Source: DDI0439 B
+  source records accounted for   307      unclassified          0
+  CPU-specific state               0      debug state         161
+  architecture-defined duplicates 146
 ```
+
+Cortex-M4 adds no implementation-defined registers of its own: every row of
+its TRM either restates architectural state or belongs to a debug component.
+Cortex-M7 adds ten (`CM7_ITCMCR`, `CM7_DTCMCR`, `CM7_AHBPCR`, `CM7_CACR`,
+`CM7_AHBSCR`, `CM7_ABFSR`, `IEBR0/1`, `DEBR0/1`).
 
 Reproduce with `make state-coverage`.
 
@@ -84,6 +93,31 @@ documents, each marked keep or skip with a reason
 (`spec/rules/*.tables.yaml`). If a revised manual introduces a table nobody has
 decided on, `make state-check` fails rather than quietly ignoring it. There is
 no generic `IGNORE`: an exclusion without a reason is rejected.
+
+**Every source row must produce a record.** The balance the task spec calls
+for is enforced, not just described: a line that looks like a table row but
+yields no entry aborts the import, and so does a row that matches the pattern
+but is discarded afterwards. Counting only the records that came out is what
+lets a dropped row stay invisible -- and it did. Enforcing the balance
+recovered `STCVR` (its type column reads `RW clear`), `FP_COMPn` (address
+`0xE0002008+4n`), sixteen CTI registers written `CTIINEN[7:0]`, the MPU alias
+registers, `ID_MMFR1` (the PDF inserts a space after `ID_`), and the TPIU
+integration data registers.
+
+**A second index, and a prose sweep.** The document's own index only catches
+what that index lists, and a table-driven importer cannot see prose at all.
+`tools/state_prose_sweep.py` therefore walks every section heading: Arm heads
+each register description `<Long name>, <MNEMONIC>` and each group `... 
+registers`. Anything unmatched must be listed with a reason in
+`spec/rules/<target>.prose.yaml`, so a new one fails CI. It found
+`TPIU_ITCTRL` on first run against the Cortex-M4 TRM -- a naming variance, the
+table writes `ITCTRL` -- and the sweep is now block-prefix aware.
+
+**A TRM may spell an architectural register differently.** The Cortex-M4 TRM
+writes `STCSR`, `STRVR`, `STCVR` and `STCR` where the architecture writes
+`SYST_CSR`, `SYST_RVR`, `SYST_CVR` and `SYST_CALIB`. Overlays therefore resolve
+against the architecture manifest by address as well as by name; matching on
+name alone reported four architectural registers as Cortex-M4-specific state.
 
 **The manual checks itself.** DDI0403E.e publishes its own register index
 (Tables D8-2 and D8-3). The importer parses those indexes and asserts that every
@@ -161,28 +195,30 @@ Run against an STM32F429I board over ST-LINK/V2.1 (`make && ./out/state_probe st
 
 ```
 CPUID              0x410FC241  (PARTNO 0xC24)
-Part               not recognised
-CPU overlay        none pinned - architecture manifest only
+Part               Cortex-M4 r0p1
+CPU overlay        cortex_m4_r0p0
+NOTE               the pinned TRM documents r0p0; this part is r0p1.
+                   Differences introduced after r0p0 are not covered.
 FP extension       implemented
 MPU regions        8
 DWT comparators    4
 NVIC INTLINESNUM   2  (96 interrupt lines)
 
-armv7m (DDI0403 E.e): 610 state elements
-  write-only (not sampled)    3
-  AVAILABLE                 586
+armv7m (DDI0403 E.e): 654 state elements
+  write-only (not sampled)    3      AVAILABLE            630
   BACKEND_UNSUPPORTED        21
+
+cortex_m4_r0p0 (DDI0439 B): 161 state elements
+  write-only (not sampled)    1      AVAILABLE            160
 ```
 
-The derived features match the part: 8 MPU regions, 4 DWT comparators and 96
-interrupt lines are what an STM32F429 implements. Core and special-purpose
-registers read through DCRSR/DCRDR return coherent values -- `XPSR=0x01000000`
-with the T bit set, `MSP` in SRAM, `PC` in flash, `DHCSR` showing halted with
-`S_REGRDY`.
+The derived features match the part. Core and special-purpose registers read
+through DCRSR/DCRDR return coherent values -- `XPSR=0x01000000` with the T bit
+set, `MSP` in SRAM, `PC` in flash, `DHCSR` showing halted with `S_REGRDY` --
+and so does the FP register file.
 
-PARTNO 0xC24 is a Cortex-M4. We hold no TRM for it, so the probe applies the
-architecture manifest only and says so, rather than applying the Cortex-M7
-overlay to a part it does not describe.
+The part is r0p1 and the pinned TRM documents r0p0, so the probe applies the
+overlay and states the gap rather than implying the revisions are the same.
 
 ### What AVAILABLE does and does not mean
 
@@ -218,9 +254,14 @@ Honest scope boundaries, so nobody mistakes silence for coverage:
   documented as offsets within a component. No base addresses are recorded, so
   `hw_state_read` refuses them rather than guessing. Recording the bases would
   make them readable.
-- **CPU overlays beyond Cortex-M7.** Only DDI0489B is pinned, so PARTNO 0xC24
-  (Cortex-M4, the part on the bench) gets architecture-only coverage. Adding it
-  is a matter of pinning DDI0439 and writing a rules file -- no new methodology.
+- **Cortex-M4 r0p1.** The pinned TRM (DDI0439B) documents r0p0; the bench part
+  is r0p1. Later issues exist (DDI0439C/D/E) but their PDFs are behind a
+  JS-rendered page and could not be resolved automatically. Differences
+  introduced after r0p0 are not covered, and the probe says so.
+- **Exhaustive prose coverage.** The section-heading sweep is systematic for
+  registers Arm gives a description section or a group heading. State defined
+  only in running text with neither would still be missed; nothing in these
+  three documents is known to be, but that is not the same as proof.
 - **Snapshot serialization (§34).** The snapshot set is computed and CI asserts
   the generated set matches the manifest, but there is no serializer.
 - **Write paths.** Everything here reads. Nothing writes architectural state

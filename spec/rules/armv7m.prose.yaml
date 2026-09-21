@@ -1,0 +1,8 @@
+schema_version: 1
+architecture: ARMv7-M
+description: Section headings that look like a register description but are not one. Anything not listed
+  here and not covered by the manifest fails CI.
+not_registers:
+  NVIC: Block heading for the Nested Vectored Interrupt Controller (B3.4), not a register. Its registers
+    are enumerated in Table B3-8.
+  FSTMX: Pre-UAL instruction mnemonic pair FLDMX/FSTMX (D2.3.1), not a register.

@@ -83,20 +83,51 @@ def _expand_placeholder(name: str, desc: str, addr_cell: str) -> list[tuple[str,
     return [(f"0x{start + k * stride:08X}", f"{base}{lo + k}") for k in range(count)]
 
 
+# Access types as Arm prints them. Some carry a qualifier ('RW clear'), and a
+# few rows leave the column empty, so the qualifier and the column are optional.
 _ACCESS_ALT = r"RW or RO|RAZ/WI|RO|RW|WO|RAZ|WI|-"
-_ADDR = r"0x[0-9A-Fa-f]+(?:\s*-\s*0x[0-9A-Fa-f]+)?"
-_NAME = r"-|[A-Za-z_][A-Za-z0-9_]*(?:\s*-\s*[A-Za-z_][A-Za-z0-9_]*)?"
-# One table row: address (possibly an inline range), register name (ditto), the
-# access type, then reset and description. A trailing bare '-' on the address or
-# name marks a range whose other end wraps onto the following line.
+_ACCESS = r"(?:" + _ACCESS_ALT + r")(?:\s+(?:clear|only|once))?"
+# An address cell: a plain address, an inline range, or a strided array base
+# such as '0xE0002008+4n'.
+# A range separator is attached to the address or single-spaced from it.
+# Columns are separated by two or more spaces, so anything further away is the
+# next column -- treating a Name column's '-' as a range dash makes the row
+# swallow the line below it.
+_ADDR = (r"0x[0-9A-Fa-f]+(?:\s*\+\s*\d*[a-z])?"
+         r"(?:[ ]?(?:-|to)[ ]?(?:0x[0-9A-Fa-f]+)?)?")
+# A name cell: an identifier, an inline name range, or an array slice such as
+# 'CTIINEN[7:0]'. A trailing '_' absorbs a space the PDF inserted ('ID_ MMFR1').
+# The second half of a name range must not be an access token: without the
+# guard, 'NVIC_ISER0-          RW' parses as one name and the row is lost.
+_NAME = (r"-|[A-Za-z_][A-Za-z0-9_]*_?(?:[ ]?[A-Za-z0-9_]+){0,2}"
+         r"(?:\[\d+:\d+\])?"
+         r"(?:\s*-\s*(?!(?:RW|RO|WO|RAZ|WI)\b)[A-Za-z_][A-Za-z0-9_]*)?")
 _ROW_RE = re.compile(
-    r"^\s*(?P<addr>" + _ADDR + r")(?P<adash>\s*-(?!\s*0x))?\s{2,}"
-    r"(?P<name>" + _NAME + r")(?P<ndash>\s*-)?\s{2,}"
-    r"(?P<type>" + _ACCESS_ALT + r")[a-z]?\s{2,}"
-    r"(?P<rest>.*)$"
+    r"^\s*(?P<addr>" + _ADDR + r")(?P<adash>[ ]?-(?!\s*0x))?\s{2,}"
+    r"(?P<name>" + _NAME + r")(?P<ndash>[ ]?-)?"
+    r"(?:\s{2,}(?P<type>" + _ACCESS + r")[a-z]?)?"
+    r"(?:\s{2,}(?P<rest>.*))?$"
 )
-_RESERVED_RE = re.compile(r"^\s*(?P<addr>" + _ADDR + r")\s*-?\s{2,}-\s{2,}-\s{2,}")
+_RESERVED_RE = re.compile(r"^\s*(?P<addr>" + _ADDR + r")[ ]?-?\s{2,}[-…]\s{2,}[-…]\s{2,}")
 _CONT_RE = re.compile(r"^\s*(?P<addr>0x[0-9A-Fa-f]+)\s{2,}(?P<name>[A-Za-z_][A-Za-z0-9_]*)\b")
+
+# 'CTIINEN[7:0]' is eight registers, the same as an explicit range.
+_SLICE_RE = re.compile(r"^(?P<base>[A-Za-z_][A-Za-z0-9_]*)\[(?P<hi>\d+):(?P<lo>\d+)\]$")
+
+
+def _expand_slice(name: str, addr_cell: str) -> list[tuple[str, str]]:
+    m = _SLICE_RE.match(name.strip())
+    if not m:
+        return []
+    lo, hi = int(m.group("lo")), int(m.group("hi"))
+    am = ADDR_RE.match(addr_cell.strip())
+    if not am:
+        return []
+    start = int(am.group(1), 16)
+    end = int(am.group(2), 16) if am.group(2) else start
+    count = hi - lo + 1
+    stride = (end - start) // (count - 1) if count > 1 and end > start else 4
+    return [(f"0x{start + k * stride:08X}", f"{m.group('base')}{lo + k}") for k in range(count)]
 
 
 def parse_addr_name_type_reset(table: Table) -> list[RawRecord]:
@@ -108,13 +139,29 @@ def parse_addr_name_type_reset(table: Table) -> list[RawRecord]:
     column detection is not a sound basis for a completeness claim.
     """
     out: list[RawRecord] = []
+    consumed: set[int] = set()
+    rejected: list[tuple[int, str]] = []
     pages = [pg for pg, _ in table.raw_lines]
     lines = [l for _, l in table.raw_lines]
     for i, line in enumerate(lines):
+        # A line already absorbed as the tail of a wrapped range above must not
+        # also be parsed on its own: that produces a phantom duplicate of the
+        # last element of the range.
+        if i in consumed:
+            continue
+
         rm = _RESERVED_RE.match(line)
         if rm and "Reserved" in line:
-            out.append(RawRecord(name=None, address=rm.group("addr"), access="-",
-                                 reset=None, description="Reserved", reserved=True, page=pages[i], row=None))
+            addr = rm.group("addr")
+            # A reserved range wraps too: absorb its continuation line.
+            if re.search(r"(?:-|to)\s*$", addr):
+                for k in range(i + 1, min(i + 3, len(lines))):
+                    if re.match(r"^\s*0x[0-9A-Fa-f]+", lines[k]):
+                        consumed.add(k)
+                        break
+            out.append(RawRecord(name=None, address=addr, access="-",
+                                 reset=None, description="Reserved", reserved=True,
+                                 page=pages[i], row=None))
             continue
 
         m = _ROW_RE.match(line)
@@ -122,27 +169,58 @@ def parse_addr_name_type_reset(table: Table) -> list[RawRecord]:
             continue
 
         addr, name = m.group("addr"), m.group("name")
-        typ, rest = m.group("type"), m.group("rest").strip()
+        typ = (m.group("type") or "-").strip()
+        rest = (m.group("rest") or "").strip()
 
         if name.strip() == "-":
+            # A reserved or delegated range; absorb its continuation line too.
+            if m.group("adash") or re.search(r"(?:-|to)\s*$", addr):
+                for k in range(i + 1, min(i + 3, len(lines))):
+                    if re.match(r"^\s*0x[0-9A-Fa-f]+", lines[k]):
+                        consumed.add(k)
+                        break
             out.append(RawRecord(name=None, address=addr, access=typ, reset=None,
-                                 description=rest or "Reserved", reserved=True, page=pages[i], row=None))
+                                 description=rest or "Reserved", reserved=True,
+                                 page=pages[i], row=None))
             continue
 
-        if m.group("adash") or m.group("ndash"):
-            for nxt in lines[i + 1: i + 3]:
-                cm = _CONT_RE.match(nxt)
+        if m.group("adash") or m.group("ndash") or re.search(r"(?:-|to)\s*$", addr):
+            for k in range(i + 1, min(i + 3, len(lines))):
+                cm = _CONT_RE.match(lines[k])
                 if cm:
-                    addr = f"{addr} - {cm.group('addr')}"
+                    addr = f"{addr.rstrip('- to')} - {cm.group('addr')}"
                     name = f"{name} - {cm.group('name')}"
+                    consumed.add(k)
                     break
+                if re.match(r"^\s*0x[0-9A-Fa-f]+\s*$", lines[k]):
+                    addr = f"{addr.rstrip('- to')} - {lines[k].strip()}"
+                    consumed.add(k)
+                    break
+                # A wrapped description line belonging to this row.
+                if not re.match(r"^\s*0x[0-9A-Fa-f]+", lines[k]):
+                    break
+                consumed.add(k)
+                break
 
+        name = re.sub(r"_\s+", "_", name).strip()        # 'ID_ MMFR1' -> 'ID_MMFR1'
+        # A few registers are named in words ('FIFO data 0'); join them into an
+        # identifier. Range names keep their ' - ' so they can still expand.
+        if "-" not in name:
+            name = re.sub(r"\s+", "_", name)
+        rest = rest or ""
         parts = rest.split(None, 1)
         reset = strip_footnote(parts[0]) if parts else ""
         desc = parts[1].strip() if len(parts) > 1 else ""
 
         pairs: list[tuple[str, str]] = []
-        if name.endswith("x"):
+        if "[" in name:
+            pairs = _expand_slice(name, addr)
+        if not pairs and "+" in addr:
+            # A strided array base such as '0xE0002008+4n': the count is not in
+            # this cell, so keep it as one conditional array entry.
+            base = addr.split("+")[0].strip()
+            pairs = [(base, name)]
+        if not pairs and name.endswith("x"):
             pairs = _expand_placeholder(name, desc, addr)
         if not pairs and ("-" in addr or "-" in name):
             pairs = expand_range(addr, name)
@@ -152,11 +230,42 @@ def parse_addr_name_type_reset(table: Table) -> list[RawRecord]:
         for a, n in pairs:
             n = n.strip()
             # A name still carrying a separator means range expansion failed;
-            # emitting it would invent a register that does not exist.
+            # emitting it would invent a register that does not exist. Record
+            # the rejection: a row discarded here matched the row pattern, so
+            # it would otherwise be invisible to the balance check.
             if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", n):
+                rejected.append((pages[i], f"{line.strip()[:100]}  [rejected name {n!r}]"))
                 continue
             out.append(RawRecord(name=n, address=a, access=typ, reset=reset,
                                  description=desc, reserved=False, page=pages[i], row=None))
+
+    table.consumed_lines = consumed
+    table.rejected_rows = rejected
+    return out
+
+
+def unparsed_rows(table: Table) -> list[tuple[int, str]]:
+    """
+    Row-like lines the parser did not turn into a record.
+
+    This is the balance check from the task spec: a source row that silently
+    fails to parse is invisible, so the importer refuses to finish while any
+    remain. Continuation lines of a wrapped range are consumed by the row above
+    and are not drops.
+    """
+    lines = [l for _, l in table.raw_lines]
+    consumed = getattr(table, "consumed_lines", set())
+    out = list(getattr(table, "rejected_rows", []))
+    for i, l in enumerate(lines):
+        if i in consumed:
+            continue
+        if not re.match(r"^\s*0x[0-9A-Fa-f]+", l):
+            continue
+        if _ROW_RE.match(l) or _RESERVED_RE.match(l):
+            continue
+        if re.fullmatch(r"\s*0x[0-9A-Fa-f]+\s*", l):
+            continue
+        out.append((table.raw_lines[i][0], l.strip()))
     return out
 
 

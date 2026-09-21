@@ -47,7 +47,7 @@ PRIVATE_HEADER = core/hw_priv.h
 
 
 # --- Build Rules ---
-.PHONY: all clean check state-import state-gen state-coverage state-check
+.PHONY: all clean check state-import state-gen state-coverage state-check state-sweep
 
 all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET)
 
@@ -96,7 +96,7 @@ $(ODIR)/$(SHARED_LIB): $(LIB_OBJ)
 # The .def files under generated/ are outputs. To change what state libhw knows
 # about, change the rules the importer reads and re-import; never edit the .def.
 STATE_ARCH = armv7m
-STATE_CPUS = cortex_m7_r0p2
+STATE_CPUS = cortex_m7_r0p2 cortex_m4_r0p0
 
 # Re-import from the pinned manuals. Needs the licensed documents present.
 state-import:
@@ -110,6 +110,11 @@ state-gen:
 # The accounting: every source entry classified, nothing unclassified.
 state-coverage:
 	@python3 tools/state_gen.py --coverage-only
+
+# Sweep the manuals for state documented outside their register tables.
+state-sweep:
+	@python3 tools/state_prose_sweep.py --target $(STATE_ARCH)
+	@for c in $(STATE_CPUS); do python3 tools/state_prose_sweep.py --target $$c; done
 
 # CI invariants for the state database.
 state-check:

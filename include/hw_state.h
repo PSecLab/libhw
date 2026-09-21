@@ -112,6 +112,10 @@ typedef struct {
 typedef struct {
     uint32_t    cpuid;
     uint16_t    partno;         /* CPUID bits[15:4] */
+    uint8_t     variant;        /* CPUID bits[23:20] -> rN */
+    uint8_t     revision;       /* CPUID bits[3:0]   -> pN */
+    const char *overlay_revision;  /* product revision the pinned TRM documents */
+    uint8_t     revision_matches;  /* 0 when the TRM documents a different revision */
     const char *cpu_name;       /* NULL when the part is not one we have a TRM for */
     const char *overlay;        /* pinned CPU overlay database, or NULL */
     uint8_t     fp_extension;

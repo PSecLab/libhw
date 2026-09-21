@@ -799,6 +799,35 @@ entries:
   debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RASR_A3
+- canonical_name: 'RESERVED_0xE000EDBC- '
+  source_id: 'B3-11:0xE000EDBC- '
+  architecture: ARMv7-M
+  namespace: arch
+  classification: explicit_exclusion
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.5.4 Register support for PMSAv7 in the SCS
+    table: Table B3-11 MPU register summary
+    row: '0xE000EDBC- '
+    page: 636
+  width: null
+  access: memory_mapped
+  encoding: '0xE000EDBC- '
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: Reserved
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ''
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EDBC- '
 - canonical_name: CPUID
   source_id: B3-4:CPUID
   architecture: ARMv7-M
@@ -1263,8 +1292,8 @@ entries:
   debug_width: 32
   component: SCB
   state_id: ARMv7-M:arch:SCB:AFSR
-- canonical_name: RESERVED_0xE000ED40
-  source_id: B3-4:0xE000ED40
+- canonical_name: 'RESERVED_0xE000ED40 - '
+  source_id: 'B3-4:0xE000ED40 - '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1273,11 +1302,11 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-4 Summary of SCB registers
-    row: '0xE000ED40'
+    row: '0xE000ED40 - '
     page: 597
   width: null
   access: memory_mapped
-  encoding: '0xE000ED40'
+  encoding: '0xE000ED40 - '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -1291,7 +1320,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000ED40
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000ED40 - '
 - canonical_name: CPACR
   source_id: B3-4:CPACR
   architecture: ARMv7-M
@@ -1640,8 +1669,8 @@ entries:
   debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000E00C
-- canonical_name: RESERVED_0xE000EDF0
-  source_id: B3-6:0xE000EDF0
+- canonical_name: 'RESERVED_0xE000EDF0 - '
+  source_id: 'B3-6:0xE000EDF0 - '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1650,17 +1679,17 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-6 Summary of system control and ID registers not in the SCB
-    row: '0xE000EDF0'
+    row: '0xE000EDF0 - '
     page: 598
   width: null
   access: memory_mapped
-  encoding: '0xE000EDF0'
+  encoding: '0xE000EDF0 - '
   encoding_kind: absolute
   readable: true
   writable: true
   feature_requirement: null
   alias: null
-  reason: See Debug system registers on page C1-699
+  reason: '-                              See Debug system registers on page C1-699'
   snapshot: false
   source_family: ARM_ARM
   source_release: DDI0403 E.e
@@ -1668,7 +1697,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000EDF0
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EDF0 - '
 - canonical_name: STIR
   source_id: B3-6:STIR
   architecture: ARMv7-M
@@ -1698,8 +1727,8 @@ entries:
   debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:STIR
-- canonical_name: RESERVED_0xE000EF04
-  source_id: B3-6:0xE000EF04
+- canonical_name: 'RESERVED_0xE000EF04- '
+  source_id: 'B3-6:0xE000EF04- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1708,11 +1737,11 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-6 Summary of system control and ID registers not in the SCB
-    row: '0xE000EF04'
+    row: '0xE000EF04- '
     page: 598
   width: null
   access: memory_mapped
-  encoding: '0xE000EF04'
+  encoding: '0xE000EF04- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -1726,9 +1755,9 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000EF04
-- canonical_name: RESERVED_0xE000EF34
-  source_id: B3-6:0xE000EF34
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EF04- '
+- canonical_name: 'RESERVED_0xE000EF34- '
+  source_id: 'B3-6:0xE000EF34- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1737,11 +1766,11 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-6 Summary of system control and ID registers not in the SCB
-    row: '0xE000EF34'
+    row: '0xE000EF34- '
     page: 598
   width: null
   access: memory_mapped
-  encoding: '0xE000EF34'
+  encoding: '0xE000EF34- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -1755,7 +1784,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000EF34
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EF34- '
 - canonical_name: RESERVED_0xE000EF4C
   source_id: B3-6:0xE000EF4C
   architecture: ARMv7-M
@@ -1785,8 +1814,8 @@ entries:
   debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000EF4C
-- canonical_name: RESERVED_0xE000EF50
-  source_id: B3-6:0xE000EF50
+- canonical_name: 'RESERVED_0xE000EF50- '
+  source_id: 'B3-6:0xE000EF50- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1795,17 +1824,17 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-6 Summary of system control and ID registers not in the SCB
-    row: '0xE000EF50'
+    row: '0xE000EF50- '
     page: 598
   width: null
   access: memory_mapped
-  encoding: '0xE000EF50'
+  encoding: '0xE000EF50- '
   encoding_kind: absolute
   readable: true
   writable: true
   feature_requirement: null
   alias: null
-  reason: Cache and Branch Predictor maintenance, see Cache and
+  reason: '-                              Cache and Branch Predictor maintenance, see Cache and'
   snapshot: false
   source_family: ARM_ARM
   source_release: DDI0403 E.e
@@ -1813,9 +1842,9 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000EF50
-- canonical_name: RESERVED_0xE000EF84
-  source_id: B3-6:0xE000EF84
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EF50- '
+- canonical_name: 'RESERVED_0xE000EF84- '
+  source_id: 'B3-6:0xE000EF84- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -1824,11 +1853,11 @@ entries:
     revision: E.e
     section: B3.2.2 System control and ID registers
     table: Table B3-6 Summary of system control and ID registers not in the SCB
-    row: '0xE000EF84'
+    row: '0xE000EF84- '
     page: 598
   width: null
   access: memory_mapped
-  encoding: '0xE000EF84'
+  encoding: '0xE000EF84- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -1842,7 +1871,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000EF84
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EF84- '
 - canonical_name: PID4
   source_id: B3-6:PID4
   architecture: ARMv7-M
@@ -1872,6 +1901,209 @@ entries:
   debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID4
+- canonical_name: PID5
+  source_id: B3-6:PID5
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID5
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFD4'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID5
+- canonical_name: PID6
+  source_id: B3-6:PID6
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID6
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFD8'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID6
+- canonical_name: PID7
+  source_id: B3-6:PID7
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID7
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFDC'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID7
+- canonical_name: PID0
+  source_id: B3-6:PID0
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID0
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFE0'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID0
+- canonical_name: PID1
+  source_id: B3-6:PID1
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID1
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFE4'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID1
+- canonical_name: PID2
+  source_id: B3-6:PID2
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID2
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFE8'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID2
+- canonical_name: PID3
+  source_id: B3-6:PID3
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: PID3
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFEC'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:PID3
 - canonical_name: CID0
   source_id: B3-6:CID0
   architecture: ARMv7-M
@@ -1901,6 +2133,93 @@ entries:
   debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CID0
+- canonical_name: CID1
+  source_id: B3-6:CID1
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: CID1
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFF4'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:CID1
+- canonical_name: CID2
+  source_id: B3-6:CID2
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: CID2
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFF8'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:CID2
+- canonical_name: CID3
+  source_id: B3-6:CID3
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B3.2.2 System control and ID registers
+    table: Table B3-6 Summary of system control and ID registers not in the SCB
+    row: CID3
+    page: 598
+  width: 32
+  access: memory_mapped
+  encoding: '0xE000EFFC'
+  encoding_kind: absolute
+  readable: true
+  writable: false
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: SCS
+  state_id: ARMv7-M:arch:SCS:CID3
 - canonical_name: SYST_CSR
   source_id: B3-7:SYST_CSR
   architecture: ARMv7-M
@@ -2017,8 +2336,8 @@ entries:
   debug_width: 32
   component: SYSTICK
   state_id: ARMv7-M:arch:SYSTICK:SYST_CALIB
-- canonical_name: RESERVED_0xE000E020
-  source_id: B3-7:0xE000E020
+- canonical_name: 'RESERVED_0xE000E020- '
+  source_id: 'B3-7:0xE000E020- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -2027,11 +2346,11 @@ entries:
     revision: E.e
     section: B3.3.2 System timer register support in the SCS
     table: Table B3-7 SysTick register summary
-    row: '0xE000E020'
+    row: '0xE000E020- '
     page: 621
   width: null
   access: memory_mapped
-  encoding: '0xE000E020'
+  encoding: '0xE000E020- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -2045,7 +2364,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000E020
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000E020- '
 - canonical_name: NVIC_ISER0
   source_id: B3-8:NVIC_ISER0
   architecture: ARMv7-M
@@ -4366,8 +4685,8 @@ entries:
   debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR15
-- canonical_name: RESERVED_0xE000E340
-  source_id: B3-8:0xE000E340
+- canonical_name: 'RESERVED_0xE000E340- '
+  source_id: 'B3-8:0xE000E340- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -4376,11 +4695,11 @@ entries:
     revision: E.e
     section: B3.4.3 NVIC register support in the SCS
     table: Table B3-8 NVIC register summary
-    row: '0xE000E340'
+    row: '0xE000E340- '
     page: 626
   width: null
   access: memory_mapped
-  encoding: '0xE000E340'
+  encoding: '0xE000E340- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -4394,7 +4713,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000E340
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000E340- '
 - canonical_name: NVIC_IPR0
   source_id: B3-8:NVIC_IPR0
   architecture: ARMv7-M
@@ -7991,8 +8310,8 @@ entries:
   debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR123
-- canonical_name: RESERVED_0xE000E5F0
-  source_id: B3-8:0xE000E5F0
+- canonical_name: 'RESERVED_0xE000E5F0- '
+  source_id: 'B3-8:0xE000E5F0- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -8001,11 +8320,11 @@ entries:
     revision: E.e
     section: B3.4.3 NVIC register support in the SCS
     table: Table B3-8 NVIC register summary
-    row: '0xE000E5F0'
+    row: '0xE000E5F0- '
     page: 626
   width: null
   access: memory_mapped
-  encoding: '0xE000E5F0'
+  encoding: '0xE000E5F0- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -8019,7 +8338,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE000E5F0
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000E5F0- '
 - canonical_name: CPUID
   source_id: B4-1:CPUID
   architecture: ARMv7-M
@@ -9093,6 +9412,35 @@ entries:
   debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DEMCR
+- canonical_name: 'RESERVED_0xE000EE00 to '
+  source_id: 'C1-10:0xE000EE00 to '
+  architecture: ARMv7-M
+  namespace: arch
+  classification: explicit_exclusion
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: C1.6 Debug system registers
+    table: Table C1-10 Debug register summary
+    row: '0xE000EE00 to '
+    page: 699
+  width: null
+  access: memory_mapped
+  encoding: '0xE000EE00 to '
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: Reserved
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ''
+  state_id: 'ARMv7-M:arch:RESERVED_0xE000EE00 to '
 - canonical_name: ITM_STIM0
   source_id: C1-11:ITM_STIM0
   architecture: ARMv7-M
@@ -16807,8 +17155,8 @@ entries:
   debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_TCR
-- canonical_name: RESERVED_0xE0000FD0
-  source_id: C1-11:0xE0000FD0
+- canonical_name: 'RESERVED_0xE0000FD0 - '
+  source_id: 'C1-11:0xE0000FD0 - '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -16817,17 +17165,17 @@ entries:
     revision: E.e
     section: C1.7.2 ITM register summary
     table: Table C1-11 Register summary
-    row: '0xE0000FD0'
+    row: '0xE0000FD0 - '
     page: 714
   width: null
   access: memory_mapped
-  encoding: '0xE0000FD0'
+  encoding: '0xE0000FD0 - '
   encoding_kind: absolute
   readable: true
   writable: true
   feature_requirement: null
   alias: null
-  reason: Optional CoreSight management and ID registers. See Appendix D1
+  reason: '-                Optional CoreSight management and ID registers. See Appendix D1'
   snapshot: false
   source_family: ARM_ARM
   source_release: DDI0403 E.e
@@ -16835,7 +17183,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE0000FD0
+  state_id: 'ARMv7-M:arch:RESERVED_0xE0000FD0 - '
 - canonical_name: DWT_CTRL
   source_id: C1-21:DWT_CTRL
   architecture: ARMv7-M
@@ -17187,8 +17535,8 @@ entries:
   debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000102C
-- canonical_name: RESERVED_0xE0001F00
-  source_id: C1-21:0xE0001F00
+- canonical_name: 'RESERVED_0xE0001F00- '
+  source_id: 'C1-21:0xE0001F00- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -17197,11 +17545,11 @@ entries:
     revision: E.e
     section: C1.8.6 DWT register summary
     table: Table C1-21 DWT register summary
-    row: '0xE0001F00'
+    row: '0xE0001F00- '
     page: 737
   width: null
   access: memory_mapped
-  encoding: '0xE0001F00'
+  encoding: '0xE0001F00- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -17215,7 +17563,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE0001F00
+  state_id: 'ARMv7-M:arch:RESERVED_0xE0001F00- '
 - canonical_name: TPIU_SSPSR
   source_id: C1-22:TPIU_SSPSR
   architecture: ARMv7-M
@@ -17332,8 +17680,8 @@ entries:
   debug_width: 32
   component: TPIU
   state_id: ARMv7-M:debug:TPIU:TPIU_SPPR
-- canonical_name: RESERVED_0xE0040F00
-  source_id: C1-22:0xE0040F00
+- canonical_name: 'RESERVED_0xE0040F00- '
+  source_id: 'C1-22:0xE0040F00- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -17342,11 +17690,11 @@ entries:
     revision: E.e
     section: C1.10.1 TPIU register summary
     table: Table C1-22 Required TPIU registers
-    row: '0xE0040F00'
+    row: '0xE0040F00- '
     page: 751
   width: null
   access: memory_mapped
-  encoding: '0xE0040F00'
+  encoding: '0xE0040F00- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -17360,7 +17708,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE0040F00
+  state_id: 'ARMv7-M:arch:RESERVED_0xE0040F00- '
 - canonical_name: TPIU_TYPE
   source_id: C1-22:TPIU_TYPE
   architecture: ARMv7-M
@@ -17390,8 +17738,8 @@ entries:
   debug_width: 32
   component: TPIU
   state_id: ARMv7-M:debug:TPIU:TPIU_TYPE
-- canonical_name: RESERVED_0xE0040FCC
-  source_id: C1-22:0xE0040FCC
+- canonical_name: 'RESERVED_0xE0040FCC- '
+  source_id: 'C1-22:0xE0040FCC- '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -17400,11 +17748,11 @@ entries:
     revision: E.e
     section: C1.10.1 TPIU register summary
     table: Table C1-22 Required TPIU registers
-    row: '0xE0040FCC'
+    row: '0xE0040FCC- '
     page: 751
   width: null
   access: memory_mapped
-  encoding: '0xE0040FCC'
+  encoding: '0xE0040FCC- '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -17418,7 +17766,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE0040FCC
+  state_id: 'ARMv7-M:arch:RESERVED_0xE0040FCC- '
 - canonical_name: FP_CTRL
   source_id: C1-23:FP_CTRL
   architecture: ARMv7-M
@@ -17491,7 +17839,7 @@ entries:
     page: 756
   width: 32
   access: memory_mapped
-  encoding: '0xE0002008'
+  encoding: '0xE0002008 - '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -17506,8 +17854,8 @@ entries:
   debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP0
-- canonical_name: RESERVED_0xE0002FD0
-  source_id: C1-23:0xE0002FD0
+- canonical_name: 'RESERVED_0xE0002FD0 - '
+  source_id: 'C1-23:0xE0002FD0 - '
   architecture: ARMv7-M
   namespace: arch
   classification: explicit_exclusion
@@ -17516,11 +17864,11 @@ entries:
     revision: E.e
     section: C1.11.2 FPB register summary
     table: Table C1-23 Flash Patch and Breakpoint register summary
-    row: '0xE0002FD0'
+    row: '0xE0002FD0 - '
     page: 756
   width: null
   access: memory_mapped
-  encoding: '0xE0002FD0'
+  encoding: '0xE0002FD0 - '
   encoding_kind: absolute
   readable: true
   writable: true
@@ -17534,7 +17882,7 @@ entries:
   debug_lsb: 0
   debug_width: 32
   component: ''
-  state_id: ARMv7-M:arch:RESERVED_0xE0002FD0
+  state_id: 'ARMv7-M:arch:RESERVED_0xE0002FD0 - '
 - canonical_name: ROMSCS
   source_id: C1-3:ROMSCS
   architecture: ARMv7-M

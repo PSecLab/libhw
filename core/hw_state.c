@@ -61,6 +61,29 @@ static const hw_state_dbgreg_t cortex_m7_r0p2_dbgregs[] = {
 #include "cortex_m7_r0p2.def"
 };
 
+/* --- cortex_m4_r0p0 ------------------------------------------------------ */
+
+#define HW_STATE(id, name, ns, acc, enc, ekind, w, rd, wr, snap, feat) \
+    { name, ns, acc, enc, ekind, w, rd, wr, snap, feat },
+static const hw_state_desc_t cortex_m4_r0p0_states[] = {
+#include "cortex_m4_r0p0.def"
+};
+
+#define HW_ALIAS(id, target, off, width) { #id, #target, off, width },
+static const hw_state_alias_t cortex_m4_r0p0_aliases[] = {
+#include "cortex_m4_r0p0.def"
+};
+
+#define HW_OPERATION(id, name, enc, reason) { name, enc, reason },
+static const hw_state_operation_t cortex_m4_r0p0_operations[] = {
+#include "cortex_m4_r0p0.def"
+};
+
+#define HW_DBGREG(id, name, regsel, lsb, width) { name, regsel, lsb, width },
+static const hw_state_dbgreg_t cortex_m4_r0p0_dbgregs[] = {
+#include "cortex_m4_r0p0.def"
+};
+
 #define COUNT(a) (sizeof(a) / sizeof((a)[0]))
 
 const hw_state_db_t hw_state_databases[] = {
@@ -74,6 +97,11 @@ const hw_state_db_t hw_state_databases[] = {
       cortex_m7_r0p2_aliases, COUNT(cortex_m7_r0p2_aliases),
       cortex_m7_r0p2_operations, COUNT(cortex_m7_r0p2_operations),
       cortex_m7_r0p2_dbgregs, COUNT(cortex_m7_r0p2_dbgregs) },
+    { "cortex_m4_r0p0", "DDI0439 B",
+      cortex_m4_r0p0_states, COUNT(cortex_m4_r0p0_states),
+      cortex_m4_r0p0_aliases, COUNT(cortex_m4_r0p0_aliases),
+      cortex_m4_r0p0_operations, COUNT(cortex_m4_r0p0_operations),
+      cortex_m4_r0p0_dbgregs, COUNT(cortex_m4_r0p0_dbgregs) },
     { NULL, NULL, NULL, 0, NULL, 0, NULL, 0, NULL, 0 },
 };
 
@@ -169,6 +197,8 @@ int hw_state_read(hw_t *ctx, const hw_state_desc_t *desc,
 /* CPUID PARTNO of the one Cortex-M part we hold a TRM for: DDI0489B Table 3-1
  * gives a CPUID reset value of 0x410FC272, so PARTNO is 0xC27. */
 #define PARTNO_CORTEX_M7 0xC27u
+/* DDI0439B Table 4-1 gives a CPUID reset value of 0x410FC240, so PARTNO 0xC24. */
+#define PARTNO_CORTEX_M4 0xC24u
 
 const char *hw_state_avail_name(hw_state_avail_t a) {
     switch (a) {
@@ -191,14 +221,29 @@ int hw_state_identify(hw_t *ctx, hw_cpu_features_t *out) {
     out->cpuid = v;
     out->partno = (uint16_t)((v >> 4) & 0xFFFu);
 
+    out->variant = (uint8_t)((v >> 20) & 0xFu);
+    out->revision = (uint8_t)(v & 0xFu);
+
     if (out->partno == PARTNO_CORTEX_M7) {
         out->cpu_name = "Cortex-M7";
         out->overlay = "cortex_m7_r0p2";
+        out->overlay_revision = "r0p2";
+        out->revision_matches = (out->variant == 0 && out->revision == 2);
+    } else if (out->partno == PARTNO_CORTEX_M4) {
+        out->cpu_name = "Cortex-M4";
+        out->overlay = "cortex_m4_r0p0";
+        out->overlay_revision = "r0p0";
+        // The pinned TRM documents r0p0. A part at a later revision is still
+        // covered for everything the TRM describes, but differences introduced
+        // after r0p0 are not, so the caller is told rather than left to assume.
+        out->revision_matches = (out->variant == 0 && out->revision == 0);
     } else {
         // Not a fault: we simply hold no TRM for this part, so only the
         // architecture manifest applies. Saying so beats guessing an overlay.
         out->cpu_name = NULL;
         out->overlay = NULL;
+        out->overlay_revision = NULL;
+        out->revision_matches = 0;
     }
 
     if (hw_read32(ctx, SCS_MPU_TYPE, &v) == 0) {

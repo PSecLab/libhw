@@ -26,9 +26,9 @@ from state.generate import GEN_DIR, coverage, load_manifest          # noqa: E40
 from state.model import Classification                                # noqa: E402
 from state.sources import SourceError, load_sources                   # noqa: E402
 
-TARGETS = ["armv7m", "cortex_m7_r0p2"]
+TARGETS = ["armv7m", "cortex_m7_r0p2", "cortex_m4_r0p0"]
 ARCH_TARGET = "armv7m"
-CPU_TARGETS = ["cortex_m7_r0p2"]
+CPU_TARGETS = ["cortex_m7_r0p2", "cortex_m4_r0p0"]
 
 # Every classification a source record may carry. Set equality against this is
 # what turns "the list looks complete" into "the list is accounted for".
@@ -313,3 +313,18 @@ def test_fp_register_file_present():
     for i in range(32):
         assert by_name[f"S{i}"]["feature_requirement"] == "FP_EXTENSION", \
             f"S{i} must be conditional on the FP extension"
+
+
+@pytest.mark.skipif(not sources_available(), reason="licensed Arm documents not present on this machine")
+@pytest.mark.parametrize("target", TARGETS)
+def test_prose_documented_state_is_covered(target):
+    """
+    State the manual defines outside a register-summary table must still be
+    covered. A table-driven importer cannot see it, and the document's own
+    memory-mapped indexes cannot catch it -- which is how the whole FP
+    register file went missing.
+    """
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "tools" / "state_prose_sweep.py"), "--target", target],
+        capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stdout + proc.stderr
