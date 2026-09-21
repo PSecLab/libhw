@@ -16,6 +16,7 @@ LIBS = -lstlink
 ODIR = out
 TARGET = hw_test
 TEST_TARGET = flash_test
+PROBE_TARGET = state_probe
 LIBRARY = libhw.a
 
 # VPATH: Tell 'make' where to look for source files.
@@ -32,11 +33,13 @@ LIB_SRC_NAMES = hw.c \
                 hw_state.c
 APP_SRC_NAME = example.c
 TEST_SRC_NAME = flash_test.c
+PROBE_SRC_NAME = state_probe.c
 
 # --- Generated File Paths ---
 LIB_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(LIB_SRC_NAMES))
 APP_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(APP_SRC_NAME))
 TEST_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(TEST_SRC_NAME))
+PROBE_OBJ = $(patsubst %.c,$(ODIR)/%.o,$(PROBE_SRC_NAME))
 
 # --- Header Files (for dependency tracking) ---
 PUBLIC_HEADER = include/hw.h
@@ -46,7 +49,7 @@ PRIVATE_HEADER = core/hw_priv.h
 # --- Build Rules ---
 .PHONY: all clean check state-import state-gen state-coverage state-check
 
-all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET)
+all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET)
 
 # Rule to link the final executable
 $(ODIR)/$(TARGET): $(APP_OBJ) $(ODIR)/$(LIBRARY)
@@ -61,6 +64,11 @@ $(ODIR)/$(TEST_TARGET): $(TEST_OBJ) $(ODIR)/$(LIBRARY)
 # Run the test suite. Needs no hardware.
 check: $(ODIR)/$(TEST_TARGET)
 	@$(ODIR)/$(TEST_TARGET)
+
+# Rule to link the live-target state probe
+$(ODIR)/$(PROBE_TARGET): $(PROBE_OBJ) $(ODIR)/$(LIBRARY)
+	@echo "LD   ==> $@"
+	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
 
 # Rule to create the static library archive
 $(ODIR)/$(LIBRARY): $(LIB_OBJ)

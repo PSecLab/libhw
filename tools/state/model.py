@@ -133,6 +133,13 @@ class StateEntry:
     source_family: str = ""        # AARCHMRS, ARM_TRM, ARM_ARM, RISCV_OPCODES
     source_release: str = ""       # pinned release/revision of that source
 
+    # Debug access path (DCRSR REGSEL), where one exists. This is a second,
+    # independent way to reach the same state: an instruction uses SYSm, a
+    # debugger uses REGSEL, and the two encodings differ.
+    debug_regsel: int | None = None
+    debug_lsb: int = 0
+    debug_width: int = 32
+
     # Owning block (SCB, NVIC, DWT, ITM, ...). CoreSight ID registers repeat the
     # same names in every component at different addresses, so the component is
     # part of a register's identity rather than decoration.

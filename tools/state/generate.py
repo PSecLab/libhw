@@ -49,19 +49,23 @@ def generate_def(target: str) -> pathlib.Path:
         f" * Generated from {src['document']} {src['revision']} by tools/state_gen.py.",
         " * Do not edit. Edit the manifest's source rules and re-import instead.",
         " *",
-        " * HW_STATE(id, name, ns, access, encoding, width, readable, writable, snapshot, feature)",
+        " * HW_STATE(id, name, ns, access, encoding, enc_kind, width, readable, writable, snapshot, feature)",
         " * HW_ALIAS(id, target, bit_offset, bit_width)",
         " * HW_OPERATION(id, name, encoding, reason)",
+        " * HW_DBGREG(id, name, regsel, lsb, width)   -- DCRSR/DCRDR access path",
         " */",
         "",
         "#ifndef HW_STATE",
-        "#define HW_STATE(id, name, ns, access, enc, width, rd, wr, snap, feat)",
+        "#define HW_STATE(id, name, ns, access, enc, ekind, width, rd, wr, snap, feat)",
         "#endif",
         "#ifndef HW_ALIAS",
         "#define HW_ALIAS(id, target, off, width)",
         "#endif",
         "#ifndef HW_OPERATION",
         "#define HW_OPERATION(id, name, enc, reason)",
+        "#endif",
+        "#ifndef HW_DBGREG",
+        "#define HW_DBGREG(id, name, regsel, lsb, width)",
         "#endif",
         "",
     ]
@@ -74,6 +78,7 @@ def generate_def(target: str) -> pathlib.Path:
             lines.append(
                 f'HW_STATE({cid}, "{e["canonical_name"]}", HW_NS_{e["namespace"].upper()}, '
                 f'HW_ACC_{(e.get("access") or "memory_mapped").upper()}, "{enc}", '
+                f'HW_ENC_{(e.get("encoding_kind") or "absolute").upper()}, '
                 f'{e.get("width") or 32}, {int(bool(e["readable"]))}, {int(bool(e["writable"]))}, '
                 f'{int(bool(e["snapshot"]))}, "{e.get("feature_requirement") or ""}")'
             )
@@ -84,7 +89,17 @@ def generate_def(target: str) -> pathlib.Path:
             reason = (e.get("reason") or "").replace('"', "'")[:90]
             lines.append(f'HW_OPERATION({cid}, "{e["canonical_name"]}", "{enc}", "{reason}")')
 
-    lines += ["", "#undef HW_STATE", "#undef HW_ALIAS", "#undef HW_OPERATION", ""]
+    for e in doc["entries"]:
+        if e.get("debug_regsel") is None:
+            continue
+        if e["classification"] not in EMITTING:
+            continue
+        lines.append(
+            f'HW_DBGREG({_c_name(e)}, "{e["canonical_name"]}", {e["debug_regsel"]}, '
+            f'{e.get("debug_lsb", 0)}, {e.get("debug_width", 32)})')
+
+    lines += ["", "#undef HW_STATE", "#undef HW_ALIAS", "#undef HW_OPERATION",
+              "#undef HW_DBGREG", ""]
     out.write_text("\n".join(lines))
     return out
 

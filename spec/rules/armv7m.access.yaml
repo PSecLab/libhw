@@ -1,0 +1,140 @@
+schema_version: 1
+architecture: ARMv7-M
+mechanism: dcrsr_dcrdr
+description: 'Debug access path for core, special-purpose and FP registers. A write to DCRSR (0xE000EDF4)
+  selects a register and the value appears in DCRDR (0xE000EDF8). This is a different encoding from the
+  MRS/MSR SYSm values in Table B5-1: the same state element is reached differently by an instruction and
+  by a debugger.'
+dcrsr_address: '0xE000EDF4'
+dcrdr_address: '0xE000EDF8'
+dhcsr_address: '0xE000EDF0'
+provenance:
+  document: DDI0403
+  revision: E.e
+  section: C1.6.3 Debug Core Register Selector Register, DCRSR
+  field: REGSEL, bits[6:0]
+  page: C1-703..C1-704
+  extraction: manual
+  note: Defined as a prose field description rather than a table, so this mapping is transcribed by hand.
+    Every entry names the section and field it came from so a reviewer can check it against the manual.
+registers:
+  R0:
+    regsel: 0
+    lsb: 0
+    width: 32
+  R1:
+    regsel: 1
+    lsb: 0
+    width: 32
+  R2:
+    regsel: 2
+    lsb: 0
+    width: 32
+  R3:
+    regsel: 3
+    lsb: 0
+    width: 32
+  R4:
+    regsel: 4
+    lsb: 0
+    width: 32
+  R5:
+    regsel: 5
+    lsb: 0
+    width: 32
+  R6:
+    regsel: 6
+    lsb: 0
+    width: 32
+  R7:
+    regsel: 7
+    lsb: 0
+    width: 32
+  R8:
+    regsel: 8
+    lsb: 0
+    width: 32
+  R9:
+    regsel: 9
+    lsb: 0
+    width: 32
+  R10:
+    regsel: 10
+    lsb: 0
+    width: 32
+  R11:
+    regsel: 11
+    lsb: 0
+    width: 32
+  R12:
+    regsel: 12
+    lsb: 0
+    width: 32
+  LR:
+    regsel: 14
+    lsb: 0
+    width: 32
+  PC:
+    regsel: 15
+    lsb: 0
+    width: 32
+    note: REGSEL 15 selects DebugReturnAddress, see C1-704
+  SP_main:
+    regsel: 17
+    lsb: 0
+    width: 32
+  SP_process:
+    regsel: 18
+    lsb: 0
+    width: 32
+  MSP:
+    regsel: 17
+    lsb: 0
+    width: 32
+  PSP:
+    regsel: 18
+    lsb: 0
+    width: 32
+  XPSR:
+    regsel: 16
+    lsb: 0
+    width: 32
+  PRIMASK:
+    regsel: 20
+    lsb: 0
+    width: 8
+  BASEPRI:
+    regsel: 20
+    lsb: 8
+    width: 8
+  FAULTMASK:
+    regsel: 20
+    lsb: 16
+    width: 8
+  CONTROL:
+    regsel: 20
+    lsb: 24
+    width: 8
+  FPSCR:
+    regsel: 33
+    lsb: 0
+    width: 32
+    requires: FP_EXTENSION
+  APSR:
+    regsel: 16
+    lsb: 0
+    width: 32
+    view_of: XPSR
+    note: Application PSR view of xPSR; flags in bits[31:27] plus GE when DSP is implemented
+  IPSR:
+    regsel: 16
+    lsb: 0
+    width: 9
+    view_of: XPSR
+    note: Exception number, xPSR bits[8:0]
+  EPSR:
+    regsel: 16
+    lsb: 0
+    width: 32
+    view_of: XPSR
+    note: Execution state view of xPSR; ICI/IT and T bit

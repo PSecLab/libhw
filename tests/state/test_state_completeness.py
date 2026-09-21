@@ -222,3 +222,58 @@ def test_special_register_encoder_against_assembler():
         capture_output=True, text=True)
     assert proc.returncode == 0, proc.stdout + proc.stderr
     assert "Mismatches:         0" in proc.stdout, proc.stdout
+
+
+@pytest.mark.parametrize("target", TARGETS)
+def test_offset_encodings_are_marked(target):
+    """
+    A component-relative offset must be marked as one in the generated table.
+
+    Reading an offset as though it were an absolute address silently returns
+    some unrelated location and reports success. On an STM32F429 the ROM table
+    offsets (0x000, 0xFCC, ...) land in boot-aliased memory, so every one of
+    them read back cleanly and was reported AVAILABLE until this was fixed.
+    """
+    from state.generate import _c_name
+
+    text = (GEN_DIR / f"{target}.def").read_text()
+    # Key on the component-qualified identifier: the same register name appears
+    # in several CoreSight blocks, one absolute and another relative.
+    offsets = {_c_name(e) for e in entries(target)
+               if e.get("encoding_kind") == "offset"
+               and e["classification"] in (Classification.EMITTED_STATE.value,
+                                           Classification.CONDITIONAL_STATE.value)}
+    for cid in sorted(offsets):
+        row = re.search(rf'^HW_STATE\({re.escape(cid)},.*$', text, re.M)
+        assert row, f"{cid} missing from the generated table"
+        assert "HW_ENC_OFFSET" in row.group(0), \
+            f"{cid} is a component-relative offset but is not marked HW_ENC_OFFSET"
+
+
+def test_debug_access_paths_have_provenance():
+    """The DCRSR mapping is transcribed from prose, so it must say where from."""
+    p = ROOT / "spec" / "rules" / "armv7m.access.yaml"
+    doc = yaml.safe_load(p.read_text())
+    prov = doc.get("provenance") or {}
+    for field in ("document", "revision", "section", "field", "extraction"):
+        assert prov.get(field), f"access manifest provenance missing {field}"
+    assert prov["extraction"] == "manual", "hand-transcribed data must be flagged as such"
+    assert doc["registers"], "access manifest declares no registers"
+
+
+def test_sysm_and_regsel_are_distinct_encodings():
+    """
+    SYSm (MRS/MSR) and REGSEL (DCRSR) are different numbers for the same state.
+    Conflating them is a classic source of wrong reads, so assert they really
+    do differ for at least one register rather than assuming.
+    """
+    access = yaml.safe_load((ROOT / "spec" / "rules" / "armv7m.access.yaml").read_text())["registers"]
+    differing = []
+    for e in entries(ARCH_TARGET):
+        enc = e.get("encoding") or ""
+        if not enc.startswith("SYSm="):
+            continue
+        a = access.get(e["canonical_name"])
+        if a and a["regsel"] != int(enc.split("=")[1]):
+            differing.append(e["canonical_name"])
+    assert differing, "expected SYSm and REGSEL to differ for at least one register"

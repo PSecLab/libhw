@@ -50,11 +50,27 @@ typedef enum {
     HW_STATE_READ_FAILED,
 } hw_state_avail_t;
 
+/**
+ * What an encoding string means.
+ *
+ * An offset is meaningless without its component's base address, so it must
+ * never be used as though it were an absolute address: doing so reads some
+ * unrelated location and reports success.
+ */
+typedef enum {
+    HW_ENC_ABSOLUTE = 0,   /* a full target address */
+    HW_ENC_OFFSET,         /* relative to a component base we do not record yet */
+    HW_ENC_SYSM,           /* MRS/MSR SYSm value */
+    HW_ENC_CORE,           /* Arm core register */
+    HW_ENC_FP_SYSREG,      /* VMRS/VMSR system register */
+} hw_enc_kind_t;
+
 typedef struct {
     const char *name;        /* canonical name as printed in the manual */
     hw_ns_t     ns;
     hw_acc_t    access;
     const char *encoding;    /* "0xE000ED00", "SYSm=16", ... */
+    hw_enc_kind_t enc_kind;
     uint16_t    width;       /* bits */
     uint8_t     readable;
     uint8_t     writable;
@@ -77,6 +93,34 @@ typedef struct {
     const char *reason;
 } hw_state_operation_t;
 
+/**
+ * A debug access path: DCRSR selects a register and its value appears in DCRDR.
+ *
+ * This is a second, independent encoding for state that is also reachable by
+ * MRS/MSR. An instruction uses the SYSm value from Table B5-1; a debugger uses
+ * the REGSEL value from the DCRSR field description. They are not the same
+ * number, and conflating them is a classic source of wrong reads.
+ */
+typedef struct {
+    const char *name;
+    uint8_t     regsel;
+    uint8_t     lsb;      /* REGSEL 20 packs four registers into byte lanes */
+    uint8_t     width;
+} hw_state_dbgreg_t;
+
+/** What a target actually implements, derived from its ID registers. */
+typedef struct {
+    uint32_t    cpuid;
+    uint16_t    partno;         /* CPUID bits[15:4] */
+    const char *cpu_name;       /* NULL when the part is not one we have a TRM for */
+    const char *overlay;        /* pinned CPU overlay database, or NULL */
+    uint8_t     fp_extension;
+    uint8_t     mpu;
+    uint8_t     mpu_regions;    /* MPU_TYPE.DREGION */
+    uint8_t     dwt_numcomp;    /* DWT_CTRL.NUMCOMP */
+    uint8_t     nvic_intlinesnum;  /* ICTR.INTLINESNUM */
+} hw_cpu_features_t;
+
 /** One generated state database (an architecture, or a CPU overlay). */
 typedef struct {
     const char                 *name;
@@ -87,6 +131,8 @@ typedef struct {
     size_t                      alias_count;
     const hw_state_operation_t *operations;
     size_t                      operation_count;
+    const hw_state_dbgreg_t    *dbgregs;
+    size_t                      dbgreg_count;
 } hw_state_db_t;
 
 /** The databases built into this library. Terminated by a NULL name. */
@@ -109,5 +155,26 @@ const hw_state_desc_t *hw_state_find(const hw_state_db_t *db, const char *name);
  */
 int hw_state_read(hw_t *ctx, const hw_state_desc_t *desc,
                   uint32_t *value_out, hw_state_avail_t *why);
+
+/**
+ * Read the target's ID registers and derive what it implements.
+ *
+ * The target must be halted. Returns 0 on success. An unrecognised part is not
+ * an error: cpu_name and overlay are left NULL, because the absence of a
+ * pinned TRM for a part is a gap in our sources, not a fault in the target.
+ */
+int hw_state_identify(hw_t *ctx, hw_cpu_features_t *out);
+
+/**
+ * Whether a descriptor's feature requirement is satisfied by this target.
+ * Descriptors with no requirement are always expected.
+ */
+int hw_state_expected(const hw_state_desc_t *desc, const hw_cpu_features_t *f);
+
+/** Human-readable name for an availability result. */
+const char *hw_state_avail_name(hw_state_avail_t a);
+
+/** Find the DCRSR access path for a register, or NULL. */
+const hw_state_dbgreg_t *hw_state_dbgreg(const hw_state_db_t *db, const char *name);
 
 #endif // HW_STATE_H

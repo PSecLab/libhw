@@ -67,6 +67,14 @@ def _load_rules(target: str) -> dict:
     return yaml.safe_load(p.read_text())
 
 
+def _load_access_rules(target: str) -> dict:
+    """Debug access paths, where the manual defines them in prose rather than a table."""
+    p = RULES_DIR / f"{target}.access.yaml"
+    if not p.is_file():
+        return {}
+    return (yaml.safe_load(p.read_text()) or {}).get("registers", {}) or {}
+
+
 def _load_classify_rules(target: str) -> dict:
     p = RULES_DIR / f"{target}.classify.yaml"
     if not p.is_file():
@@ -101,6 +109,7 @@ def _access_flags(typ: str) -> tuple[bool, bool]:
 def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list[StateEntry], ImportReport]:
     rules_doc = _load_rules(target)
     overrides = _load_classify_rules(target)
+    access_paths = _load_access_rules(target)
     src = get_source(rules_doc["source"])
     path = src.verify()
 
@@ -207,6 +216,9 @@ def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list
                           and readable and namespace in (Namespace.ARCH, Namespace.CPU)),
                 source_family="ARM_TRM" if src.document == "DDI0489" else "ARM_ARM",
                 component=rule.get("component", ""),
+                debug_regsel=(access_paths.get(name) or {}).get("regsel"),
+                debug_lsb=int((access_paths.get(name) or {}).get("lsb", 0)),
+                debug_width=int((access_paths.get(name) or {}).get("width", 32)),
                 encoding_kind=PROFILE_ENCODING_KIND.get(rule["profile"], "absolute"),
                 source_release=f"{src.document} {src.revision}")
 

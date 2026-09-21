@@ -131,7 +131,74 @@ python3 tools/state_source_diff.py --target armv7m          # drift vs the sourc
 python3 tools/state_cmsis_diff.py --target armv7m \
     --target cortex_m7_r0p2 --header /path/to/core_cm7.h    # independent cross-check
 python3 tools/state_encoding_check.py --target armv7m       # assembler oracle
+
+./out/state_probe stlink            # validate against a live target
+./out/state_probe stlink --verbose  # ... and print every value read
 ```
+
+## Two encodings for the same state
+
+A register reachable both by instruction and by debugger has two different
+encodings, and conflating them reads the wrong thing:
+
+| State | MRS/MSR `SYSm` (Table B5-1) | DCRSR `REGSEL` (C1.6.3) |
+|---|---|---|
+| `MSP` | 8 | 17 |
+| `PSP` | 9 | 18 |
+| `PRIMASK` | 16 | 20, bits[7:0] |
+| `BASEPRI` | 17 | 20, bits[15:8] |
+| `CONTROL` | 20 | 20, bits[31:24] |
+
+`SYSm` comes from a table and is checked against `llvm-mc`. `REGSEL` is given
+as a prose field description, so it is transcribed by hand in
+`spec/rules/armv7m.access.yaml`, flagged `extraction: manual`, and carries the
+section and field it came from. A CI test asserts the two really do differ, so
+nobody later "simplifies" them into one number.
+
+## Validated on hardware
+
+Run against an STM32F429I board over ST-LINK/V2.1 (`make && ./out/state_probe stlink`):
+
+```
+CPUID              0x410FC241  (PARTNO 0xC24)
+Part               not recognised
+CPU overlay        none pinned - architecture manifest only
+FP extension       implemented
+MPU regions        8
+DWT comparators    4
+NVIC INTLINESNUM   2  (96 interrupt lines)
+
+armv7m (DDI0403 E.e): 610 state elements
+  write-only (not sampled)    3
+  AVAILABLE                 586
+  BACKEND_UNSUPPORTED        21
+```
+
+The derived features match the part: 8 MPU regions, 4 DWT comparators and 96
+interrupt lines are what an STM32F429 implements. Core and special-purpose
+registers read through DCRSR/DCRDR return coherent values -- `XPSR=0x01000000`
+with the T bit set, `MSP` in SRAM, `PC` in flash, `DHCSR` showing halted with
+`S_REGRDY`.
+
+PARTNO 0xC24 is a Cortex-M4. We hold no TRM for it, so the probe applies the
+architecture manifest only and says so, rather than applying the Cortex-M7
+overlay to a part it does not describe.
+
+### What AVAILABLE does and does not mean
+
+`AVAILABLE` means the read transaction completed, not that the register is
+implemented. On Cortex-M an unimplemented word in the PPB generally reads as
+zero rather than faulting, so a clean read is weak evidence of existence.
+Runtime inaccessibility is reported separately from architectural absence, and
+neither is inferred from the other.
+
+This distinction caught a real defect. Eighteen ROM-table and CoreSight
+registers are given in the manual as offsets within a component
+(`0x000`, `0xFCC`, ...). They were being read as absolute addresses, which on
+this part lands in boot-aliased memory -- so all eighteen read back cleanly and
+were reported `AVAILABLE`. Encodings now record whether they are absolute or
+relative, `hw_state_read` refuses a relative one, and a CI test keeps them
+marked.
 
 ## Not done
 
@@ -147,11 +214,14 @@ Honest scope boundaries, so nobody mistakes silence for coverage:
   backend.
 - **RISC-V.** `csrs.csv` from riscv-opcodes has been fetched and is pinnable, but
   no importer exists yet.
-- **Runtime feature resolution (§33).** The availability taxonomy is defined
-  (`hw_state_avail_t`) and `hw_state_read` classifies failures, but nothing yet
-  reads the ID registers to derive the implemented feature set.
+- **Component base addresses.** Eighteen ROM-table and CoreSight registers are
+  documented as offsets within a component. No base addresses are recorded, so
+  `hw_state_read` refuses them rather than guessing. Recording the bases would
+  make them readable.
+- **CPU overlays beyond Cortex-M7.** Only DDI0489B is pinned, so PARTNO 0xC24
+  (Cortex-M4, the part on the bench) gets architecture-only coverage. Adding it
+  is a matter of pinning DDI0439 and writing a rules file -- no new methodology.
 - **Snapshot serialization (§34).** The snapshot set is computed and CI asserts
   the generated set matches the manifest, but there is no serializer.
-- **Non-memory-mapped access paths.** `hw_state_read` handles memory-mapped
-  state; core, special and FP system registers report
-  `HW_STATE_BACKEND_UNSUPPORTED` rather than guessing a path that does not exist.
+- **Write paths.** Everything here reads. Nothing writes architectural state
+  apart from DCRSR, which is how a debugger selects a register for transfer.

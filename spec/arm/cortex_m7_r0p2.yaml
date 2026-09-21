@@ -30,6 +30,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTICONTROL
 - canonical_name: CTIINTACK
@@ -56,6 +59,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIINTACK
 - canonical_name: CTIAPPSET
@@ -82,6 +88,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIAPPSET
 - canonical_name: CTIAPPCLEAR
@@ -108,6 +117,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIAPPCLEAR
 - canonical_name: CTIAPPPULSE
@@ -134,6 +146,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIAPPPULSE
 - canonical_name: CTITRIGINSTATUS
@@ -160,6 +175,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTITRIGINSTATUS
 - canonical_name: CTITRIGOUTSTATUS
@@ -186,6 +204,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTITRIGOUTSTATUS
 - canonical_name: CTICHINSTATUS
@@ -212,6 +233,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTICHINSTATUS
 - canonical_name: CTIGATE
@@ -238,6 +262,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CTIGATE
 - canonical_name: ASICCTL
@@ -264,6 +291,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ASICCTL
 - canonical_name: ITCHINACK
@@ -290,6 +320,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITCHINACK
 - canonical_name: ITTRIGINACK
@@ -316,6 +349,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITTRIGINACK
 - canonical_name: ITCHOUT
@@ -342,6 +378,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITCHOUT
 - canonical_name: ITTRIGOUT
@@ -368,6 +407,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITTRIGOUT
 - canonical_name: ITCHOUTACK
@@ -394,6 +436,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITCHOUTACK
 - canonical_name: ITTRIGOUTACK
@@ -420,6 +465,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITTRIGOUTACK
 - canonical_name: ITCHIN
@@ -446,6 +494,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITCHIN
 - canonical_name: ITTRIGIN
@@ -472,6 +523,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITTRIGIN
 - canonical_name: ITCTRL
@@ -498,6 +552,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:ITCTRL
 - canonical_name: CLAIMSET
@@ -524,6 +581,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CLAIMSET
 - canonical_name: CLAIMCLR
@@ -550,6 +610,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CLAIMCLR
 - canonical_name: LAR
@@ -576,6 +639,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:LAR
 - canonical_name: LSR
@@ -602,6 +668,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:LSR
 - canonical_name: AUTHSTATUS
@@ -628,6 +697,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:AUTHSTATUS
 - canonical_name: DEVID
@@ -654,6 +726,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:DEVID
 - canonical_name: DEVTYPE
@@ -680,6 +755,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:DEVTYPE
 - canonical_name: PIDR4
@@ -706,6 +784,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:PIDR4
 - canonical_name: RESERVED_0xFD4
@@ -732,6 +813,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xFD4
 - canonical_name: RESERVED_0xFD8
@@ -758,6 +842,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xFD8
 - canonical_name: RESERVED_0xFDC
@@ -784,6 +871,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xFDC
 - canonical_name: PIDR0
@@ -810,6 +900,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:PIDR0
 - canonical_name: PIDR1
@@ -836,6 +929,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:PIDR1
 - canonical_name: PIDR2
@@ -862,6 +958,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:PIDR2
 - canonical_name: PIDR3
@@ -888,6 +987,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:PIDR3
 - canonical_name: CIDR0
@@ -914,6 +1016,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CIDR0
 - canonical_name: CIDR1
@@ -940,6 +1045,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CIDR1
 - canonical_name: CIDR2
@@ -966,6 +1074,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CIDR2
 - canonical_name: CIDR3
@@ -992,6 +1103,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: CTI
   state_id: ARMv7-M:debug:CTI:CIDR3
 - canonical_name: DWT_CTRL
@@ -1018,6 +1132,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_CTRL
 - canonical_name: DWT_CYCCNT
@@ -1044,6 +1161,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_CYCCNT
 - canonical_name: DWT_CPICNT
@@ -1070,6 +1190,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_CPICNT
 - canonical_name: DWT_EXCCNT
@@ -1096,6 +1219,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_EXCCNT
 - canonical_name: DWT_SLEEPCNT
@@ -1122,6 +1248,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_SLEEPCNT
 - canonical_name: DWT_LSUCNT
@@ -1148,6 +1277,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_LSUCNT
 - canonical_name: DWT_FOLDCNT
@@ -1174,6 +1306,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_FOLDCNT
 - canonical_name: DWT_PCSR
@@ -1200,6 +1335,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_PCSR
 - canonical_name: DWT_COMP0
@@ -1226,6 +1364,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_COMP0
 - canonical_name: DWT_MASK0
@@ -1252,6 +1393,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_MASK0
 - canonical_name: DWT_FUNCTION0
@@ -1278,6 +1422,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_FUNCTION0
 - canonical_name: DWT_COMP1
@@ -1304,6 +1451,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_COMP1
 - canonical_name: DWT_MASK1
@@ -1330,6 +1480,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_MASK1
 - canonical_name: DWT_FUNCTION1
@@ -1356,6 +1509,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_FUNCTION1
 - canonical_name: DWT_COMP2
@@ -1382,6 +1538,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_COMP2
 - canonical_name: DWT_MASK2
@@ -1408,6 +1567,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_MASK2
 - canonical_name: DWT_FUNCTION2
@@ -1434,6 +1596,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_FUNCTION2
 - canonical_name: DWT_COMP3
@@ -1460,6 +1625,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_COMP3
 - canonical_name: DWT_MASK3
@@ -1486,6 +1654,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_MASK3
 - canonical_name: DWT_FUNCTION3
@@ -1512,6 +1683,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_FUNCTION3
 - canonical_name: DWT_LAR
@@ -1538,6 +1712,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_LAR
 - canonical_name: DWT_LSR
@@ -1564,6 +1741,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:DWT_LSR
 - canonical_name: PID4
@@ -1590,6 +1770,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID4
 - canonical_name: PID5
@@ -1616,6 +1799,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID5
 - canonical_name: PID6
@@ -1642,6 +1828,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID6
 - canonical_name: PID7
@@ -1668,6 +1857,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID7
 - canonical_name: PID0
@@ -1694,6 +1886,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID0
 - canonical_name: PID1
@@ -1720,6 +1915,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID1
 - canonical_name: PID2
@@ -1746,6 +1944,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID2
 - canonical_name: PID3
@@ -1772,6 +1973,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:PID3
 - canonical_name: CID0
@@ -1798,6 +2002,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:CID0
 - canonical_name: CID1
@@ -1824,6 +2031,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:CID1
 - canonical_name: CID2
@@ -1850,6 +2060,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:CID2
 - canonical_name: CID3
@@ -1876,6 +2089,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DWT
   state_id: ARMv7-M:debug:DWT:CID3
 - canonical_name: ITM_TER
@@ -1902,6 +2118,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_TER
 - canonical_name: ITM_TPR
@@ -1928,6 +2147,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_TPR
 - canonical_name: ITM_TCR
@@ -1954,6 +2176,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_TCR
 - canonical_name: ITM_ITATRDY
@@ -1980,6 +2205,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_ITATRDY
 - canonical_name: ITM_ITATVAL
@@ -2006,6 +2234,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_ITATVAL
 - canonical_name: ITM_TCTRL
@@ -2032,6 +2263,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_TCTRL
 - canonical_name: ITM_LAR
@@ -2058,6 +2292,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_LAR
 - canonical_name: ITM_LSR
@@ -2084,6 +2321,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:ITM_LSR
 - canonical_name: PID4
@@ -2110,6 +2350,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID4
 - canonical_name: PID5
@@ -2136,6 +2379,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID5
 - canonical_name: PID6
@@ -2162,6 +2408,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID6
 - canonical_name: PID7
@@ -2188,6 +2437,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID7
 - canonical_name: PID0
@@ -2214,6 +2466,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID0
 - canonical_name: PID1
@@ -2240,6 +2495,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID1
 - canonical_name: PID2
@@ -2266,6 +2524,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID2
 - canonical_name: PID3
@@ -2292,6 +2553,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:PID3
 - canonical_name: CID0
@@ -2318,6 +2582,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:CID0
 - canonical_name: CID1
@@ -2344,6 +2611,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:CID1
 - canonical_name: CID2
@@ -2370,6 +2640,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:CID2
 - canonical_name: CID3
@@ -2396,6 +2669,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ITM
   state_id: ARMv7-M:debug:ITM:CID3
 - canonical_name: ACTLR
@@ -2422,6 +2698,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ACTLR
 - canonical_name: RESERVED_0xE000E00C
@@ -2448,6 +2727,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000E00C
 - canonical_name: SYST_CSR
@@ -2474,6 +2756,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SYST_CSR
 - canonical_name: SYST_RVR
@@ -2500,6 +2785,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SYST_RVR
 - canonical_name: SYST_CVR
@@ -2526,6 +2814,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SYST_CVR
 - canonical_name: SYST_CALIB
@@ -2552,6 +2843,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SYST_CALIB
 - canonical_name: CPUID
@@ -2578,6 +2872,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CPUID
 - canonical_name: ICSR
@@ -2604,6 +2901,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ICSR
 - canonical_name: VTOR
@@ -2630,6 +2930,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:VTOR
 - canonical_name: AIRCR
@@ -2656,6 +2959,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:AIRCR
 - canonical_name: SCR
@@ -2682,6 +2988,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SCR
 - canonical_name: CCR
@@ -2708,6 +3017,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CCR
 - canonical_name: SHPR1
@@ -2734,6 +3046,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SHPR1
 - canonical_name: SHPR2
@@ -2760,6 +3075,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SHPR2
 - canonical_name: SHPR3
@@ -2786,6 +3104,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SHPR3
 - canonical_name: SHCSR
@@ -2812,6 +3133,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:SHCSR
 - canonical_name: CFSR
@@ -2838,6 +3162,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CFSR
 - canonical_name: HFSR
@@ -2864,6 +3191,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:HFSR
 - canonical_name: DFSR
@@ -2890,6 +3220,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DFSR
 - canonical_name: MMFAR
@@ -2916,6 +3249,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:MMFAR
 - canonical_name: BFAR
@@ -2942,6 +3278,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:BFAR
 - canonical_name: ID_PFR0
@@ -2968,6 +3307,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_PFR0
 - canonical_name: ID_PFR1
@@ -2994,6 +3336,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_PFR1
 - canonical_name: ID_DFR0
@@ -3020,6 +3365,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_DFR0
 - canonical_name: ID_AFR0
@@ -3046,6 +3394,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_AFR0
 - canonical_name: ID_MMFR0
@@ -3072,6 +3423,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_MMFR0
 - canonical_name: ID_MMFR1
@@ -3098,6 +3452,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_MMFR1
 - canonical_name: ID_MMFR2
@@ -3124,6 +3481,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_MMFR2
 - canonical_name: ID_MMFR3
@@ -3150,6 +3510,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_MMFR3
 - canonical_name: ID_ISAR0
@@ -3176,6 +3539,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_ISAR0
 - canonical_name: ID_ISAR1
@@ -3202,6 +3568,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_ISAR1
 - canonical_name: ID_ISAR2
@@ -3228,6 +3597,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_ISAR2
 - canonical_name: ID_ISAR3
@@ -3254,6 +3626,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_ISAR3
 - canonical_name: ID_ISAR4
@@ -3280,6 +3655,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ID_ISAR4
 - canonical_name: CLIDR
@@ -3306,6 +3684,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CLIDR
 - canonical_name: CTR
@@ -3332,6 +3713,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CTR
 - canonical_name: CCSIDR
@@ -3358,6 +3742,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CCSIDR
 - canonical_name: CSSELR
@@ -3384,6 +3771,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CSSELR
 - canonical_name: CPACR
@@ -3410,6 +3800,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CPACR
 - canonical_name: STIR
@@ -3436,6 +3829,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:STIR
 - canonical_name: ICIALLU
@@ -3462,6 +3858,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ICIALLU
 - canonical_name: RESERVED_0xE000EF54
@@ -3488,6 +3887,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000EF54
 - canonical_name: ICIMVAU
@@ -3514,6 +3916,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:ICIMVAU
 - canonical_name: DCIMVAC
@@ -3540,6 +3945,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCIMVAC
 - canonical_name: DCISW
@@ -3566,6 +3974,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCISW
 - canonical_name: DCCMVAU
@@ -3592,6 +4003,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCCMVAU
 - canonical_name: DCCMVAC
@@ -3618,6 +4032,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCCMVAC
 - canonical_name: DCCSW
@@ -3644,6 +4061,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCCSW
 - canonical_name: DCCIMVAC
@@ -3670,6 +4090,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCCIMVAC
 - canonical_name: DCCISW
@@ -3696,6 +4119,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:DCCISW
 - canonical_name: BPIALL
@@ -3722,6 +4148,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:BPIALL
 - canonical_name: RESERVED_0xE000EF7C
@@ -3748,6 +4177,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000EF7C
 - canonical_name: RESERVED_0xE000EF80
@@ -3774,6 +4206,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000EF80
 - canonical_name: CM7_ITCMCR
@@ -3800,6 +4235,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_ITCMCR
 - canonical_name: CM7_DTCMCR
@@ -3826,6 +4264,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_DTCMCR
 - canonical_name: CM7_AHBPCR
@@ -3852,6 +4293,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_AHBPCR
 - canonical_name: CM7_CACR
@@ -3878,6 +4322,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_CACR
 - canonical_name: CM7_AHBSCR
@@ -3904,6 +4351,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_AHBSCR
 - canonical_name: RESERVED_0xE000EFA4
@@ -3930,6 +4380,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:RESERVED_0xE000EFA4
 - canonical_name: CM7_ABFSR
@@ -3956,6 +4409,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:CM7_ABFSR
 - canonical_name: IEBR0
@@ -3982,6 +4438,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:IEBR0
 - canonical_name: IEBR1
@@ -4008,6 +4467,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:IEBR1
 - canonical_name: DEBR0
@@ -4034,6 +4496,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:DEBR0
 - canonical_name: DEBR1
@@ -4060,6 +4525,9 @@ entries:
   snapshot: true
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:cpu:SCS:DEBR1
 - canonical_name: PID4
@@ -4086,6 +4554,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID4
 - canonical_name: PID5
@@ -4112,6 +4583,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID5
 - canonical_name: PID6
@@ -4138,6 +4612,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID6
 - canonical_name: PID7
@@ -4164,6 +4641,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID7
 - canonical_name: PID0
@@ -4190,6 +4670,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID0
 - canonical_name: PID1
@@ -4216,6 +4699,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID1
 - canonical_name: PID2
@@ -4242,6 +4728,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID2
 - canonical_name: PID3
@@ -4268,6 +4757,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:PID3
 - canonical_name: CID0
@@ -4294,6 +4786,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CID0
 - canonical_name: CID1
@@ -4320,6 +4815,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CID1
 - canonical_name: CID2
@@ -4346,6 +4844,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CID2
 - canonical_name: CID3
@@ -4372,6 +4873,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:arch:SCS:CID3
 - canonical_name: MPU_TYPE
@@ -4398,6 +4902,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_TYPE
 - canonical_name: MPU_CTRL
@@ -4424,6 +4931,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_CTRL
 - canonical_name: MPU_RNR
@@ -4450,6 +4960,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RNR
 - canonical_name: MPU_RBAR
@@ -4476,6 +4989,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RBAR
 - canonical_name: MPU_RASR
@@ -4502,6 +5018,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RASR
 - canonical_name: MPU_RBAR_A1
@@ -4528,6 +5047,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RBAR_A1
 - canonical_name: MPU_RASR_A1
@@ -4554,6 +5076,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RASR_A1
 - canonical_name: MPU_RBAR_A2
@@ -4580,6 +5105,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RBAR_A2
 - canonical_name: MPU_RASR_A2
@@ -4606,6 +5134,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RASR_A2
 - canonical_name: MPU_RBAR_A3
@@ -4632,6 +5163,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RBAR_A3
 - canonical_name: MPU_RASR_A3
@@ -4658,6 +5192,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: MPU
   state_id: ARMv7-M:arch:MPU:MPU_RASR_A3
 - canonical_name: ICTR
@@ -4684,6 +5221,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:ICTR
 - canonical_name: NVIC_ISER0
@@ -4710,6 +5250,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER0
 - canonical_name: NVIC_ISER1
@@ -4736,6 +5279,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER1
 - canonical_name: NVIC_ISER2
@@ -4762,6 +5308,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER2
 - canonical_name: NVIC_ISER3
@@ -4788,6 +5337,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER3
 - canonical_name: NVIC_ISER4
@@ -4814,6 +5366,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER4
 - canonical_name: NVIC_ISER5
@@ -4840,6 +5395,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER5
 - canonical_name: NVIC_ISER6
@@ -4866,6 +5424,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER6
 - canonical_name: NVIC_ISER7
@@ -4892,6 +5453,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISER7
 - canonical_name: NVIC_ICER0
@@ -4918,6 +5482,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER0
 - canonical_name: NVIC_ICER1
@@ -4944,6 +5511,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER1
 - canonical_name: NVIC_ICER2
@@ -4970,6 +5540,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER2
 - canonical_name: NVIC_ICER3
@@ -4996,6 +5569,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER3
 - canonical_name: NVIC_ICER4
@@ -5022,6 +5598,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER4
 - canonical_name: NVIC_ICER5
@@ -5048,6 +5627,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER5
 - canonical_name: NVIC_ICER6
@@ -5074,6 +5656,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER6
 - canonical_name: NVIC_ICER7
@@ -5100,6 +5685,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICER7
 - canonical_name: NVIC_ISPR0
@@ -5126,6 +5714,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR0
 - canonical_name: NVIC_ISPR1
@@ -5152,6 +5743,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR1
 - canonical_name: NVIC_ISPR2
@@ -5178,6 +5772,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR2
 - canonical_name: NVIC_ISPR3
@@ -5204,6 +5801,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR3
 - canonical_name: NVIC_ISPR4
@@ -5230,6 +5830,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR4
 - canonical_name: NVIC_ISPR5
@@ -5256,6 +5859,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR5
 - canonical_name: NVIC_ISPR6
@@ -5282,6 +5888,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR6
 - canonical_name: NVIC_ISPR7
@@ -5308,6 +5917,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ISPR7
 - canonical_name: NVIC_ICPR0
@@ -5334,6 +5946,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR0
 - canonical_name: NVIC_ICPR1
@@ -5360,6 +5975,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR1
 - canonical_name: NVIC_ICPR2
@@ -5386,6 +6004,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR2
 - canonical_name: NVIC_ICPR3
@@ -5412,6 +6033,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR3
 - canonical_name: NVIC_ICPR4
@@ -5438,6 +6062,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR4
 - canonical_name: NVIC_ICPR5
@@ -5464,6 +6091,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR5
 - canonical_name: NVIC_ICPR6
@@ -5490,6 +6120,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR6
 - canonical_name: NVIC_ICPR7
@@ -5516,6 +6149,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_ICPR7
 - canonical_name: NVIC_IABR0
@@ -5542,6 +6178,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR0
 - canonical_name: NVIC_IABR1
@@ -5568,6 +6207,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR1
 - canonical_name: NVIC_IABR2
@@ -5594,6 +6236,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR2
 - canonical_name: NVIC_IABR3
@@ -5620,6 +6265,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR3
 - canonical_name: NVIC_IABR4
@@ -5646,6 +6294,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR4
 - canonical_name: NVIC_IABR5
@@ -5672,6 +6323,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR5
 - canonical_name: NVIC_IABR6
@@ -5698,6 +6352,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR6
 - canonical_name: NVIC_IABR7
@@ -5724,6 +6381,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IABR7
 - canonical_name: NVIC_IPR0
@@ -5750,6 +6410,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR0
 - canonical_name: NVIC_IPR1
@@ -5776,6 +6439,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR1
 - canonical_name: NVIC_IPR2
@@ -5802,6 +6468,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR2
 - canonical_name: NVIC_IPR3
@@ -5828,6 +6497,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR3
 - canonical_name: NVIC_IPR4
@@ -5854,6 +6526,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR4
 - canonical_name: NVIC_IPR5
@@ -5880,6 +6555,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR5
 - canonical_name: NVIC_IPR6
@@ -5906,6 +6584,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR6
 - canonical_name: NVIC_IPR7
@@ -5932,6 +6613,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR7
 - canonical_name: NVIC_IPR8
@@ -5958,6 +6642,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR8
 - canonical_name: NVIC_IPR9
@@ -5984,6 +6671,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR9
 - canonical_name: NVIC_IPR10
@@ -6010,6 +6700,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR10
 - canonical_name: NVIC_IPR11
@@ -6036,6 +6729,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR11
 - canonical_name: NVIC_IPR12
@@ -6062,6 +6758,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR12
 - canonical_name: NVIC_IPR13
@@ -6088,6 +6787,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR13
 - canonical_name: NVIC_IPR14
@@ -6114,6 +6816,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR14
 - canonical_name: NVIC_IPR15
@@ -6140,6 +6845,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR15
 - canonical_name: NVIC_IPR16
@@ -6166,6 +6874,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR16
 - canonical_name: NVIC_IPR17
@@ -6192,6 +6903,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR17
 - canonical_name: NVIC_IPR18
@@ -6218,6 +6932,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR18
 - canonical_name: NVIC_IPR19
@@ -6244,6 +6961,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR19
 - canonical_name: NVIC_IPR20
@@ -6270,6 +6990,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR20
 - canonical_name: NVIC_IPR21
@@ -6296,6 +7019,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR21
 - canonical_name: NVIC_IPR22
@@ -6322,6 +7048,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR22
 - canonical_name: NVIC_IPR23
@@ -6348,6 +7077,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR23
 - canonical_name: NVIC_IPR24
@@ -6374,6 +7106,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR24
 - canonical_name: NVIC_IPR25
@@ -6400,6 +7135,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR25
 - canonical_name: NVIC_IPR26
@@ -6426,6 +7164,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR26
 - canonical_name: NVIC_IPR27
@@ -6452,6 +7193,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR27
 - canonical_name: NVIC_IPR28
@@ -6478,6 +7222,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR28
 - canonical_name: NVIC_IPR29
@@ -6504,6 +7251,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR29
 - canonical_name: NVIC_IPR30
@@ -6530,6 +7280,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR30
 - canonical_name: NVIC_IPR31
@@ -6556,6 +7309,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR31
 - canonical_name: NVIC_IPR32
@@ -6582,6 +7338,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR32
 - canonical_name: NVIC_IPR33
@@ -6608,6 +7367,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR33
 - canonical_name: NVIC_IPR34
@@ -6634,6 +7396,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR34
 - canonical_name: NVIC_IPR35
@@ -6660,6 +7425,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR35
 - canonical_name: NVIC_IPR36
@@ -6686,6 +7454,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR36
 - canonical_name: NVIC_IPR37
@@ -6712,6 +7483,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR37
 - canonical_name: NVIC_IPR38
@@ -6738,6 +7512,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR38
 - canonical_name: NVIC_IPR39
@@ -6764,6 +7541,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR39
 - canonical_name: NVIC_IPR40
@@ -6790,6 +7570,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR40
 - canonical_name: NVIC_IPR41
@@ -6816,6 +7599,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR41
 - canonical_name: NVIC_IPR42
@@ -6842,6 +7628,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR42
 - canonical_name: NVIC_IPR43
@@ -6868,6 +7657,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR43
 - canonical_name: NVIC_IPR44
@@ -6894,6 +7686,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR44
 - canonical_name: NVIC_IPR45
@@ -6920,6 +7715,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR45
 - canonical_name: NVIC_IPR46
@@ -6946,6 +7744,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR46
 - canonical_name: NVIC_IPR47
@@ -6972,6 +7773,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR47
 - canonical_name: NVIC_IPR48
@@ -6998,6 +7802,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR48
 - canonical_name: NVIC_IPR49
@@ -7024,6 +7831,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR49
 - canonical_name: NVIC_IPR50
@@ -7050,6 +7860,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR50
 - canonical_name: NVIC_IPR51
@@ -7076,6 +7889,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR51
 - canonical_name: NVIC_IPR52
@@ -7102,6 +7918,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR52
 - canonical_name: NVIC_IPR53
@@ -7128,6 +7947,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR53
 - canonical_name: NVIC_IPR54
@@ -7154,6 +7976,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR54
 - canonical_name: NVIC_IPR55
@@ -7180,6 +8005,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR55
 - canonical_name: NVIC_IPR56
@@ -7206,6 +8034,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR56
 - canonical_name: NVIC_IPR57
@@ -7232,6 +8063,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR57
 - canonical_name: NVIC_IPR58
@@ -7258,6 +8092,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR58
 - canonical_name: NVIC_IPR59
@@ -7284,6 +8121,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: NVIC
   state_id: ARMv7-M:arch:NVIC:NVIC_IPR59
 - canonical_name: FPCCR
@@ -7310,6 +8150,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:FPCCR
 - canonical_name: FPCAR
@@ -7336,6 +8179,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:FPCAR
 - canonical_name: FPDSCR
@@ -7362,6 +8208,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:FPDSCR
 - canonical_name: MVFR0
@@ -7388,6 +8237,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:MVFR0
 - canonical_name: MVFR1
@@ -7414,6 +8266,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:MVFR1
 - canonical_name: MVFR2
@@ -7440,6 +8295,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FP
   state_id: ARMv7-M:arch:FP:MVFR2
 - canonical_name: PIDR4
@@ -7466,6 +8324,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR4
 - canonical_name: PIDR5
@@ -7492,6 +8353,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR5
 - canonical_name: PIDR6
@@ -7518,6 +8382,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR6
 - canonical_name: PIDR7
@@ -7544,6 +8411,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR7
 - canonical_name: PIDR0
@@ -7570,6 +8440,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR0
 - canonical_name: PIDR1
@@ -7596,6 +8469,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR1
 - canonical_name: PIDR2
@@ -7622,6 +8498,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR2
 - canonical_name: PIDR3
@@ -7648,6 +8527,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:PIDR3
 - canonical_name: CIDR0
@@ -7674,6 +8556,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:CIDR0
 - canonical_name: CIDR1
@@ -7700,6 +8585,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:CIDR1
 - canonical_name: CIDR2
@@ -7726,6 +8614,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:CIDR2
 - canonical_name: CIDR3
@@ -7752,6 +8643,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: ROMTABLE
   state_id: ARMv7-M:debug:ROMTABLE:CIDR3
 - canonical_name: PIDR4
@@ -7778,6 +8672,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR4
 - canonical_name: PIDR5
@@ -7804,6 +8701,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR5
 - canonical_name: PIDR6
@@ -7830,6 +8730,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR6
 - canonical_name: PIDR7
@@ -7856,6 +8759,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR7
 - canonical_name: PIDR0
@@ -7882,6 +8788,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR0
 - canonical_name: PIDR1
@@ -7908,6 +8817,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR1
 - canonical_name: PIDR2
@@ -7934,6 +8846,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR2
 - canonical_name: PIDR3
@@ -7960,6 +8875,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:PIDR3
 - canonical_name: CIDR0
@@ -7986,6 +8904,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:CIDR0
 - canonical_name: CIDR1
@@ -8012,6 +8933,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:CIDR1
 - canonical_name: CIDR2
@@ -8038,6 +8962,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:CIDR2
 - canonical_name: CIDR3
@@ -8064,6 +8991,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: PPBROMTABLE
   state_id: ARMv7-M:debug:PPBROMTABLE:CIDR3
 - canonical_name: PIDR4
@@ -8090,6 +9020,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR4
 - canonical_name: PIDR5
@@ -8116,6 +9049,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR5
 - canonical_name: PIDR6
@@ -8142,6 +9078,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR6
 - canonical_name: PIDR7
@@ -8168,6 +9107,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR7
 - canonical_name: PIDR0
@@ -8194,6 +9136,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR0
 - canonical_name: PIDR1
@@ -8220,6 +9165,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR1
 - canonical_name: PIDR2
@@ -8246,6 +9194,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR2
 - canonical_name: PIDR3
@@ -8272,6 +9223,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:PIDR3
 - canonical_name: CIDR0
@@ -8298,6 +9252,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:CIDR0
 - canonical_name: CIDR1
@@ -8324,6 +9281,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:CIDR1
 - canonical_name: CIDR2
@@ -8350,6 +9310,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:CIDR2
 - canonical_name: CIDR3
@@ -8376,6 +9339,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: SCS
   state_id: ARMv7-M:debug:SCS:CIDR3
 - canonical_name: DFSR
@@ -8402,6 +9368,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DFSR
 - canonical_name: DHCSR
@@ -8428,6 +9397,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DHCSR
 - canonical_name: DCRSR
@@ -8454,6 +9426,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DCRSR
 - canonical_name: DCRDR
@@ -8480,6 +9455,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DCRDR
 - canonical_name: DEMCR
@@ -8506,6 +9484,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: DCB
   state_id: ARMv7-M:debug:DCB:DEMCR
 - canonical_name: FP_CTRL
@@ -8532,6 +9513,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_CTRL
 - canonical_name: FP_REMAP
@@ -8558,6 +9542,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_REMAP
 - canonical_name: FP_COMP0
@@ -8584,6 +9571,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP0
 - canonical_name: FP_COMP1
@@ -8610,6 +9600,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP1
 - canonical_name: FP_COMP2
@@ -8636,6 +9629,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP2
 - canonical_name: FP_COMP3
@@ -8662,6 +9658,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP3
 - canonical_name: FP_COMP4
@@ -8688,6 +9687,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP4
 - canonical_name: FP_COMP5
@@ -8714,6 +9716,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP5
 - canonical_name: FP_COMP6
@@ -8740,6 +9745,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP6
 - canonical_name: FP_COMP7
@@ -8766,6 +9774,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_COMP7
 - canonical_name: FP_LAR
@@ -8792,6 +9803,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_LAR
 - canonical_name: FP_LSR
@@ -8818,6 +9832,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:FP_LSR
 - canonical_name: PID4
@@ -8844,6 +9861,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID4
 - canonical_name: PID5
@@ -8870,6 +9890,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID5
 - canonical_name: PID6
@@ -8896,6 +9919,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID6
 - canonical_name: PID7
@@ -8922,6 +9948,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID7
 - canonical_name: PID0
@@ -8948,6 +9977,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID0
 - canonical_name: PID1
@@ -8974,6 +10006,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID1
 - canonical_name: PID2
@@ -9000,6 +10035,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID2
 - canonical_name: PID3
@@ -9026,6 +10064,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:PID3
 - canonical_name: CID0
@@ -9052,6 +10093,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:CID0
 - canonical_name: CID1
@@ -9078,6 +10122,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:CID1
 - canonical_name: CID2
@@ -9104,6 +10151,9 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:CID2
 - canonical_name: CID3
@@ -9130,5 +10180,8 @@ entries:
   snapshot: false
   source_family: ARM_TRM
   source_release: DDI0489 B
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
   component: FPB
   state_id: ARMv7-M:debug:FPB:CID3
