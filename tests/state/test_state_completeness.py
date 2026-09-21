@@ -277,3 +277,39 @@ def test_sysm_and_regsel_are_distinct_encodings():
         if a and a["regsel"] != int(enc.split("=")[1]):
             differing.append(e["canonical_name"])
     assert differing, "expected SYSm and REGSEL to differ for at least one register"
+
+
+def test_core_register_index_is_complete():
+    """
+    Table D8-1 wraps its comma list across two lines. Parsing the continuation
+    as part of the *next* row loses the tail of the list, which is how R12 and
+    SP_main went missing until someone asked whether every register was there.
+    """
+    names = {e["canonical_name"] for e in entries(ARCH_TARGET) if e.get("component") == "CORE"}
+    expected = {f"R{i}" for i in range(13)} | {
+        "SP_main", "SP_process", "LR", "PC",
+        "APSR", "IPSR", "EPSR", "PRIMASK", "FAULTMASK", "BASEPRI", "CONTROL"}
+    assert expected <= names, f"core registers missing from the index: {sorted(expected - names)}"
+
+
+def test_fp_register_file_present():
+    """
+    The FP extension register file is defined in prose (A2.5.2), not in a
+    register summary table, so a purely table-driven import misses all 32
+    registers. D0-D15 must be aliases of it, not additional storage.
+    """
+    by_name = {e["canonical_name"]: e for e in entries(ARCH_TARGET)}
+    singles = {f"S{i}" for i in range(32)}
+    missing = sorted(singles - set(by_name))
+    assert not missing, f"FP single-precision registers missing: {missing}"
+
+    for i in range(16):
+        d = by_name.get(f"D{i}")
+        assert d, f"D{i} missing"
+        assert d["classification"] == Classification.ALIAS.value, \
+            f"D{i} must be an alias of the single-precision file, not separate storage"
+        assert d["alias"]["target"] == f"S{i * 2}", f"D{i} aliases the wrong register"
+
+    for i in range(32):
+        assert by_name[f"S{i}"]["feature_requirement"] == "FP_EXTENSION", \
+            f"S{i} must be conditional on the FP extension"

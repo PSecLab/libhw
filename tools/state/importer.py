@@ -82,6 +82,20 @@ def _load_classify_rules(target: str) -> dict:
     return (yaml.safe_load(p.read_text()) or {}).get("registers", {}) or {}
 
 
+def _load_register_files(target: str) -> dict:
+    """
+    Register files the manual describes in prose rather than tabulating.
+
+    The FP extension file is the case that matters on Cortex-M: A2.5.2 says
+    'thirty-two 32-bit single-precision registers, S0-S31', and no summary
+    table lists them, so a purely table-driven import misses the entire file.
+    """
+    p = RULES_DIR / f"{target}.classify.yaml"
+    if not p.is_file():
+        return {}
+    return (yaml.safe_load(p.read_text()) or {}).get("register_files", {}) or {}
+
+
 def _index_names(table: Table) -> set[str]:
     names: set[str] = set()
     for _pg, line in table.raw_lines:
@@ -110,6 +124,7 @@ def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list
     rules_doc = _load_rules(target)
     overrides = _load_classify_rules(target)
     access_paths = _load_access_rules(target)
+    register_files = _load_register_files(target)
     src = get_source(rules_doc["source"])
     path = src.verify()
 
@@ -271,6 +286,38 @@ def import_target(target: str, arch_names: set[str] | None = None) -> tuple[list
             source_family="ARM_ARM", source_release=f"{src.document} {src.revision}")
         seen[name] = entry
         entries.append(entry)
+
+    # Register files declared in prose. Expanded here so the file's size comes
+    # from the manual's own statement of it rather than being invented.
+    for fkey, spec in register_files.items():
+        cls = Classification(spec["class"])
+        for n in range(int(spec["count"])):
+            name = spec["name_format"] % n
+            if name in seen:
+                continue
+            prov = Provenance(document=src.document, revision=src.revision,
+                              section=spec.get("provenance_section", ""),
+                              table=spec.get("provenance_table", ""), row=name, page=None)
+            alias = None
+            if spec.get("alias_format"):
+                alias = Alias(target=spec["alias_format"] % (n * int(spec.get("alias_index_stride", 1))),
+                              bit_offset=0, bit_width=int(spec.get("width", 32)))
+            regsel = spec.get("dcrsr_regsel_base")
+            entry = StateEntry(
+                canonical_name=name, source_id=f"{fkey}:{name}",
+                architecture=report.architecture, namespace=Namespace.ARCH,
+                classification=cls, provenance=prov, width=int(spec.get("width", 32)),
+                access=Access(spec.get("access", "core_reg")), encoding=None,
+                encoding_kind="core",
+                feature_requirement=spec.get("requires"), alias=alias,
+                reason=spec.get("reason"),
+                debug_regsel=(regsel + n) if regsel is not None else None,
+                debug_lsb=0, debug_width=min(int(spec.get("width", 32)), 32),
+                component="FPREGS",
+                snapshot=(cls is Classification.CONDITIONAL_STATE),
+                source_family="ARM_ARM", source_release=f"{src.document} {src.revision}")
+            seen[name] = entry
+            entries.append(entry)
 
     # Document-internal completeness check.
     imported = {e.canonical_name for e in entries if e.classification is not Classification.EXPLICIT_EXCLUSION}

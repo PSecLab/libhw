@@ -45,3 +45,31 @@ registers:
     requires: IMPDEF:DWT_CTRL.NUMCOMP
     reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at
       runtime from DWT_CTRL.NUMCOMP, so the architecture cannot fix a count
+register_files:
+  fp_single:
+    count: 32
+    name_format: S%d
+    width: 32
+    class: conditional_state
+    requires: FP_EXTENSION
+    access: core_reg
+    dcrsr_regsel_base: 64
+    provenance_section: A2.5.2 The FP extension registers
+    provenance_table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    extraction: manual
+    reason: The FP extension register file is defined in prose rather than in a register summary table,
+      so it is declared here. S0-S31 are the independent storage.
+  fp_double:
+    count: 16
+    name_format: D%d
+    width: 64
+    class: alias
+    requires: FP_EXTENSION
+    access: core_reg
+    alias_format: S%d
+    alias_index_stride: 2
+    provenance_section: A2.5.2 The FP extension registers
+    provenance_table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    extraction: manual
+    reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file,
+      not additional state.

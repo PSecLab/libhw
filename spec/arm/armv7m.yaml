@@ -18405,6 +18405,64 @@ entries:
   debug_width: 32
   component: CORE
   state_id: ARMv7-M:arch:CORE:R11
+- canonical_name: R12
+  source_id: D8-1:R12
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: D8.1 Arm core registers
+    table: Table D8-1 Arm core register index
+    row: R12
+    page: 842
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 12
+  debug_lsb: 0
+  debug_width: 32
+  component: CORE
+  state_id: ARMv7-M:arch:CORE:R12
+- canonical_name: SP_main
+  source_id: D8-1:SP_main
+  architecture: ARMv7-M
+  namespace: arch
+  classification: emitted_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: D8.1 Arm core registers
+    table: Table D8-1 Arm core register index
+    row: SP_main
+    page: 842
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias: null
+  reason: null
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 17
+  debug_lsb: 0
+  debug_width: 32
+  component: CORE
+  state_id: ARMv7-M:arch:CORE:SP_main
 - canonical_name: SP_process
   source_id: D8-1:SP_process
   architecture: ARMv7-M
@@ -18791,3 +18849,1475 @@ entries:
   debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:UFSR
+- canonical_name: S0
+  source_id: fp_single:S0
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S0
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 64
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S0
+- canonical_name: S1
+  source_id: fp_single:S1
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S1
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 65
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S1
+- canonical_name: S2
+  source_id: fp_single:S2
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S2
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 66
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S2
+- canonical_name: S3
+  source_id: fp_single:S3
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S3
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 67
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S3
+- canonical_name: S4
+  source_id: fp_single:S4
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S4
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 68
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S4
+- canonical_name: S5
+  source_id: fp_single:S5
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S5
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 69
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S5
+- canonical_name: S6
+  source_id: fp_single:S6
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S6
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 70
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S6
+- canonical_name: S7
+  source_id: fp_single:S7
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S7
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 71
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S7
+- canonical_name: S8
+  source_id: fp_single:S8
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S8
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 72
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S8
+- canonical_name: S9
+  source_id: fp_single:S9
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S9
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 73
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S9
+- canonical_name: S10
+  source_id: fp_single:S10
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S10
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 74
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S10
+- canonical_name: S11
+  source_id: fp_single:S11
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S11
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 75
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S11
+- canonical_name: S12
+  source_id: fp_single:S12
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S12
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 76
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S12
+- canonical_name: S13
+  source_id: fp_single:S13
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S13
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 77
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S13
+- canonical_name: S14
+  source_id: fp_single:S14
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S14
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 78
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S14
+- canonical_name: S15
+  source_id: fp_single:S15
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S15
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 79
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S15
+- canonical_name: S16
+  source_id: fp_single:S16
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S16
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 80
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S16
+- canonical_name: S17
+  source_id: fp_single:S17
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S17
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 81
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S17
+- canonical_name: S18
+  source_id: fp_single:S18
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S18
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 82
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S18
+- canonical_name: S19
+  source_id: fp_single:S19
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S19
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 83
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S19
+- canonical_name: S20
+  source_id: fp_single:S20
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S20
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 84
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S20
+- canonical_name: S21
+  source_id: fp_single:S21
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S21
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 85
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S21
+- canonical_name: S22
+  source_id: fp_single:S22
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S22
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 86
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S22
+- canonical_name: S23
+  source_id: fp_single:S23
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S23
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 87
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S23
+- canonical_name: S24
+  source_id: fp_single:S24
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S24
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 88
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S24
+- canonical_name: S25
+  source_id: fp_single:S25
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S25
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 89
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S25
+- canonical_name: S26
+  source_id: fp_single:S26
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S26
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 90
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S26
+- canonical_name: S27
+  source_id: fp_single:S27
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S27
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 91
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S27
+- canonical_name: S28
+  source_id: fp_single:S28
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S28
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 92
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S28
+- canonical_name: S29
+  source_id: fp_single:S29
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S29
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 93
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S29
+- canonical_name: S30
+  source_id: fp_single:S30
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S30
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 94
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S30
+- canonical_name: S31
+  source_id: fp_single:S31
+  architecture: ARMv7-M
+  namespace: arch
+  classification: conditional_state
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Thirty-two 32-bit single-precision registers, S0-S31'''
+    row: S31
+    page: null
+  width: 32
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias: null
+  reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
+    S0-S31 are the independent storage.
+  snapshot: true
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: 95
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:S31
+- canonical_name: D0
+  source_id: fp_double:D0
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D0
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S0
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D0
+- canonical_name: D1
+  source_id: fp_double:D1
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D1
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S2
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D1
+- canonical_name: D2
+  source_id: fp_double:D2
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D2
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S4
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D2
+- canonical_name: D3
+  source_id: fp_double:D3
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D3
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S6
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D3
+- canonical_name: D4
+  source_id: fp_double:D4
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D4
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S8
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D4
+- canonical_name: D5
+  source_id: fp_double:D5
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D5
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S10
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D5
+- canonical_name: D6
+  source_id: fp_double:D6
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D6
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S12
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D6
+- canonical_name: D7
+  source_id: fp_double:D7
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D7
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S14
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D7
+- canonical_name: D8
+  source_id: fp_double:D8
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D8
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S16
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D8
+- canonical_name: D9
+  source_id: fp_double:D9
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D9
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S18
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D9
+- canonical_name: D10
+  source_id: fp_double:D10
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D10
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S20
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D10
+- canonical_name: D11
+  source_id: fp_double:D11
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D11
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S22
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D11
+- canonical_name: D12
+  source_id: fp_double:D12
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D12
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S24
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D12
+- canonical_name: D13
+  source_id: fp_double:D13
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D13
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S26
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D13
+- canonical_name: D14
+  source_id: fp_double:D14
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D14
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S28
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D14
+- canonical_name: D15
+  source_id: fp_double:D15
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: A2.5.2 The FP extension registers
+    table: 'Prose: ''Sixteen 64-bit double-precision registers, D0-D15'''
+    row: D15
+    page: null
+  width: 64
+  access: core_reg
+  encoding: null
+  encoding_kind: core
+  readable: true
+  writable: true
+  feature_requirement: FP_EXTENSION
+  alias:
+    target: S30
+    bit_offset: 0
+    bit_width: 64
+  reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
+  snapshot: false
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: FPREGS
+  state_id: ARMv7-M:arch:FPREGS:D15

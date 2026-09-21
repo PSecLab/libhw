@@ -181,37 +181,41 @@ def parse_addr_register_value(table: Table) -> list[RawRecord]:
 
 def parse_core_register_index(table: Table) -> list[RawRecord]:
     """
-    Table D8-1: 'Register | See', where one cell may hold a comma-separated list
-    that wraps across lines ('R0, R1, ... R7, R8, ... R12').
+    Table D8-1: 'Register | See', where the name cell holds a comma-separated
+    list that can wrap onto the following line:
+
+        R0, R1, R2, R3, R4, R5, R6,    Registers on page B1-516
+        R7, R8, R9, R10, R11, R12
+
+    A continuation line has no 'See' column and belongs to the row *above* it.
+    Attaching it to the row below instead silently loses the tail of the list --
+    which is how R12 and SP_main went missing.
     """
     out: list[RawRecord] = []
-    pending: list[str] = []
+    rows: list[tuple[str, str, int]] = []      # (names, see, page)
 
     for _pg, line in table.raw_lines:
         cells = [c.strip() for c in re.split(r"\s{2,}", line.strip()) if c.strip()]
-        if not cells:
+        if not cells or cells[0] in ("Register", "See"):
             continue
-        if cells[0] in ("Register", "See"):
-            continue
-        names_cell = cells[0]
-        has_see = len(cells) > 1
+        if len(cells) >= 2:
+            rows.append((cells[0], cells[-1], _pg))
+        elif rows:
+            # Continuation of the row above.
+            names, see, pg = rows[-1]
+            rows[-1] = (f"{names} {cells[0]}", see, pg)
 
-        pending.append(names_cell)
-        if not has_see:
-            continue
-
-        joined = " ".join(pending)
-        pending = []
-        for tok in re.split(r",\s*", joined):
-            tok = tok.strip()
+    for names, see, pg in rows:
+        for tok in re.split(r",\s*", names):
+            tok = tok.strip().rstrip(",")
             if not tok:
                 continue
             m = re.match(r"^([A-Za-z_][A-Za-z0-9_]*)(?:\s*\(([^)]+)\))?$", tok)
             if not m:
                 continue
             out.append(RawRecord(name=m.group(1), address=None, access="RW",
-                                 reset=None, description=cells[-1],
-                                 reserved=False, alt_name=m.group(2), page=_pg, row=None))
+                                 reset=None, description=see, reserved=False,
+                                 alt_name=m.group(2), page=pg, row=None))
     return out
 
 
