@@ -13,6 +13,27 @@ python3 -c "from libhw import connect; print(connect('mock').flash.info())"
 The library is found automatically by walking up to the repository's `out/`
 directory. Set `LIBHW_LIBRARY` to override, for an installed copy.
 
+## Installing
+
+`PYTHONPATH` is enough for working in this tree. To depend on the bindings
+from another project, install them:
+
+```bash
+pip install -e utils/python          # from the repository root
+```
+
+Install them **editable**. The package locates `out/libhw.so` by walking up
+from its own `__file__`, so an editable install keeps working against the
+build tree and picks up every rebuild. A regular install copies the package
+into `site-packages`, where that walk finds nothing -- the shared library is a
+build artifact and is not bundled in the wheel -- so point `LIBHW_LIBRARY` at
+it:
+
+```bash
+pip install utils/python
+export LIBHW_LIBRARY=/path/to/libhw/out/libhw.so
+```
+
 ## Connecting
 
 `Hw` is a context manager, and every failing call raises rather than returning

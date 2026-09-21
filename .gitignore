@@ -2,6 +2,7 @@ out
 cscope*
 __pycache__/
 *.pyc
+*.egg-info/
 
 # Build outputs are not tracked, with one exception: the state-coverage
 # artifacts are reviewable outputs, and committing them is what lets CI
