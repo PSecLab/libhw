@@ -54,6 +54,7 @@ static int openocd_impl_flash_read(hw_t *ctx, unsigned int addr, uint8_t *buf, s
 static int openocd_impl_flash_write(hw_t *ctx, unsigned int addr, const uint8_t *buf, size_t len);
 static int openocd_impl_flash_erase(hw_t *ctx, unsigned int addr, size_t len);
 static int openocd_impl_flash_mass_erase(hw_t *ctx);
+static int openocd_impl_board_reset(hw_t *ctx);
 
 // --- Static Helper Functions ---
 static void block_until_halted(hw_openocd_pvt_t *pvt);
@@ -93,6 +94,7 @@ const hw_ops_t openocd_ops = {
     .flash_write = openocd_impl_flash_write,
     .flash_erase = openocd_impl_flash_erase,
     .flash_mass_erase = openocd_impl_flash_mass_erase,
+    .board_reset = openocd_impl_board_reset,
 };
 
 // --- Helper Functions ---
@@ -748,5 +750,27 @@ static int openocd_impl_flash_mass_erase(hw_t *ctx) {
         fprintf(stderr, "OpenOCD refused a mass erase: %s\n", reply);
         return -1;
     }
+    return 0;
+}
+
+/**
+ * @brief The board_reset implementation for the openocd backend.
+ *
+ * Uses "reset halt" rather than a bare "reset" so the target comes back in a
+ * state the debug session can still work with. Note that this differs from the
+ * stlink backend, which resets with RESET_AUTO and lets the core run on.
+ */
+static int openocd_impl_board_reset(hw_t *ctx) {
+    hw_openocd_pvt_t *pvt = (hw_openocd_pvt_t*)ctx->pvt_data;
+    if (!pvt || pvt->sockfd < 0) return -1;
+
+    char reply[256];
+    if (openocd_tcl_exec(pvt->sockfd, "reset halt", reply, sizeof(reply)) != 0) return -1;
+    if (openocd_reply_failed(reply)) {
+        fprintf(stderr, "OpenOCD refused a reset: %s\n", reply);
+        return -1;
+    }
+
+    block_until_halted(pvt);
     return 0;
 }

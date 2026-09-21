@@ -127,7 +127,10 @@ int hw_board_reset(hw_t *ctx) {
     if (ctx && ctx->ops && ctx->ops->board_reset) {
         return ctx->ops->board_reset(ctx);
     }
-    return 0;
+    // Unlike the other board_* wrappers above, report a missing op as a
+    // failure rather than success: a caller that asked for a reset and got
+    // back 0 would have no way to tell that nothing actually happened.
+    return -1;
 }
 
 /* ==========================================================================
