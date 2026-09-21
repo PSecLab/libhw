@@ -50,6 +50,8 @@ PRIVATE_HEADER = core/hw_priv.h
 
 
 # --- Build Rules ---
+PYTHON_SRC = utils/python
+
 .PHONY: all clean check state-import state-gen state-coverage state-check state-sweep state-prose
 
 all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET) $(ODIR)/$(STATE_TEST_TARGET)
@@ -135,6 +137,13 @@ state-prose:
 state-check:
 	@python3 -m pytest tests/state -q
 
+# --- Python bindings ------------------------------------------------------
+# ctypes over out/libhw.so, so they need the shared library but no build step
+# of their own. The tests run against the mock backend.
+.PHONY: python-check
+python-check: $(ODIR)/$(SHARED_LIB)
+	@PYTHONPATH=utils/python python3 -m pytest utils/python/tests -q
+
 # --- CI -----------------------------------------------------------------
 # Everything that can be checked without a board and without the licensed Arm
 # documents. The document-dependent checks skip rather than pass vacuously, and
@@ -150,6 +159,9 @@ ci:
 	@echo
 	@echo "== C tests against the mock backend =="
 	@$(MAKE) --no-print-directory check
+	@echo
+	@echo "== python bindings (mock backend) =="
+	@$(MAKE) --no-print-directory python-check
 	@echo
 	@echo "== state database invariants =="
 	@python3 -m pytest tests/state -q -rs

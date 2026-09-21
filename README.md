@@ -95,6 +95,28 @@ resuming a core whose code just changed underneath it is the caller's decision.
   clears bits, and writes must respect the program granularity. Code that
   forgets to erase fails against it exactly as it would against a board.
 
+## Python bindings
+
+ctypes bindings live in `utils/python/`. No build step and no dependencies
+beyond the shared library:
+
+```bash
+make                                    # produces out/libhw.so
+export PYTHONPATH=$PWD/utils/python
+python3 -c "from libhw import connect; print(connect('mock').flash.info())"
+```
+
+```python
+from libhw import connect
+
+with connect("stlink") as hw:
+    stats = hw.flash.patch(0x08000000, old_image, new_image)
+    print(stats.sectors_changed, "sectors changed,", stats.bytes_written, "bytes written")
+```
+
+See `utils/python/README.md`. `make python-check` runs their tests against the
+mock backend.
+
 ## Testing
 
 `make check` builds and runs `tests/flash_test.c` against the `mock` backend. It

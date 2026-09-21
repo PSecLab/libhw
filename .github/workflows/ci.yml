@@ -34,8 +34,8 @@ jobs:
           llvm-mc --version 2>/dev/null | head -2 || echo "llvm-mc unavailable: the encoding oracle will skip"
           python3 --version
 
-      # Builds with -Werror, runs the mock-backend C suites, the state
-      # database invariants and the coverage report.
+      # Builds with -Werror, runs the mock-backend C suites, the Python
+      # binding tests, the state database invariants and the coverage report.
       - name: make ci
         run: make ci
 
