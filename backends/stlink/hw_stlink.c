@@ -50,6 +50,7 @@ static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val);
 static int stlink_impl_board_run(hw_t *ctx);
 static int stlink_impl_write8(hw_t *ctx, unsigned int addr, uint8_t value);
 static int stlink_impl_read8(hw_t *ctx, unsigned int addr, uint8_t *value_out);
+static int stlink_impl_board_reset(hw_t *ctx);
 
 // --- The Static Dispatch Table (vtable) ---
 
@@ -74,6 +75,7 @@ const hw_ops_t stlink_ops = {
 	.board_step = stlink_impl_board_step,
     .read_reg = stlink_impl_read_reg,
     .write_reg = stlink_impl_write_reg,
+    .board_reset = stlink_impl_board_reset,
 };
 
 
@@ -109,9 +111,6 @@ static hw_t* stlink_impl_connect(const char *host, int port) {
         free(pvt);
         return NULL;
     }
-
-    stlink_run(pvt->sl, RUN_NORMAL);
-
 
     // Allocate the generic context struct that will be returned to the user
     hw_t *ctx = calloc(1, sizeof(hw_t));
@@ -220,31 +219,19 @@ static int stlink_impl_board_halted(hw_t *ctx) {
 
 static int stlink_impl_board_run(hw_t *ctx) {
 	hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
-	stlink_run(pvt->sl, RUN_NORMAL);
-
-	// Check if still halted (e.g. right after a BKPT)
-    stlink_status(pvt->sl);
-    if (pvt->sl->core_stat == TARGET_HALTED) {
-        // Step once to clear the BKPT halt condition
-		stlink_impl_write_reg(ctx, 15, (stlink_impl_read_reg(ctx, 15) + 2));
-
-        // Try to run again
-        stlink_run(pvt->sl, RUN_NORMAL);
-    }
-
-	return 0;
+	if (!pvt || !pvt->sl) return -1;
+	return stlink_run(pvt->sl, RUN_NORMAL);
 }
+
 /**
  * @brief The board_halt implementation for the stlink backend
  */
 static int stlink_impl_board_halt(hw_t *ctx) {
 	hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+	if (!pvt || !pvt->sl) return -1;
 
-    // Put the target into a known state (halted) for stable access
     if (stlink_force_debug(pvt->sl) != 0) {
         fprintf(stderr, "Failed to enter debug mode and halt core\n");
-        stlink_close(pvt->sl);
-        free(pvt);
         return 1;
     }
 
@@ -253,17 +240,14 @@ static int stlink_impl_board_halt(hw_t *ctx) {
 
 static int stlink_impl_board_step(hw_t *ctx) {
     hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return -1;
 
-    // Put the target into a known state (halted) for stable access
     if (stlink_step(pvt->sl) != 0) {
         fprintf(stderr, "Failed to single step\n");
-        stlink_close(pvt->sl);
-        free(pvt);
         return 1;
     }
 
     return 0; // Success
-
 }
 
 /**
@@ -273,24 +257,17 @@ static uint64_t stlink_impl_read_reg(hw_t *ctx, int reg) {
     hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
     if (!pvt || !pvt->sl) return 0;
 
-    // The libstlink API for reading a single register requires passing a pointer
-    // to a `stlink_reg` struct. The library populates the appropriate field
-    // in the struct (e.g., .r[reg] for general purpose registers) with the value.
     struct stlink_reg regp;
     if (stlink_read_reg(pvt->sl, reg, &regp) != 0) {
         fprintf(stderr, "stlink_read_reg failed\n");
         return 0;
     }
 
-    // The register index corresponds to the 'r' array in the stlink_reg struct.
     if (reg >= 0 && reg < 16) {
         return regp.r[reg];
     }
 
-    // TODO: Add support for other registers like xpsr, msp, etc.
-    // if they are needed, by checking their specific indices.
-
-    return 0; // Return 0 for unsupported registers
+    return 0;
 }
 
 /**
@@ -303,3 +280,9 @@ static void stlink_impl_write_reg(hw_t *ctx, int reg, uint64_t val) {
     stlink_write_reg(pvt->sl, (uint32_t)val, reg);
 }
 
+static int stlink_impl_board_reset(hw_t *ctx) {
+    hw_stlink_pvt_t *pvt = (hw_stlink_pvt_t*)ctx->pvt_data;
+    if (!pvt || !pvt->sl) return -1;
+    stlink_reset(pvt->sl, RESET_AUTO);
+    return 0;
+}

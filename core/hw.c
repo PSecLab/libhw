@@ -122,3 +122,10 @@ void hw_write_reg(hw_t *ctx, int reg, uint64_t val) {
         ctx->ops->write_reg(ctx, reg, val);
     }
 }
+
+int hw_board_reset(hw_t *ctx) {
+    if (ctx && ctx->ops && ctx->ops->board_reset) {
+        return ctx->ops->board_reset(ctx);
+    }
+    return 0;
+}

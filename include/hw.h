@@ -50,6 +50,8 @@ struct hw_ops {
 	/* Write to a register */
 	void (*write_reg)(hw_t *ctx, int reg, uint64_t val);
 
+	/* Reset board */
+	int (*board_reset)(hw_t *ctx);
 };
 
 /**
@@ -125,5 +127,8 @@ uint64_t hw_read_reg(hw_t *ctx, int reg);
 
 /* Write to a register */
 void hw_write_reg(hw_t *ctx, int reg, uint64_t val);
+
+/* Reset target board */
+int hw_board_reset(hw_t *ctx);
 
 #endif // HW_H
