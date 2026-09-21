@@ -1,0 +1,350 @@
+"""
+Row parsers for the table shapes the Arm manuals actually use.
+
+Which profile applies to which table is recorded in spec/rules/<target>.tables.yaml
+rather than guessed, so each table's treatment is reviewable.
+"""
+
+from __future__ import annotations
+
+import re
+
+from .armpdf import ACCESS_TOKENS, ADDR_RE, Table, expand_range, strip_footnote
+
+RESERVED_WORDS = {"-", "reserved", "--"}
+
+
+class RawRecord(dict):
+    """A source row reduced to fields the normalizer understands."""
+
+
+def _clean_name(value: str, description: str = "") -> str:
+    """
+    Strip Arm's superscript footnote letters glued onto a register name.
+
+    'IEBR0k' -> 'IEBR0'. A trailing 'n' or 'x' is kept when the description
+    repeats the name verbatim, because there it is an array index placeholder
+    ('DWT_COMPn on page C1-745') rather than a footnote marker.
+    """
+    v = value.strip()
+    m = re.fullmatch(r"([A-Z][A-Z0-9_]*?[0-9A-Z_])([a-z])", v)
+    if not m:
+        return v
+    if m.group(2) in ("n", "x") and re.search(rf"\b{re.escape(v)}\b", description):
+        return v
+    return m.group(1)
+
+
+def _is_reserved(name: str, desc: str) -> bool:
+    return name.strip().lower() in RESERVED_WORDS or desc.strip().lower().startswith("reserved")
+
+
+def _merge_split_ranges(table: Table) -> dict[str, str]:
+    """
+    Some range rows wrap, putting the end address alone on the next line:
+
+        0xE0000000 -   ITM_STIMx  RW  UNKNOWN  Stimulus Port registers...
+        0xE00003FC
+
+    Return {start_address_cell: full_range} so rows can be repaired.
+    """
+    fixes: dict[str, str] = {}
+    pages = [pg for pg, _ in table.raw_lines]
+    lines = [l for _, l in table.raw_lines]
+    for i, line in enumerate(lines):
+        m = re.match(r"^\s*(0x[0-9A-Fa-f]+)\s*-\s{2,}", line)
+        if not m:
+            continue
+        for nxt in lines[i + 1: i + 3]:
+            m2 = re.fullmatch(r"\s*(0x[0-9A-Fa-f]+)\s*", nxt)
+            if m2:
+                fixes[m.group(1)] = f"{m.group(1)} - {m2.group(1)}"
+                break
+    return fixes
+
+
+def _expand_placeholder(name: str, desc: str, addr_cell: str) -> list[tuple[str, str]]:
+    """
+    Expand an 'x'-suffixed array name using the range named in its description.
+
+    'ITM_STIMx' + 'Stimulus Port registers, ITM_STIM0-ITM_STIM255' -> 256 entries.
+    """
+    m = re.search(r"\b([A-Z][A-Z0-9_]*?)(\d+)\s*-\s*([A-Z][A-Z0-9_]*?)(\d+)\b", desc)
+    if not m or m.group(1) != m.group(3):
+        return []
+    base, lo, hi = m.group(1), int(m.group(2)), int(m.group(4))
+    am = ADDR_RE.match(addr_cell.strip())
+    if not am:
+        return []
+    start = int(am.group(1), 16)
+    end = int(am.group(2), 16) if am.group(2) else start
+    count = hi - lo + 1
+    stride = (end - start) // (count - 1) if count > 1 and end > start else 4
+    return [(f"0x{start + k * stride:08X}", f"{base}{lo + k}") for k in range(count)]
+
+
+_ACCESS_ALT = r"RW or RO|RAZ/WI|RO|RW|WO|RAZ|WI|-"
+_ADDR = r"0x[0-9A-Fa-f]+(?:\s*-\s*0x[0-9A-Fa-f]+)?"
+_NAME = r"-|[A-Za-z_][A-Za-z0-9_]*(?:\s*-\s*[A-Za-z_][A-Za-z0-9_]*)?"
+# One table row: address (possibly an inline range), register name (ditto), the
+# access type, then reset and description. A trailing bare '-' on the address or
+# name marks a range whose other end wraps onto the following line.
+_ROW_RE = re.compile(
+    r"^\s*(?P<addr>" + _ADDR + r")(?P<adash>\s*-(?!\s*0x))?\s{2,}"
+    r"(?P<name>" + _NAME + r")(?P<ndash>\s*-)?\s{2,}"
+    r"(?P<type>" + _ACCESS_ALT + r")[a-z]?\s{2,}"
+    r"(?P<rest>.*)$"
+)
+_RESERVED_RE = re.compile(r"^\s*(?P<addr>" + _ADDR + r")\s*-?\s{2,}-\s{2,}-\s{2,}")
+_CONT_RE = re.compile(r"^\s*(?P<addr>0x[0-9A-Fa-f]+)\s{2,}(?P<name>[A-Za-z_][A-Za-z0-9_]*)\b")
+
+
+def parse_addr_name_type_reset(table: Table) -> list[RawRecord]:
+    """
+    Arm's standard address/name/type/reset summary.
+
+    Driven by row pattern rather than detected columns: the header wraps across
+    two or three lines in several of these tables and repeats on every page, so
+    column detection is not a sound basis for a completeness claim.
+    """
+    out: list[RawRecord] = []
+    pages = [pg for pg, _ in table.raw_lines]
+    lines = [l for _, l in table.raw_lines]
+    for i, line in enumerate(lines):
+        rm = _RESERVED_RE.match(line)
+        if rm and "Reserved" in line:
+            out.append(RawRecord(name=None, address=rm.group("addr"), access="-",
+                                 reset=None, description="Reserved", reserved=True, page=pages[i], row=None))
+            continue
+
+        m = _ROW_RE.match(line)
+        if not m:
+            continue
+
+        addr, name = m.group("addr"), m.group("name")
+        typ, rest = m.group("type"), m.group("rest").strip()
+
+        if name.strip() == "-":
+            out.append(RawRecord(name=None, address=addr, access=typ, reset=None,
+                                 description=rest or "Reserved", reserved=True, page=pages[i], row=None))
+            continue
+
+        if m.group("adash") or m.group("ndash"):
+            for nxt in lines[i + 1: i + 3]:
+                cm = _CONT_RE.match(nxt)
+                if cm:
+                    addr = f"{addr} - {cm.group('addr')}"
+                    name = f"{name} - {cm.group('name')}"
+                    break
+
+        parts = rest.split(None, 1)
+        reset = strip_footnote(parts[0]) if parts else ""
+        desc = parts[1].strip() if len(parts) > 1 else ""
+
+        pairs: list[tuple[str, str]] = []
+        if name.endswith("x"):
+            pairs = _expand_placeholder(name, desc, addr)
+        if not pairs and ("-" in addr or "-" in name):
+            pairs = expand_range(addr, name)
+        if not pairs:
+            pairs = [(addr, _clean_name(name, desc))]
+
+        for a, n in pairs:
+            n = n.strip()
+            # A name still carrying a separator means range expansion failed;
+            # emitting it would invent a register that does not exist.
+            if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", n):
+                continue
+            out.append(RawRecord(name=n, address=a, access=typ, reset=reset,
+                                 description=desc, reserved=False, page=pages[i], row=None))
+    return out
+
+
+_ID_NAME_RE = re.compile(r"(Peripheral|Component)\s*ID\s*(\d+)", re.I)
+
+
+def parse_addr_register_value(table: Table) -> list[RawRecord]:
+    """ID-value tables: 'Address | Register | Value | Description'."""
+    out: list[RawRecord] = []
+    for row in table.rows:
+        addr = (row.get("Address") or "").strip()
+        raw_name = (row.get("Register", "Name") or "").strip()
+        value = strip_footnote(row.get("Value") or "")
+        if not addr or not raw_name:
+            continue
+        m = _ID_NAME_RE.search(raw_name)
+        name = f"{'PIDR' if m.group(1).lower() == 'peripheral' else 'CIDR'}{m.group(2)}" if m else raw_name
+        out.append(RawRecord(name=name, address=addr, access="RO", reset=value,
+                             description=raw_name, reserved=False, page=row.page, row=row))
+    return out
+
+
+def parse_core_register_index(table: Table) -> list[RawRecord]:
+    """
+    Table D8-1: 'Register | See', where one cell may hold a comma-separated list
+    that wraps across lines ('R0, R1, ... R7, R8, ... R12').
+    """
+    out: list[RawRecord] = []
+    pending: list[str] = []
+
+    for _pg, line in table.raw_lines:
+        cells = [c.strip() for c in re.split(r"\s{2,}", line.strip()) if c.strip()]
+        if not cells:
+            continue
+        if cells[0] in ("Register", "See"):
+            continue
+        names_cell = cells[0]
+        has_see = len(cells) > 1
+
+        pending.append(names_cell)
+        if not has_see:
+            continue
+
+        joined = " ".join(pending)
+        pending = []
+        for tok in re.split(r",\s*", joined):
+            tok = tok.strip()
+            if not tok:
+                continue
+            m = re.match(r"^([A-Za-z_][A-Za-z0-9_]*)(?:\s*\(([^)]+)\))?$", tok)
+            if not m:
+                continue
+            out.append(RawRecord(name=m.group(1), address=None, access="RW",
+                                 reset=None, description=cells[-1],
+                                 reserved=False, alt_name=m.group(2), page=_pg, row=None))
+    return out
+
+
+_SYSM_RE = re.compile(r"(\d+)\s*=\s*0b[01]+:[01]+")
+
+
+def parse_special_register_sysm(table: Table) -> list[RawRecord]:
+    """
+    Table B5-1: special-purpose registers reachable by MRS/MSR, with SYSm values.
+
+    The first column may carry both the read and write spellings
+    ('APSR, on reads' / 'APSR_<bits>, on writes'); the base name is what matters.
+    """
+    out: list[RawRecord] = []
+    for _pg, line in table.raw_lines:
+        m = _SYSM_RE.search(line)
+        if not m:
+            continue
+        head = line[: m.start()].strip()
+        cells = [c.strip() for c in re.split(r"\s{2,}", head) if c.strip()]
+        if not cells:
+            continue
+        spec = cells[0]
+        spec = re.sub(r",\s*on (reads|writes).*$", "", spec).strip()
+        spec = re.sub(r"_<bits>", "", spec).strip()
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", spec):
+            continue
+        out.append(RawRecord(name=spec.upper(), address=None, access="RW", reset=None,
+                             description=cells[1] if len(cells) > 1 else "",
+                             reserved=False, sysm=int(m.group(1)), page=_pg, row=None))
+    # The table lists read/write spellings on separate lines; keep first occurrence.
+    seen, uniq = set(), []
+    for r in out:
+        if r["name"] in seen:
+            continue
+        seen.add(r["name"])
+        uniq.append(r)
+    return uniq
+
+
+_FP_RE = re.compile(r"^\s*(?P<enc>0b[01]+(?:\s*-\s*0b[01]+)?)\s{2,}(?P<name>[A-Za-z_][A-Za-z0-9_]*)\s{2,}(?P<desc>.*)$")
+
+
+def parse_fp_common_block(table: Table) -> list[RawRecord]:
+    """Table B1-10: 'System register | Name | Description', reached by VMRS/VMSR."""
+    out: list[RawRecord] = []
+    for _pg, line in table.raw_lines:
+        m = _FP_RE.match(line)
+        if not m:
+            continue
+        name, desc, enc = m.group("name"), m.group("desc").strip(), m.group("enc")
+        if _is_reserved(name, desc):
+            out.append(RawRecord(name=None, address=enc, access="-", reset=None,
+                                 description=desc or "Reserved", reserved=True, page=_pg, row=None))
+            continue
+        out.append(RawRecord(name=name, address=enc, access="RW", reset=None,
+                             description=desc, reserved=False, page=_pg, row=None))
+    return out
+
+
+_OTN_RE = re.compile(
+    r"^\s*(?P<off>0x[0-9A-Fa-f]+)\s{2,}(?P<type>RO|RW|WO)\s{2,}(?P<rest>.+?)\s*$")
+
+
+def parse_offset_type_name(table: Table) -> list[RawRecord]:
+    """Table D1-2: 'Address offset | Type | Register name | Notes'."""
+    out: list[RawRecord] = []
+    for _pg, line in table.raw_lines:
+        m = _OTN_RE.match(line)
+        if not m:
+            continue
+        rest = m.group("rest")
+        nm = re.search(r"\(([A-Z][A-Z0-9_]*)\)", rest)     # 'Lock Status (LSR)'
+        if not nm:
+            continue
+        out.append(RawRecord(name=nm.group(1), address=m.group("off"), access=m.group("type"),
+                             reset=None, description=rest.strip(), reserved=False, page=_pg, row=None))
+    return out
+
+
+def parse_offset_value_name(table: Table) -> list[RawRecord]:
+    """Table C1-3: 'Offset | Value | Name | Description' (ROM table entries)."""
+    out: list[RawRecord] = []
+    for row in table.rows:
+        off = (row.get("Offset") or "").strip()
+        name = (row.get("Name") or "").strip()
+        val = (row.get("Value") or "").strip()
+        desc = (row.get("Description") or "").strip()
+        if not name or not re.fullmatch(r"[A-Z][A-Z0-9_]*", name):
+            continue
+        out.append(RawRecord(name=name, address=off, access="RO", reset=val,
+                             description=desc, reserved=False, page=row.page, row=row))
+    return out
+
+
+PROFILES = {
+    "addr_name_type_reset": parse_addr_name_type_reset,
+    "addr_register_value": parse_addr_register_value,
+    "core_register_index": parse_core_register_index,
+    "special_register_sysm": parse_special_register_sysm,
+    "fp_common_block": parse_fp_common_block,
+    "offset_type_name": parse_offset_type_name,
+    "offset_value_name": parse_offset_value_name,
+}
+
+
+_DESCNAME_RE = re.compile(
+    r"^\s*(?P<addr>0x[0-9A-Fa-f]+)\s{2,}(?P<type>RO|RW|WO)\s{2,}(?P<reset>\S+(?:\s\S+)*?)\s{2,}(?P<desc>\S.*)$")
+
+
+def parse_addr_type_reset_descname(table: Table) -> list[RawRecord]:
+    """
+    Tables whose register name lives inside the description rather than in a
+    column of its own, e.g. Table B4-1:
+
+        0xE000ED40  RO  IMPLEMENTATION DEFINED  Processor Feature Register 0, ID_PFR0 on page B4-646
+    """
+    out: list[RawRecord] = []
+    for _pg, line in table.raw_lines:
+        m = _DESCNAME_RE.match(line)
+        if not m:
+            continue
+        desc = m.group("desc").strip()
+        # Prefer an explicit ', NAME on page' spelling; fall back to a leading token.
+        nm = re.search(r",\s*([A-Z][A-Z0-9_]{2,})\s+on page", desc)
+        if not nm:
+            nm = re.match(r"([A-Z][A-Z0-9_]{2,})\b", desc)
+        if not nm:
+            continue
+        out.append(RawRecord(name=nm.group(1), address=m.group("addr"), access=m.group("type"),
+                             reset=m.group("reset"), description=desc, reserved=False,
+                             page=_pg, row=None))
+    return out
+
+
+PROFILES["addr_type_reset_descname"] = parse_addr_type_reset_descname

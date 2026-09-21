@@ -1,0 +1,15 @@
+schema_version: 1
+architecture: ARMv7-M
+features:
+  FP_EXTENSION:
+    description: Floating-point extension (FPv5)
+    detect: CPACR.CP10/CP11 and MVFR0/MVFR1
+    source: DDI0403 E.e A2.5
+  MPU:
+    description: Memory Protection Unit
+    detect: MPU_TYPE.DREGION != 0
+    source: DDI0403 E.e B3.5
+  IMPDEF:DWT_CTRL.NUMCOMP:
+    description: Number of implemented DWT comparators
+    detect: DWT_CTRL.NUMCOMP
+    source: DDI0403 E.e C1.8
