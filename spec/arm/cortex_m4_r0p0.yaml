@@ -28,6 +28,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -57,6 +58,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -86,6 +88,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -115,6 +118,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -144,6 +148,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -173,6 +178,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -202,6 +208,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -231,6 +238,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -260,6 +268,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -289,6 +298,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -318,6 +328,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -347,6 +358,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -376,6 +388,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -405,6 +418,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -434,6 +448,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -463,6 +478,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -492,6 +508,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -521,6 +538,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -550,6 +568,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -579,6 +598,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -608,6 +628,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -637,6 +658,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -666,6 +688,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -695,6 +718,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -724,6 +748,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -753,6 +778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -782,6 +808,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -811,6 +838,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -840,6 +868,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -869,6 +898,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -898,6 +928,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -927,6 +958,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -956,6 +988,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -985,6 +1018,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1014,6 +1048,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1043,6 +1078,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1072,6 +1108,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1101,6 +1138,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1130,6 +1168,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1159,6 +1198,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1188,6 +1228,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1217,6 +1258,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1246,6 +1288,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1275,6 +1318,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1304,6 +1348,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1333,6 +1378,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1362,6 +1408,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1391,6 +1438,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1420,6 +1468,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1449,6 +1498,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1478,6 +1528,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1507,6 +1558,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1536,6 +1588,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1565,6 +1618,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1594,6 +1648,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1623,6 +1678,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1652,6 +1708,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1681,6 +1738,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1710,6 +1768,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1739,6 +1798,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1768,6 +1828,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1797,6 +1858,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1826,6 +1888,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1855,6 +1918,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1884,6 +1948,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1913,6 +1978,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1942,6 +2008,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -1971,6 +2038,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2000,6 +2068,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2029,6 +2098,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2058,6 +2128,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2087,6 +2158,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2116,6 +2188,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2145,6 +2218,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2174,6 +2248,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2203,6 +2278,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2232,6 +2308,7 @@ entries:
   alias: null
   reason: Architectural register SYST_CSR at 0XE000E010, named STCSR by this TRM
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2261,6 +2338,7 @@ entries:
   alias: null
   reason: Architectural register SYST_RVR at 0XE000E014, named STRVR by this TRM
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2290,6 +2368,7 @@ entries:
   alias: null
   reason: Architectural register SYST_CVR at 0XE000E018, named STCVR by this TRM
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2319,6 +2398,7 @@ entries:
   alias: null
   reason: Architectural register SYST_CALIB at 0XE000E01C, named STCR by this TRM
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2348,6 +2428,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2377,6 +2458,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2406,6 +2488,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2435,6 +2518,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2464,6 +2548,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2493,6 +2578,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2522,6 +2608,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2551,6 +2638,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2580,6 +2668,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2609,6 +2698,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2638,6 +2728,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2667,6 +2758,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2696,6 +2788,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2725,6 +2818,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2754,6 +2848,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2783,6 +2878,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2812,6 +2908,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2841,6 +2938,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2870,6 +2968,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2899,6 +2998,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2928,6 +3028,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2957,6 +3058,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -2986,6 +3088,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3015,6 +3118,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3044,6 +3148,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3073,6 +3178,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3102,6 +3208,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3131,6 +3238,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3160,6 +3268,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3189,6 +3298,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3218,6 +3328,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3247,6 +3358,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3276,6 +3388,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3305,6 +3418,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3334,6 +3448,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3363,6 +3478,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3392,6 +3508,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3421,6 +3538,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3450,6 +3568,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3479,6 +3598,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3508,6 +3628,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3537,6 +3658,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3566,6 +3688,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3595,6 +3718,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3624,6 +3748,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3653,6 +3778,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3682,6 +3808,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3711,6 +3838,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3740,6 +3868,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3769,6 +3898,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3798,6 +3928,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3827,6 +3958,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3856,6 +3988,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3885,6 +4018,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3914,6 +4048,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3943,6 +4078,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -3972,6 +4108,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4001,6 +4138,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4030,6 +4168,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4059,6 +4198,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4088,6 +4228,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4117,6 +4258,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4146,6 +4288,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4175,6 +4318,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4204,6 +4348,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4233,6 +4378,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4262,6 +4408,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4291,6 +4438,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4320,6 +4468,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4349,6 +4498,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4378,6 +4528,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4407,6 +4558,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4436,6 +4588,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4465,6 +4618,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4494,6 +4648,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4523,6 +4678,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4552,6 +4708,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4581,6 +4738,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4610,6 +4768,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4639,6 +4798,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4668,6 +4828,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4697,6 +4858,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4726,6 +4888,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4755,6 +4918,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4784,6 +4948,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4813,6 +4978,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4842,6 +5008,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4871,6 +5038,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4900,6 +5068,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4929,6 +5098,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4958,6 +5128,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -4987,6 +5158,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5016,6 +5188,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5045,6 +5218,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5074,6 +5248,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5103,6 +5278,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5132,6 +5308,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5161,6 +5338,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5190,6 +5368,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5219,6 +5398,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5248,6 +5428,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5277,6 +5458,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5306,6 +5488,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5335,6 +5518,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5364,6 +5548,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5393,6 +5578,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5422,6 +5608,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5451,6 +5638,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5480,6 +5668,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5509,6 +5698,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5538,6 +5728,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5567,6 +5758,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5596,6 +5788,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5625,6 +5818,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5654,6 +5848,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5683,6 +5878,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5712,6 +5908,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5741,6 +5938,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5770,6 +5968,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5799,6 +5998,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5828,6 +6028,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5857,6 +6058,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5886,6 +6088,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5915,6 +6118,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5944,6 +6148,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -5973,6 +6178,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6002,6 +6208,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6031,6 +6238,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6060,6 +6268,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6089,6 +6298,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6118,6 +6328,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6147,6 +6358,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6176,6 +6388,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6205,6 +6418,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6234,6 +6448,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6263,6 +6478,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6292,6 +6508,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6321,6 +6538,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6350,6 +6568,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6379,6 +6598,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6408,6 +6628,7 @@ entries:
   alias: null
   reason: Defined by the ARMv7-M architecture; accounted for in the architecture manifest
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6437,6 +6658,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6466,6 +6688,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6495,6 +6718,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6524,6 +6748,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6553,6 +6778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6582,6 +6808,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6611,6 +6838,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6640,6 +6868,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6669,6 +6898,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6698,6 +6928,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6727,6 +6958,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6756,6 +6988,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6785,6 +7018,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6814,6 +7048,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6843,6 +7078,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6872,6 +7108,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6901,6 +7138,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6930,6 +7168,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6959,6 +7198,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -6988,6 +7228,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7017,6 +7258,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7046,6 +7288,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7075,6 +7318,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7104,6 +7348,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7133,6 +7378,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7162,6 +7408,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7191,6 +7438,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7220,6 +7468,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7249,6 +7498,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7278,6 +7528,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7307,6 +7558,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7336,6 +7588,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7365,6 +7618,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7394,6 +7648,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7423,6 +7678,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7452,6 +7708,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7481,6 +7738,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7510,6 +7768,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7539,6 +7798,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7568,6 +7828,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7597,6 +7858,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7626,6 +7888,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7655,6 +7918,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7684,6 +7948,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7713,6 +7978,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7742,6 +8008,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7771,6 +8038,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7800,6 +8068,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7829,6 +8098,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7858,6 +8128,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7887,6 +8158,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7916,6 +8188,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7945,6 +8218,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -7974,6 +8248,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8003,6 +8278,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8032,6 +8308,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8061,6 +8338,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8090,6 +8368,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8119,6 +8398,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8148,6 +8428,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8177,6 +8458,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8206,6 +8488,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8235,6 +8518,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8264,6 +8548,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8293,6 +8578,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8322,6 +8608,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8351,6 +8638,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8380,6 +8668,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8409,6 +8698,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8438,6 +8728,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8467,6 +8758,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8496,6 +8788,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8525,6 +8818,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8554,6 +8848,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8583,6 +8878,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8612,6 +8908,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8641,6 +8938,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8670,6 +8968,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8699,6 +8998,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8728,6 +9028,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8757,6 +9058,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8786,6 +9088,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8815,6 +9118,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8844,6 +9148,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8873,6 +9178,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null
@@ -8902,6 +9208,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0439 B
   debug_regsel: null

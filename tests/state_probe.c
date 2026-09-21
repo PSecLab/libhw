@@ -23,7 +23,8 @@
 #include "hw.h"
 #include "hw_state.h"
 
-#define AVAIL_KINDS 6
+#define N_PRESENCE 6
+#define N_READ     6
 
 static void usage(const char *prog) {
     fprintf(stderr, "\nUsage: %s <backend> [--verbose]\n", prog);
@@ -33,49 +34,52 @@ static void usage(const char *prog) {
 
 static void probe_db(hw_t *hw, const hw_state_db_t *db,
                      const hw_cpu_features_t *f, int verbose) {
-    size_t counts[AVAIL_KINDS] = {0};
-    size_t not_expected = 0, unresolved = 0, skipped_wo = 0;
+    size_t presence[N_PRESENCE] = {0};
+    size_t reads[N_READ] = {0};
+    size_t read_ok_presence_unknown = 0, read_zero_presence_unknown = 0;
 
     printf("\n--- %s (%s): %zu state elements ---\n", db->name, db->source, db->state_count);
 
     for (size_t i = 0; i < db->state_count; i++) {
         const hw_state_desc_t *d = &db->states[i];
 
-        int expect = hw_state_expected(d, f);
-        if (expect == 0) {
-            // The target tells us this optional state is not implemented. That
-            // is a property of this CPU, not of the architecture.
-            not_expected++;
-            continue;
-        }
-        if (expect < 0) {
-            unresolved++;
-            continue;
-        }
-        if (!d->readable) {
-            skipped_wo++;
-            continue;
+        hw_state_result_t r;
+        if (hw_state_query(hw, d, f, &r) != 0) continue;
+
+        presence[r.presence]++;
+        reads[r.read]++;
+
+        // The case the report must never round up into "implemented": the read
+        // worked, and nothing else says the register is there.
+        if (r.read == HW_READ_OK && r.presence == HW_PRESENCE_UNKNOWN) {
+            read_ok_presence_unknown++;
+            if (r.value_is_zero) read_zero_presence_unknown++;
         }
 
-        uint32_t value = 0;
-        hw_state_avail_t why = HW_STATE_READ_FAILED;
-        int rc = hw_state_read(hw, d, &value, &why);
-        counts[why]++;
-
-        if (verbose && rc == 0) {
-            printf("    %-16s %-14s 0x%08X\n", d->name, d->encoding, value);
+        if (verbose && r.read == HW_READ_OK) {
+            printf("    %-16s %-14s 0x%08X  presence=%s\n",
+                   d->name, d->encoding ? d->encoding : "-", r.value,
+                   hw_presence_name(r.presence));
         }
     }
 
-    printf("  %-26s %zu\n", "not implemented by CPU:", not_expected);
-    printf("  %-26s %zu\n", "write-only (not sampled):", skipped_wo);
-    if (unresolved) {
-        printf("  %-26s %zu\n", "UNRESOLVED feature rule:", unresolved);
-    }
-    for (int k = 0; k < AVAIL_KINDS; k++) {
-        if (counts[k]) {
-            printf("  %-26s %zu\n", hw_state_avail_name((hw_state_avail_t)k), counts[k]);
+    printf("  Implemented (evidence-based):\n");
+    for (int k = 0; k < N_PRESENCE; k++) {
+        if (presence[k]) {
+            printf("      %-26s %zu\n", hw_presence_name((hw_presence_t)k), presence[k]);
         }
+    }
+    printf("  Read outcome (independent of the above):\n");
+    for (int k = 0; k < N_READ; k++) {
+        if (reads[k]) {
+            printf("      %-26s %zu\n", hw_read_status_name((hw_read_status_t)k), reads[k]);
+        }
+    }
+    if (read_ok_presence_unknown) {
+        printf("  Read succeeded but presence is UNKNOWN: %zu (%zu of them read as zero)\n",
+               read_ok_presence_unknown, read_zero_presence_unknown);
+        printf("      These are NOT counted as implemented. An unimplemented word in the\n");
+        printf("      PPB generally reads as zero rather than faulting.\n");
     }
 }
 
@@ -133,6 +137,9 @@ int main(int argc, char *argv[]) {
         printf("  not a statement that the part adds no state.\n");
     }
 
+    printf("\nNote: a successful read is not evidence of implementation. Presence above\n");
+    printf("comes only from the architecture, from feature/configuration registers, or\n");
+    printf("from CoreSight component discovery.\n");
     printf("\n--> Leaving the target halted.\n");
     hw_close(hw);
     return 0;

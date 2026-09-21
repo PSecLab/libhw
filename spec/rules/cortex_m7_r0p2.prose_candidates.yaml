@@ -1,0 +1,202 @@
+schema_version: 1
+target: cortex_m7_r0p2
+description: Prose candidates not resolvable against the manifest automatically.
+candidates:
+  comma_set:d318508982:
+    raw: LDM, LDMDB, STM, STMDB, PUSH
+    section: 1.1.1 Features
+    page: 13
+    names:
+    - LDM
+    - LDMDB
+    - PUSH
+    - STM
+    - STMDB
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:27c8518024:
+    raw: LDM, LDMDB, STM, STMDB, PUSH, POP
+    section: 1.1.1 Features
+    page: 13
+    names:
+    - LDM
+    - LDMDB
+    - POP
+    - PUSH
+    - STM
+    - STMDB
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:0fc2535c41:
+    raw: VLDM, VSTM, VPUSH, VPOP
+    section: 1.1.1 Features
+    page: 13
+    names:
+    - VLDM
+    - VPOP
+    - VPUSH
+    - VSTM
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:a7b2a726e3:
+    raw: LDR, LDRH, STR, STRH
+    section: 2.4.2 Unaligned accesses that cross regions
+    page: 31
+    names:
+    - LDR
+    - LDRH
+    - STR
+    - STRH
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:d57d4932bb:
+    raw: LDM, STM, LDRD
+    section: 5.4.7 AXIM interface transfers
+    page: 72
+    names:
+    - LDM
+    - LDRD
+    - STM
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:38ff262df6:
+    raw: LDM, STM, LDRD
+    section: 5.5.1 AHBP interface transfers
+    page: 83
+    names:
+    - LDM
+    - LDRD
+    - STM
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:5ce76a4772:
+    raw: ARSHARE, AWSHARE, ARINNER
+    section: 5.4.5 AXI extensions
+    page: 70
+    names:
+    - ARINNER
+    - ARSHARE
+    - AWSHARE
+    class: false_positive
+    reason: AXI/AHB bus signal names, not processor registers.
+  comma_set:12049ab59a:
+    raw: ARADDR, ARBURST, ARSIZE
+    section: 5.4.7 AXIM interface transfers
+    page: 72
+    names:
+    - ARADDR
+    - ARBURST
+    - ARSIZE
+    class: false_positive
+    reason: AXI/AHB bus signal names, not processor registers.
+  comma_set:004a2bf85b:
+    raw: AWADDR, AWBURST, AWSIZE
+    section: 5.4.7 AXIM interface transfers
+    page: 77
+    names:
+    - AWADDR
+    - AWBURST
+    - AWSIZE
+    class: false_positive
+    reason: AXI/AHB bus signal names, not processor registers.
+  comma_set:f588f110b0:
+    raw: AWADDR, AWBURST, AWSIZE, AWLEN
+    section: 5.4.7 AXIM interface transfers
+    page: 74
+    names:
+    - AWADDR
+    - AWBURST
+    - AWLEN
+    - AWSIZE
+    class: false_positive
+    reason: AXI/AHB bus signal names, not processor registers.
+  comma_set:c6c2733f36:
+    raw: ITM, FPU, MPU
+    section: 1.2 Component blocks
+    page: 16
+    names:
+    - FPU
+    - ITM
+    - MPU
+    class: block_name
+    reason: Names optional component blocks (ITM, FPU, MPU); their registers are enumerated in their own
+      summary tables.
+  comma_set:8ee8e5da9c:
+    raw: DTCMCR, CACR, AHBSCR, ABFSR
+    section: 13.3 Logic protection
+    page: 144
+    names:
+    - ABFSR
+    - AHBSCR
+    - CACR
+    - DTCMCR
+    class: already_covered
+    reason: The Cortex-M7 implementation-defined registers CM7_DTCMCR, CM7_CACR, CM7_AHBSCR, CM7_ABFSR
+      and CM7_AHBPCR, written here without the CM7_ prefix Table 3-1 gives them. All are covered.
+  comma_set:21543ca72a:
+    raw: TEX, C, B, AP
+    section: 6.2 MPU functional description
+    page: 101
+    names:
+    - AP
+    - B
+    - C
+    - TEX
+    class: field
+    reason: Access permission and memory attribute fields of the MPU region attribute register; bit fields
+      of a covered register, not independent state.
+  comma_set:acfd4a25b2:
+    raw: FPIXC, FPUFC, FPOFC, FPDZC, FPIDC
+    section: 8.2.3 Exceptions
+    page: 111
+    names:
+    - FPDZC
+    - FPIDC
+    - FPIXC
+    - FPOFC
+    - FPUFC
+    class: false_positive
+    reason: External output signals. They are named after the FPSCR cumulative exception bits but are
+      pins, not state; FPSCR itself is covered by the architecture manifest.
+  count:057defc5c5:
+    raw: 13 general-purpose registers
+    section: 2.6 Processor core registers
+    page: 33
+    names: []
+    class: covered_family
+    reason: States the general-purpose file, R0-R12, covered by the architecture manifest.
+  count:c83e171c6d:
+    raw: Sixteen 64-bit doubleword registers
+    section: 8.2 FPU functional description
+    page: 110
+    names: []
+    class: covered_family
+    reason: States the doubleword view D0-D15, covered by the architecture manifest as aliases of S0-S31.
+  count:470fc3b23a:
+    raw: Thirty-two 32-bit single-word registers
+    section: 8.2 FPU functional description
+    page: 110
+    names: []
+    class: covered_family
+    reason: States the single-word file S0-S31, covered by the architecture manifest.
+  phrase:edf938d397:
+    raw: banked registers
+    section: 2.6 Processor core registers
+    page: 33
+    names: []
+    class: covered_family
+    reason: SP as an alias of the banked SP_main/SP_process; all three are covered by the architecture
+      manifest.
+  range:bf18313936:
+    raw: R0-R5
+    section: 5.4.7 AXIM interface transfers
+    page: 79
+    names:
+    - R0
+    - R1
+    - R2
+    - R3
+    - R4
+    - R5
+    class: false_positive
+    reason: Register operands of an example LDMIA instruction, not a definition of state.

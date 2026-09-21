@@ -130,6 +130,12 @@ class StateEntry:
     # side-effecting registers generally do not.
     snapshot: bool = False
 
+    # Which pass produced this entry: a register-summary table, a declaration
+    # for state the manual documents only in prose, or an expanded register
+    # file. Reported separately so the coverage figures are not one opaque
+    # number.
+    derivation: str = "table"      # table | declared | register_file | prose
+
     source_family: str = ""        # AARCHMRS, ARM_TRM, ARM_ARM, RISCV_OPCODES
     source_release: str = ""       # pinned release/revision of that source
 

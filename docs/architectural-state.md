@@ -8,32 +8,51 @@ or if the generated tables drift from the manifests.
 
 ## What is claimed
 
-> Every register the ARMv7-M Architecture Reference Manual lists in its own
-> register index, plus every row of every register-summary table in the
-> Cortex-M7 r0p2 Technical Reference Manual, is either represented by libhw or
-> explicitly classified with a reason.
+> For each pinned document: every row of every register-summary table, every
+> entry of the document's own register index, and every construct its prose
+> uses to name state, is either represented by libhw or explicitly classified
+> with a reason.
 
-That claim is checked mechanically. It is not a claim about SoC peripherals,
-which are a separate layer and are deliberately out of scope.
+That is checked mechanically. It is not a claim about SoC peripherals, which
+are a separate layer and deliberately out of scope. It is also not a claim
+that a register reads back on any particular part -- see
+[Implemented is not readable](#implemented-is-not-readable).
+
+The pipeline behind the claim:
+
+```
+register tables  +  index entries  +  systematic prose scan
+        +  instruction/special-register cross-check
+        +  CMSIS / TRM cross-check
+                    |
+                    v
+          candidate state universe
+                    |
+                    v
+   manual classification of ambiguous entries
+                    |
+                    v
+              unclassified == 0
+```
 
 ## Current coverage
 
 ```
 Architecture: ARMv7-M            Source: DDI0403 E.e
-  source records accounted for   709      unclassified          0
+  source records accounted for   710      unclassified          0
   state                          601      conditional state    53
-  aliases                         19      non-state operations 10
+  aliases                         20      non-state operations 10
   explicit exclusions             26
+  derivation: table 658  declared 4  register-file 48  prose 0
+  prose scan: 427 candidates, 0 unclassified, 0 unresolved ranges
 
 CPU: Cortex-M7 r0p2              Source: DDI0489 B
   source records accounted for   399      unclassified          0
-  CPU-specific state              10      debug state         202
-  architecture-defined duplicates 179     explicit exclusions   8
+  CPU-specific state              10      prose candidates     34 (0 unclassified)
 
 CPU: Cortex-M4 r0p0              Source: DDI0439 B
   source records accounted for   307      unclassified          0
-  CPU-specific state               0      debug state         161
-  architecture-defined duplicates 146
+  CPU-specific state               0      prose candidates     23 (0 unclassified)
 ```
 
 Cortex-M4 adds no implementation-defined registers of its own: every row of
@@ -220,21 +239,66 @@ and so does the FP register file.
 The part is r0p1 and the pinned TRM documents r0p0, so the probe applies the
 overlay and states the gap rather than implying the revisions are the same.
 
-### What AVAILABLE does and does not mean
+## Implemented is not readable
 
-`AVAILABLE` means the read transaction completed, not that the register is
-implemented. On Cortex-M an unimplemented word in the PPB generally reads as
-zero rather than faulting, so a clean read is weak evidence of existence.
-Runtime inaccessibility is reported separately from architectural absence, and
-neither is inferred from the other.
+These are separate concepts and the API keeps them in separate enums with no
+shared member, so no caller can read a clean transaction as evidence that a
+register exists.
 
-This distinction caught a real defect. Eighteen ROM-table and CoreSight
+**Presence** (`hw_presence_t`) is decided only from evidence:
+
+| Verdict | Evidence |
+|---|---|
+| `ARCHITECTURAL` | the architecture mandates it unconditionally |
+| `CONFIG_CONFIRMED` / `CONFIG_DENIED` | a feature or configuration register (`MPU_TYPE.DREGION`, `DWT_CTRL.NUMCOMP`, `MVFR0`) |
+| `DISCOVERED` / `DISCOVERY_ABSENT` | the block's CoreSight component ID registers |
+| `UNKNOWN` | no evidence; never inferred from a read |
+
+**Read outcome** (`hw_read_status_t`) is recorded independently, and a CI test
+asserts `hw_state_presence` never calls `hw_state_read`. Blocks that discovery
+says are absent are not read at all.
+
+This matters because an unimplemented word in the Private Peripheral Bus
+generally reads as zero rather than faulting. On the bench part, 630 reads
+succeed but only three of those have no presence evidence behind them, and the
+report says so rather than counting them as implemented.
+
+It also caught a real defect earlier. Eighteen ROM-table and CoreSight
 registers are given in the manual as offsets within a component
 (`0x000`, `0xFCC`, ...). They were being read as absolute addresses, which on
 this part lands in boot-aliased memory -- so all eighteen read back cleanly and
-were reported `AVAILABLE`. Encodings now record whether they are absolute or
+were reported available. Encodings now record whether they are absolute or
 relative, `hw_state_read` refuses a relative one, and a CI test keeps them
 marked.
+
+## The prose pass
+
+A table-driven importer is structurally blind to state defined in running
+text, and a document's own index only catches what that index lists. The FP
+register file proves it: A2.5.2 defines S0-S31 and D0-D15 in prose, no summary
+table lists them, and Appendix D8's memory-mapped indexes cannot see them.
+
+`tools/state_prose_candidates.py` scans for the constructs a manual actually
+uses to name state: explicit ranges (`S0-S31`, `R0-R15`, `D0-D15`), `X through
+Y`, counted files (`Thirty-two ... registers`), `register file` / `register
+bank` / `banked registers` / `extension registers`, comma-separated sets,
+special registers named as operands of `MRS`/`MSR`/`VMRS`/`VMSR`, and
+parameterised families (`DWT_COMP<n>`). Ranges are expanded, so `S0-S31`
+yields 32 candidates rather than one opaque record.
+
+Nothing is added automatically. The scan emits candidates with page, section
+and context, and each is classified as `state`, `alias`, `field`,
+`block_name`, `covered_family`, `already_covered` or `false_positive`, with a
+reason. What can be resolved against the manifest is resolved automatically;
+the rest are reviewed by hand in
+`spec/rules/<target>.prose_candidates.yaml`. `make state-prose` fails on any
+unclassified candidate or unresolved range.
+
+Two of the vocabularies it classifies against are derived from the document
+rather than hand-written: instruction mnemonics come from the instruction
+chapters' own section headings, and bit-field names from the `bit assignments`
+tables. Deciding that a token is a mnemonic or a field should rest on
+something the manual says.
 
 ## Not done
 

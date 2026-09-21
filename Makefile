@@ -47,7 +47,7 @@ PRIVATE_HEADER = core/hw_priv.h
 
 
 # --- Build Rules ---
-.PHONY: all clean check state-import state-gen state-coverage state-check state-sweep
+.PHONY: all clean check state-import state-gen state-coverage state-check state-sweep state-prose
 
 all: out/libhw.so $(ODIR)/$(TARGET) $(ODIR)/$(TEST_TARGET) $(ODIR)/$(PROBE_TARGET)
 
@@ -108,13 +108,18 @@ state-gen:
 	@python3 tools/state_gen.py
 
 # The accounting: every source entry classified, nothing unclassified.
-state-coverage:
+state-coverage: state-prose
 	@python3 tools/state_gen.py --coverage-only
 
 # Sweep the manuals for state documented outside their register tables.
 state-sweep:
 	@python3 tools/state_prose_sweep.py --target $(STATE_ARCH)
 	@for c in $(STATE_CPUS); do python3 tools/state_prose_sweep.py --target $$c; done
+
+# Prose-state scan: every candidate classified, no unresolved ranges.
+state-prose:
+	@python3 tools/state_prose_candidates.py --target $(STATE_ARCH)
+	@for c in $(STATE_CPUS); do python3 tools/state_prose_candidates.py --target $$c; done
 
 # CI invariants for the state database.
 state-check:

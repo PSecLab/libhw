@@ -1,0 +1,95 @@
+schema_version: 1
+target: cortex_m4_r0p0
+description: Prose candidates not resolvable against the manifest automatically.
+candidates:
+  comma_set:f9279edccb:
+    raw: LDM, STM, PUSH
+    section: 2.1 About the functions
+    page: 21
+    names:
+    - LDM
+    - PUSH
+    - STM
+    class: false_positive
+    reason: Instruction mnemonics named in prose, not registers.
+  comma_set:f252416b5d:
+    raw: TDI, TDO, TMS
+    section: 11.3.10 TPIU_DEVID
+    page: 116
+    names:
+    - TDI
+    - TDO
+    - TMS
+    class: false_positive
+    reason: JTAG terminal names (TDI, TDO, TMS, TCK); external pins, not registers.
+  comma_set:5298a3327f:
+    raw: TEX, C, B, AP
+    section: 5.2 MPU functional description
+    page: 59
+    names:
+    - AP
+    - B
+    - C
+    - TEX
+    class: field
+    reason: Access permission and memory attribute fields of the MPU region attribute register; bit fields
+      of a covered register, not independent state.
+  comma_set:78874c054f:
+    raw: FPIXC, FPUFC, FPOFC, FPDZC, FPIDC
+    section: 7.2.7 Exceptions
+    page: 73
+    names:
+    - FPDZC
+    - FPIDC
+    - FPIXC
+    - FPOFC
+    - FPUFC
+    class: false_positive
+    reason: External output signals. They are named after the FPSCR cumulative exception bits but are
+      pins, not state; FPSCR itself is covered by the architecture manifest.
+  count:32a3e02449:
+    raw: two core registers
+    section: 7.2.3 FPU instruction set
+    page: 70
+    names: []
+    class: covered_family
+    reason: Refers to the core register file R0-R12, covered by the architecture manifest.
+  family:294400ea43:
+    raw: SYSRESETn
+    section: 2.1 About the functions
+    page: 22
+    names:
+    - SYSRESET
+    class: false_positive
+    reason: SYSRESETn is a reset input signal, not a register.
+  phrase:92f3b483a3:
+    raw: register bank
+    section: ''
+    page: 7
+    names: []
+    class: covered_family
+    reason: Contents-listing reference to the FPU register bank figure; the bank is S0-S31/D0-D15, covered
+      by the architecture manifest.
+  phrase:a78088a0f2:
+    raw: register bank
+    section: 7.2 FPU Functional Description
+    page: 68
+    names: []
+    class: covered_family
+    reason: The FPU register bank, S0-S31 with the D0-D15 view, covered by the architecture manifest.
+  phrase:5fdf29e490:
+    raw: register bank
+    section: 7.2.1 FPU views of the register bank
+    page: 68
+    names: []
+    class: covered_family
+    reason: Section heading for the FPU's views of the register bank; S0-S31 and D0-D15 are covered by
+      the architecture manifest.
+  phrase:1109204d6f:
+    raw: banked registers
+    section: 3.8 Processor core register summary
+    page: 46
+    names: []
+    class: covered_family
+    reason: SP as an alias of the banked SP_main/SP_process; all three are covered by the architecture
+      manifest.

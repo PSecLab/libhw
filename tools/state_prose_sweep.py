@@ -50,7 +50,7 @@ BLOCK_PREFIXES = ("TPIU_", "ITM_", "DWT_", "FP_", "MPU_", "NVIC_", "SYST_", "CTI
 
 def normalise(name: str) -> str:
     """Collapse an array spelling so DWT_COMPn, DWT_COMPx and DWT_COMP0 agree."""
-    return re.sub(r"(?:[NXnx]|\d+)$", "", name)
+    return re.sub(r"(?:[nx]|\d+)$", "", name)  # only a lowercase placeholder, not a capital N
 
 
 def spellings(name: str) -> set[str]:

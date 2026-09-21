@@ -28,6 +28,7 @@ entries:
   alias: null
   reason: All accesses are UNPREDICTABLE
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -57,6 +58,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 33
@@ -86,6 +88,7 @@ entries:
   alias: null
   reason: All accesses are UNPREDICTABLE
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -116,6 +119,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -145,6 +149,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -175,6 +180,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -205,6 +211,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -235,6 +242,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -265,6 +273,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -295,6 +304,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -325,6 +335,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -355,6 +366,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -385,6 +397,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -415,6 +428,7 @@ entries:
   reason: Memory-mapped cache and branch-predictor maintenance operation; writing it performs an action rather than storing
     state
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -444,6 +458,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -473,6 +488,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -502,6 +518,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -531,6 +548,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -560,6 +578,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -589,6 +608,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -618,6 +638,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -647,6 +668,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -676,6 +698,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -705,6 +728,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -734,6 +758,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -763,6 +788,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -792,6 +818,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -821,6 +848,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -850,6 +878,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -879,6 +908,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -908,6 +938,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -937,6 +968,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -966,6 +998,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -995,6 +1028,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1024,6 +1058,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1053,6 +1088,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1082,6 +1118,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1111,6 +1148,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1140,6 +1178,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1169,6 +1208,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1198,6 +1238,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1227,6 +1268,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1256,6 +1298,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1285,6 +1328,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1314,6 +1358,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1343,6 +1388,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1372,6 +1418,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1401,6 +1448,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1430,6 +1478,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1459,6 +1508,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1488,6 +1538,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1517,6 +1568,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1546,6 +1598,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1575,6 +1628,7 @@ entries:
   alias: null
   reason: 0x00000000                          Main Control register, Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1604,6 +1658,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1633,6 +1688,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1662,6 +1718,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1691,6 +1748,7 @@ entries:
   alias: null
   reason: '-                              See Debug system registers on page C1-699'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1720,6 +1778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1749,6 +1808,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1778,6 +1838,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1807,6 +1868,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1836,6 +1898,7 @@ entries:
   alias: null
   reason: '-                              Cache and Branch Predictor maintenance, see Cache and'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1865,6 +1928,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1894,6 +1958,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1923,6 +1988,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1952,6 +2018,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -1981,6 +2048,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2010,6 +2078,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2039,6 +2108,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2068,6 +2138,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2097,6 +2168,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2126,6 +2198,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2155,6 +2228,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2184,6 +2258,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2213,6 +2288,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2242,6 +2318,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2271,6 +2348,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2300,6 +2378,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2329,6 +2408,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2358,6 +2438,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2387,6 +2468,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2416,6 +2498,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2445,6 +2528,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2474,6 +2558,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2503,6 +2588,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2532,6 +2618,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2561,6 +2648,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2590,6 +2678,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2619,6 +2708,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2648,6 +2738,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2677,6 +2768,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2706,6 +2798,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2735,6 +2828,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2764,6 +2858,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2793,6 +2888,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2822,6 +2918,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2851,6 +2948,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2880,6 +2978,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2909,6 +3008,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2938,6 +3038,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2967,6 +3068,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -2996,6 +3098,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3025,6 +3128,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3054,6 +3158,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3083,6 +3188,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3112,6 +3218,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3141,6 +3248,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3170,6 +3278,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3199,6 +3308,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3228,6 +3338,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3257,6 +3368,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3286,6 +3398,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3315,6 +3428,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3344,6 +3458,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3373,6 +3488,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3402,6 +3518,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3431,6 +3548,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3460,6 +3578,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3489,6 +3608,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3518,6 +3638,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3547,6 +3668,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3576,6 +3698,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3605,6 +3728,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3634,6 +3758,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3663,6 +3788,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3692,6 +3818,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3721,6 +3848,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3750,6 +3878,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3779,6 +3908,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3808,6 +3938,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3837,6 +3968,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3866,6 +3998,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3895,6 +4028,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3924,6 +4058,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3953,6 +4088,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -3982,6 +4118,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4011,6 +4148,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4040,6 +4178,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4069,6 +4208,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4098,6 +4238,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4127,6 +4268,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4156,6 +4298,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4185,6 +4328,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4214,6 +4358,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4243,6 +4388,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4272,6 +4418,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4301,6 +4448,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4330,6 +4478,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4359,6 +4508,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4388,6 +4538,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4417,6 +4568,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4446,6 +4598,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4475,6 +4628,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4504,6 +4658,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4533,6 +4688,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4562,6 +4718,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4591,6 +4748,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4620,6 +4778,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4649,6 +4808,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4678,6 +4838,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4707,6 +4868,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4736,6 +4898,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4765,6 +4928,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4794,6 +4958,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4823,6 +4988,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4852,6 +5018,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4881,6 +5048,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4910,6 +5078,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4939,6 +5108,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4968,6 +5138,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -4997,6 +5168,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5026,6 +5198,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5055,6 +5228,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5084,6 +5258,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5113,6 +5288,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5142,6 +5318,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5171,6 +5348,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5200,6 +5378,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5229,6 +5408,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5258,6 +5438,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5287,6 +5468,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5316,6 +5498,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5345,6 +5528,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5374,6 +5558,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5403,6 +5588,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5432,6 +5618,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5461,6 +5648,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5490,6 +5678,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5519,6 +5708,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5548,6 +5738,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5577,6 +5768,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5606,6 +5798,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5635,6 +5828,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5664,6 +5858,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5693,6 +5888,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5722,6 +5918,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5751,6 +5948,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5780,6 +5978,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5809,6 +6008,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5838,6 +6038,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5867,6 +6068,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5896,6 +6098,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5925,6 +6128,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5954,6 +6158,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -5983,6 +6188,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6012,6 +6218,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6041,6 +6248,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6070,6 +6278,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6099,6 +6308,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6128,6 +6338,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6157,6 +6368,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6186,6 +6398,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6215,6 +6428,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6244,6 +6458,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6273,6 +6488,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6302,6 +6518,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6331,6 +6548,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6360,6 +6578,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6389,6 +6608,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6418,6 +6638,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6447,6 +6668,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6476,6 +6698,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6505,6 +6728,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6534,6 +6758,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6563,6 +6788,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6592,6 +6818,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6621,6 +6848,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6650,6 +6878,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6679,6 +6908,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6708,6 +6938,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6737,6 +6968,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6766,6 +6998,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6795,6 +7028,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6824,6 +7058,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6853,6 +7088,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6882,6 +7118,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6911,6 +7148,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6940,6 +7178,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6969,6 +7208,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -6998,6 +7238,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7027,6 +7268,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7056,6 +7298,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7085,6 +7328,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7114,6 +7358,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7143,6 +7388,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7172,6 +7418,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7201,6 +7448,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7230,6 +7478,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7259,6 +7508,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7288,6 +7538,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7317,6 +7568,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7346,6 +7598,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7375,6 +7628,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7404,6 +7658,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7433,6 +7688,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7462,6 +7718,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7491,6 +7748,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7520,6 +7778,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7549,6 +7808,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7578,6 +7838,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7607,6 +7868,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7636,6 +7898,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7665,6 +7928,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7694,6 +7958,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7723,6 +7988,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7752,6 +8018,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7781,6 +8048,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7810,6 +8078,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7839,6 +8108,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7868,6 +8138,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7897,6 +8168,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7926,6 +8198,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7955,6 +8228,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -7984,6 +8258,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8013,6 +8288,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8042,6 +8318,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8071,6 +8348,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8100,6 +8378,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8129,6 +8408,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8158,6 +8438,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8187,6 +8468,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8216,6 +8498,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8245,6 +8528,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8274,6 +8558,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8303,6 +8588,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8332,6 +8618,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8361,6 +8648,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8390,6 +8678,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8419,6 +8708,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8448,6 +8738,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8477,6 +8768,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8506,6 +8798,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8535,6 +8828,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8564,6 +8858,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8593,6 +8888,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8622,6 +8918,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8651,6 +8948,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8680,6 +8978,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8709,6 +9008,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8738,6 +9038,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8767,6 +9068,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8796,6 +9098,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8825,6 +9128,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8854,6 +9158,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8883,6 +9188,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8912,6 +9218,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -8941,6 +9248,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8970,6 +9278,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -8999,6 +9308,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -9028,6 +9338,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -9057,6 +9368,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -9086,6 +9398,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9115,6 +9428,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 17
@@ -9144,6 +9458,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 18
@@ -9173,6 +9488,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -9202,6 +9518,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -9231,6 +9548,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9260,6 +9578,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -9289,6 +9608,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -9318,6 +9638,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9347,6 +9668,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9376,6 +9698,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9405,6 +9728,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9434,6 +9758,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9463,6 +9788,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9492,6 +9818,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9521,6 +9848,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9550,6 +9878,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9579,6 +9908,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9608,6 +9938,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9637,6 +9968,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9666,6 +9998,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9695,6 +10028,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9724,6 +10058,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9753,6 +10088,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9782,6 +10118,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9811,6 +10148,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9840,6 +10178,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9869,6 +10208,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9898,6 +10238,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9927,6 +10268,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9956,6 +10298,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -9985,6 +10328,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10014,6 +10358,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10043,6 +10388,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10072,6 +10418,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10101,6 +10448,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10130,6 +10478,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10159,6 +10508,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10188,6 +10538,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10217,6 +10568,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10246,6 +10598,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10275,6 +10628,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10304,6 +10658,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10333,6 +10688,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10362,6 +10718,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10391,6 +10748,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10420,6 +10778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10449,6 +10808,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10478,6 +10838,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10507,6 +10868,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10536,6 +10898,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10565,6 +10928,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10594,6 +10958,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10623,6 +10988,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10652,6 +11018,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10681,6 +11048,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10710,6 +11078,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10739,6 +11108,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10768,6 +11138,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10797,6 +11168,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10826,6 +11198,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10855,6 +11228,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10884,6 +11258,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10913,6 +11288,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10942,6 +11318,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -10971,6 +11348,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11000,6 +11378,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11029,6 +11408,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11058,6 +11438,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11087,6 +11468,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11116,6 +11498,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11145,6 +11528,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11174,6 +11558,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11203,6 +11588,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11232,6 +11618,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11261,6 +11648,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11290,6 +11678,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11319,6 +11708,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11348,6 +11738,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11377,6 +11768,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11406,6 +11798,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11435,6 +11828,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11464,6 +11858,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11493,6 +11888,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11522,6 +11918,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11551,6 +11948,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11580,6 +11978,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11609,6 +12008,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11638,6 +12038,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11667,6 +12068,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11696,6 +12098,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11725,6 +12128,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11754,6 +12158,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11783,6 +12188,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11812,6 +12218,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11841,6 +12248,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11870,6 +12278,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11899,6 +12308,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11928,6 +12338,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11957,6 +12368,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -11986,6 +12398,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12015,6 +12428,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12044,6 +12458,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12073,6 +12488,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12102,6 +12518,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12131,6 +12548,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12160,6 +12578,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12189,6 +12608,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12218,6 +12638,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12247,6 +12668,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12276,6 +12698,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12305,6 +12728,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12334,6 +12758,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12363,6 +12788,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12392,6 +12818,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12421,6 +12848,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12450,6 +12878,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12479,6 +12908,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12508,6 +12938,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12537,6 +12968,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12566,6 +12998,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12595,6 +13028,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12624,6 +13058,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12653,6 +13088,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12682,6 +13118,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12711,6 +13148,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12740,6 +13178,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12769,6 +13208,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12798,6 +13238,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12827,6 +13268,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12856,6 +13298,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12885,6 +13328,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12914,6 +13358,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12943,6 +13388,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -12972,6 +13418,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13001,6 +13448,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13030,6 +13478,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13059,6 +13508,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13088,6 +13538,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13117,6 +13568,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13146,6 +13598,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13175,6 +13628,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13204,6 +13658,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13233,6 +13688,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13262,6 +13718,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13291,6 +13748,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13320,6 +13778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13349,6 +13808,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13378,6 +13838,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13407,6 +13868,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13436,6 +13898,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13465,6 +13928,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13494,6 +13958,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13523,6 +13988,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13552,6 +14018,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13581,6 +14048,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13610,6 +14078,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13639,6 +14108,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13668,6 +14138,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13697,6 +14168,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13726,6 +14198,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13755,6 +14228,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13784,6 +14258,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13813,6 +14288,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13842,6 +14318,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13871,6 +14348,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13900,6 +14378,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13929,6 +14408,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13958,6 +14438,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -13987,6 +14468,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14016,6 +14498,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14045,6 +14528,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14074,6 +14558,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14103,6 +14588,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14132,6 +14618,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14161,6 +14648,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14190,6 +14678,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14219,6 +14708,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14248,6 +14738,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14277,6 +14768,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14306,6 +14798,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14335,6 +14828,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14364,6 +14858,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14393,6 +14888,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14422,6 +14918,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14451,6 +14948,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14480,6 +14978,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14509,6 +15008,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14538,6 +15038,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14567,6 +15068,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14596,6 +15098,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14625,6 +15128,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14654,6 +15158,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14683,6 +15188,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14712,6 +15218,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14741,6 +15248,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14770,6 +15278,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14799,6 +15308,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14828,6 +15338,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14857,6 +15368,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14886,6 +15398,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14915,6 +15428,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14944,6 +15458,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -14973,6 +15488,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15002,6 +15518,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15031,6 +15548,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15060,6 +15578,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15089,6 +15608,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15118,6 +15638,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15147,6 +15668,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15176,6 +15698,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15205,6 +15728,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15234,6 +15758,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15263,6 +15788,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15292,6 +15818,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15321,6 +15848,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15350,6 +15878,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15379,6 +15908,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15408,6 +15938,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15437,6 +15968,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15466,6 +15998,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15495,6 +16028,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15524,6 +16058,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15553,6 +16088,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15582,6 +16118,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15611,6 +16148,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15640,6 +16178,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15669,6 +16208,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15698,6 +16238,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15727,6 +16268,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15756,6 +16298,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15785,6 +16328,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15814,6 +16358,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15843,6 +16388,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15872,6 +16418,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15901,6 +16448,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15930,6 +16478,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15959,6 +16508,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -15988,6 +16538,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16017,6 +16568,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16046,6 +16598,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16075,6 +16628,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16104,6 +16658,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16133,6 +16688,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16162,6 +16718,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16191,6 +16748,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16220,6 +16778,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16249,6 +16808,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16278,6 +16838,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16307,6 +16868,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16336,6 +16898,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16365,6 +16928,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16394,6 +16958,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16423,6 +16988,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16452,6 +17018,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16481,6 +17048,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16510,6 +17078,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16539,6 +17108,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16568,6 +17138,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16597,6 +17168,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16626,6 +17198,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16655,6 +17228,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16684,6 +17258,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16713,6 +17288,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16742,6 +17318,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16771,6 +17348,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16800,6 +17378,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16829,6 +17408,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16858,6 +17438,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16887,6 +17468,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16916,6 +17498,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16945,6 +17528,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -16974,6 +17558,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17003,6 +17588,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17032,6 +17618,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17061,6 +17648,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17090,6 +17678,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17119,6 +17708,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17148,6 +17738,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17177,6 +17768,7 @@ entries:
   alias: null
   reason: '-                Optional CoreSight management and ID registers. See Appendix D1'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17206,6 +17798,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17235,6 +17828,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17264,6 +17858,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17293,6 +17888,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17322,6 +17918,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17351,6 +17948,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17380,6 +17978,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17409,6 +18008,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17439,6 +18039,7 @@ entries:
   reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at runtime from DWT_CTRL.NUMCOMP,
     so the architecture cannot fix a count
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17469,6 +18070,7 @@ entries:
   reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at runtime from DWT_CTRL.NUMCOMP,
     so the architecture cannot fix a count
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17499,6 +18101,7 @@ entries:
   reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at runtime from DWT_CTRL.NUMCOMP,
     so the architecture cannot fix a count
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17528,6 +18131,7 @@ entries:
   alias: null
   reason: Reserved
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17557,6 +18161,7 @@ entries:
   alias: null
   reason: IMP DEF         Optional CoreSight management and ID registers. See Appendix D1
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17586,6 +18191,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17615,6 +18221,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17644,6 +18251,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17673,6 +18281,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17702,6 +18311,7 @@ entries:
   alias: null
   reason: '-              Optional CoreSight management and ID registers. See Appendix D1'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17731,6 +18341,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17760,6 +18371,7 @@ entries:
   alias: null
   reason: '-              Optional CoreSight management and ID registers. See Appendix D1'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17789,6 +18401,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17818,6 +18431,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17847,6 +18461,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17876,6 +18491,7 @@ entries:
   alias: null
   reason: '-            Optional CoreSight management and ID registers. See'
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17905,6 +18521,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17934,6 +18551,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17963,6 +18581,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -17992,6 +18611,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18021,6 +18641,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18050,6 +18671,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18079,6 +18701,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18108,6 +18731,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18137,6 +18761,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18166,6 +18791,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18195,6 +18821,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18224,6 +18851,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18253,6 +18881,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18282,6 +18911,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18311,6 +18941,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18340,6 +18971,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18369,6 +19001,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18398,6 +19031,7 @@ entries:
   alias: null
   reason: null
   snapshot: false
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -18427,6 +19061,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 0
@@ -18456,6 +19091,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 1
@@ -18485,6 +19121,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 2
@@ -18514,6 +19151,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 3
@@ -18543,6 +19181,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 4
@@ -18572,6 +19211,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 5
@@ -18601,6 +19241,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 6
@@ -18630,6 +19271,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 7
@@ -18659,6 +19301,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 8
@@ -18688,6 +19331,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 9
@@ -18717,6 +19361,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 10
@@ -18746,6 +19391,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 11
@@ -18775,6 +19421,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 12
@@ -18804,6 +19451,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 17
@@ -18833,6 +19481,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 18
@@ -18862,6 +19511,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 14
@@ -18891,6 +19541,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 15
@@ -18920,6 +19571,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -18949,6 +19601,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -18978,6 +19631,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 16
@@ -19007,6 +19661,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -19036,6 +19691,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -19065,6 +19721,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -19094,6 +19751,7 @@ entries:
   alias: null
   reason: null
   snapshot: true
+  derivation: table
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 20
@@ -19126,6 +19784,7 @@ entries:
     bit_width: 8
   reason: MemManage Fault Status is CFSR[7:0]; not independent storage
   snapshot: false
+  derivation: declared
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -19158,6 +19817,7 @@ entries:
     bit_width: 8
   reason: BusFault Status is CFSR[15:8]; not independent storage
   snapshot: false
+  derivation: declared
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -19190,6 +19850,7 @@ entries:
     bit_width: 16
   reason: UsageFault Status is CFSR[31:16]; not independent storage
   snapshot: false
+  derivation: declared
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -19197,6 +19858,40 @@ entries:
   debug_width: 32
   component: ''
   state_id: ARMv7-M:arch:UFSR
+- canonical_name: SP
+  source_id: declared:SP
+  architecture: ARMv7-M
+  namespace: arch
+  classification: alias
+  provenance:
+    document: DDI0403
+    revision: E.e
+    section: B1.4.1 The Arm core registers
+    table: 'Prose: ''SP (R13)'' - the current stack pointer'
+    row: SP
+    page: null
+  width: 32
+  access: memory_mapped
+  encoding: null
+  encoding_kind: absolute
+  readable: true
+  writable: true
+  feature_requirement: null
+  alias:
+    target: SP_main
+    bit_offset: 0
+    bit_width: 32
+  reason: SP names whichever of SP_main or SP_process CONTROL.SPSEL currently selects; a view of one of them, not independent
+    storage. DCRSR REGSEL 13 reaches it.
+  snapshot: false
+  derivation: declared
+  source_family: ARM_ARM
+  source_release: DDI0403 E.e
+  debug_regsel: null
+  debug_lsb: 0
+  debug_width: 32
+  component: ''
+  state_id: ARMv7-M:arch:SP
 - canonical_name: S0
   source_id: fp_single:S0
   architecture: ARMv7-M
@@ -19220,6 +19915,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 64
@@ -19250,6 +19946,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 65
@@ -19280,6 +19977,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 66
@@ -19310,6 +20008,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 67
@@ -19340,6 +20039,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 68
@@ -19370,6 +20070,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 69
@@ -19400,6 +20101,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 70
@@ -19430,6 +20132,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 71
@@ -19460,6 +20163,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 72
@@ -19490,6 +20194,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 73
@@ -19520,6 +20225,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 74
@@ -19550,6 +20256,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 75
@@ -19580,6 +20287,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 76
@@ -19610,6 +20318,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 77
@@ -19640,6 +20349,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 78
@@ -19670,6 +20380,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 79
@@ -19700,6 +20411,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 80
@@ -19730,6 +20442,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 81
@@ -19760,6 +20473,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 82
@@ -19790,6 +20504,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 83
@@ -19820,6 +20535,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 84
@@ -19850,6 +20566,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 85
@@ -19880,6 +20597,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 86
@@ -19910,6 +20628,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 87
@@ -19940,6 +20659,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 88
@@ -19970,6 +20690,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 89
@@ -20000,6 +20721,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 90
@@ -20030,6 +20752,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 91
@@ -20060,6 +20783,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 92
@@ -20090,6 +20814,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 93
@@ -20120,6 +20845,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 94
@@ -20150,6 +20876,7 @@ entries:
   reason: The FP extension register file is defined in prose rather than in a register summary table, so it is declared here.
     S0-S31 are the independent storage.
   snapshot: true
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: 95
@@ -20182,6 +20909,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20214,6 +20942,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20246,6 +20975,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20278,6 +21008,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20310,6 +21041,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20342,6 +21074,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20374,6 +21107,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20406,6 +21140,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20438,6 +21173,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20470,6 +21206,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20502,6 +21239,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20534,6 +21272,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20566,6 +21305,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20598,6 +21338,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20630,6 +21371,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null
@@ -20662,6 +21404,7 @@ entries:
     bit_width: 64
   reason: Dn is a 64-bit view of the pair S(2n):S(2n+1); the same storage as the single-precision file, not additional state.
   snapshot: false
+  derivation: register_file
   source_family: ARM_ARM
   source_release: DDI0403 E.e
   debug_regsel: null

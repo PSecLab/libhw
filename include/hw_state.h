@@ -39,16 +39,43 @@ typedef enum {
     HW_ACC_FP_SYSREG,               /* VMRS/VMSR */
 } hw_acc_t;
 
-/** Why a piece of state could not be read. Absence from a target is not the
- *  same as absence from the architecture, so these are kept distinct. */
+/**
+ * Whether the target implements a piece of state.
+ *
+ * This is deliberately separate from whether a read of it succeeded. A clean
+ * read is not evidence of implementation: an unimplemented word in the Private
+ * Peripheral Bus generally reads as zero rather than faulting, so "the
+ * transaction completed" and "the register exists" are different claims.
+ * Presence is decided only from the architecture, from feature and
+ * configuration registers, or from CoreSight component discovery.
+ */
 typedef enum {
-    HW_STATE_AVAILABLE = 0,
-    HW_STATE_NOT_IMPLEMENTED_BY_CPU,
-    HW_STATE_BACKEND_UNSUPPORTED,
-    HW_STATE_ACCESS_DENIED,
-    HW_STATE_UNSAFE_TO_READ,
-    HW_STATE_READ_FAILED,
-} hw_state_avail_t;
+    HW_PRESENCE_UNKNOWN = 0,        /* no evidence either way; do not infer from a read */
+    HW_PRESENCE_ARCHITECTURAL,      /* the architecture mandates it unconditionally */
+    HW_PRESENCE_CONFIG_CONFIRMED,   /* a feature/configuration register says it exists */
+    HW_PRESENCE_CONFIG_DENIED,      /* a feature/configuration register says it does not */
+    HW_PRESENCE_DISCOVERED,         /* its block's CoreSight ID registers identify it */
+    HW_PRESENCE_DISCOVERY_ABSENT,   /* its block's ID registers say the block is absent */
+} hw_presence_t;
+
+/** The outcome of attempting to read a piece of state. */
+typedef enum {
+    HW_READ_NOT_ATTEMPTED = 0,
+    HW_READ_OK,
+    HW_READ_BACKEND_UNSUPPORTED,
+    HW_READ_UNSAFE,                 /* write-only, or needs a state the target is not in */
+    HW_READ_ACCESS_DENIED,
+    HW_READ_FAILED,
+} hw_read_status_t;
+
+/** Presence and read outcome together, kept apart on purpose. */
+typedef struct {
+    hw_presence_t    presence;
+    const char      *evidence;      /* what decided presence, for the report */
+    hw_read_status_t read;
+    uint32_t         value;
+    uint8_t          value_is_zero; /* a zero read is especially weak evidence */
+} hw_state_result_t;
 
 /**
  * What an encoding string means.
@@ -76,6 +103,7 @@ typedef struct {
     uint8_t     writable;
     uint8_t     snapshot;    /* belongs in a whole-CPU snapshot */
     const char *feature;     /* "" when unconditional */
+    const char *component;   /* owning block, for CoreSight discovery */
 } hw_state_desc_t;
 
 /** A state element that is an alias of part of another element's storage. */
@@ -92,6 +120,12 @@ typedef struct {
     const char *encoding;
     const char *reason;
 } hw_state_operation_t;
+
+/** A CoreSight block, identified by its component ID registers. */
+typedef struct {
+    const char *name;
+    uint32_t    base;      /* CIDR0 lives at base + 0xFF0 */
+} hw_state_component_t;
 
 /**
  * A debug access path: DCRSR selects a register and its value appears in DCRDR.
@@ -137,6 +171,8 @@ typedef struct {
     size_t                      operation_count;
     const hw_state_dbgreg_t    *dbgregs;
     size_t                      dbgreg_count;
+    const hw_state_component_t *components;
+    size_t                      component_count;
 } hw_state_db_t;
 
 /** The databases built into this library. Terminated by a NULL name. */
@@ -157,8 +193,25 @@ const hw_state_desc_t *hw_state_find(const hw_state_db_t *db, const char *name);
  *
  * @return 0 when the value was read, -1 otherwise.
  */
+/**
+ * Determine whether the target implements this state, without reading it.
+ *
+ * Never consults a data read: only the architecture, the resolved feature set
+ * and CoreSight component discovery.
+ */
+hw_presence_t hw_state_presence(hw_t *ctx, const hw_state_desc_t *desc,
+                                const hw_cpu_features_t *f, const char **evidence);
+
+/**
+ * Determine presence and, separately, attempt a read.
+ *
+ * The read outcome never changes the presence verdict.
+ */
+int hw_state_query(hw_t *ctx, const hw_state_desc_t *desc,
+                   const hw_cpu_features_t *f, hw_state_result_t *out);
+
 int hw_state_read(hw_t *ctx, const hw_state_desc_t *desc,
-                  uint32_t *value_out, hw_state_avail_t *why);
+                  uint32_t *value_out, hw_read_status_t *why);
 
 /**
  * Read the target's ID registers and derive what it implements.
@@ -176,7 +229,8 @@ int hw_state_identify(hw_t *ctx, hw_cpu_features_t *out);
 int hw_state_expected(const hw_state_desc_t *desc, const hw_cpu_features_t *f);
 
 /** Human-readable name for an availability result. */
-const char *hw_state_avail_name(hw_state_avail_t a);
+const char *hw_presence_name(hw_presence_t p);
+const char *hw_read_status_name(hw_read_status_t r);
 
 /** Find the DCRSR access path for a register, or NULL. */
 const hw_state_dbgreg_t *hw_state_dbgreg(const hw_state_db_t *db, const char *name);

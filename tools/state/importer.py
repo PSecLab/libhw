@@ -260,6 +260,7 @@ def import_target(target: str, arch_names: set[str] | None = None,
                 debug_lsb=int((access_paths.get(name) or {}).get("lsb", 0)),
                 debug_width=int((access_paths.get(name) or {}).get("width", 32)),
                 encoding_kind=PROFILE_ENCODING_KIND.get(rule["profile"], "absolute"),
+                derivation="table",
                 source_release=f"{src.document} {src.revision}")
 
             key = entry.state_id()
@@ -307,7 +308,7 @@ def import_target(target: str, arch_names: set[str] | None = None,
             reason=ov.get("reason"),
             alias=(Alias(target=ov["alias_of"], bit_offset=int(ov.get("bit_offset", 0)),
                          bit_width=int(ov.get("bit_width", 32))) if ov.get("alias_of") else None),
-            snapshot=False,
+            snapshot=False, derivation="declared",
             source_family="ARM_ARM", source_release=f"{src.document} {src.revision}")
         seen[name] = entry
         entries.append(entry)
@@ -340,6 +341,7 @@ def import_target(target: str, arch_names: set[str] | None = None,
                 debug_lsb=0, debug_width=min(int(spec.get("width", 32)), 32),
                 component="FPREGS",
                 snapshot=(cls is Classification.CONDITIONAL_STATE),
+                derivation="register_file",
                 source_family="ARM_ARM", source_release=f"{src.document} {src.revision}")
             seen[name] = entry
             entries.append(entry)

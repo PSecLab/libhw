@@ -1,0 +1,251 @@
+schema_version: 1
+target: armv7m
+description: Prose candidates that could not be resolved against the manifest automatically. Every one
+  carries a class and a reason.
+candidates:
+  comma_set:66d74f1aa8:
+    raw: VCVTA, VCVTN, VCVTP
+    section: A2.5 The optional Floating-point Extension
+    page: 34
+    names:
+    - VCVTA
+    - VCVTN
+    - VCVTP
+    class: false_positive
+    reason: Floating-point instruction mnemonics (VCVT/VRINT variants, VLDM/VPUSH/VSTM and the .F64 data-type
+      suffix). Named in the FP chapter's prose rather than in an instruction heading, which is why the
+      derived mnemonic vocabulary did not catch them.
+  comma_set:3c943a7921:
+    raw: VRINTA, VRINTN, VRINTP
+    section: A2.5 The optional Floating-point Extension
+    page: 34
+    names:
+    - VRINTA
+    - VRINTN
+    - VRINTP
+    class: false_positive
+    reason: Floating-point instruction mnemonics (VCVT/VRINT variants, VLDM/VPUSH/VSTM and the .F64 data-type
+      suffix). Named in the FP chapter's prose rather than in an instruction heading, which is why the
+      derived mnemonic vocabulary did not catch them.
+  comma_set:b5c5afce2e:
+    raw: F64, VLDM, VPUSH, VSTM
+    section: A3.7 Memory access order
+    page: 92
+    names:
+    - F64
+    - VLDM
+    - VPUSH
+    - VSTM
+    class: false_positive
+    reason: Floating-point instruction mnemonics (VCVT/VRINT variants, VLDM/VPUSH/VSTM and the .F64 data-type
+      suffix). Named in the FP chapter's prose rather than in an instruction heading, which is why the
+      derived mnemonic vocabulary did not catch them.
+  comma_set:39ee6f4711:
+    raw: TEX, C, B
+    section: B3.5 Protected Memory System Architecture, PMSAv7
+    page: 641
+    names:
+    - B
+    - C
+    - TEX
+    class: field
+    reason: TEX, C and B are memory attribute fields of MPU_RASR (Table B3-13 gives their encoding); bit
+      fields of a covered register, not independent state.
+  comma_set:f3d89daeba:
+    raw: TEX,C,B
+    section: B3.5 Protected Memory System Architecture, PMSAv7
+    page: 642
+    names:
+    - B
+    - C
+    - TEX
+    class: field
+    reason: The {TEX,C,B} encoding of MPU_RASR; bit fields of a covered register.
+  comma_set:9c4a3fb228:
+    raw: HALT, C_STEP, C_MASKINTS, C_SNAPSTALL
+    section: C1.3 Armv7-M debug features
+    page: 690
+    names:
+    - C_MASKINTS
+    - C_SNAPSTALL
+    - C_STEP
+    - HALT
+    class: field
+    reason: C_HALT, C_STEP, C_MASKINTS and C_SNAPSTALL are control bits of DHCSR, which is covered; bit
+      fields, not independent state.
+  family:d7b9af46fc:
+    raw: CRn
+    section: A7.7.22 CDP, CDP2
+    page: 217
+    names:
+    - CR
+    class: false_positive
+    reason: <CRn> is an operand placeholder in the CDP/CDP2 instruction syntax, naming a coprocessor register
+      operand rather than ARMv7-M state.
+  family:00f3c2ee0f:
+    raw: CRn
+    section: A7.7.72 MCR, MCR2
+    page: 286
+    names:
+    - CR
+    class: false_positive
+    reason: <CRn> is an operand placeholder in the MCR/MCR2 instruction syntax.
+  family:5ee41edfb8:
+    raw: CRn
+    section: A7.7.80 MRC, MRC2
+    page: 297
+    names:
+    - CR
+    class: false_positive
+    reason: <CRn> is an operand placeholder in the MRC/MRC2 instruction syntax.
+  family:7df3c80f5a:
+    raw: CPn
+    section: B3.2 System Control Space (SCS)
+    page: 615
+    names:
+    - CP
+    class: field
+    reason: CPn, bits[2n+1:2n], is the per-coprocessor access field of CPACR; a bit field of a covered
+      register.
+  phrase:418702616c:
+    raw: register bank
+    section: B4.7 Floating-point feature identification registers
+    page: 663
+    names: []
+    class: covered_family
+    reason: MVFR0.A_SIMD_registers reports the size of the FP register bank; that bank is S0-S31, already
+      covered, and MVFR0 itself is covered.
+  through:f1d05bb2d2:
+    raw: CP0 to CP7
+    section: A2.6 Coprocessor support
+    page: 61
+    names:
+    - CP0
+    - CP1
+    - CP2
+    - CP3
+    - CP4
+    - CP5
+    - CP6
+    - CP7
+    class: false_positive
+    reason: CP0-CP7 are coprocessor numbers, not registers. On M-profile only CP10 and CP11 are used,
+      and they are reached through CPACR fields rather than as state of their own.
+  count:f6d966e1e2:
+    raw: 3         The special-purpose mask registers
+    section: B1.4 Registers
+    page: 519
+    names: []
+    class: covered_family
+    reason: 'Points at B1.4.3, the special-purpose mask registers: PRIMASK, FAULTMASK and BASEPRI, all
+      covered.'
+  count:6693acef24:
+    raw: 3         The special-purpose mask registers
+    section: B1.4.3 The special-purpose mask registers
+    page: 519
+    names: []
+    class: covered_family
+    reason: 'B1.4.3 states the special-purpose mask register file: PRIMASK, FAULTMASK, BASEPRI, all covered.'
+  count:c7d6f6c149:
+    raw: 2 The special-purpose mask registers
+    section: B1.4.3 The special-purpose mask registers
+    page: 519
+    names: []
+    class: covered_family
+    reason: Figure B1-2 of the special-purpose mask registers; PRIMASK, FAULTMASK and BASEPRI are covered.
+  count:989d384c9f:
+    raw: 2        The special-purpose Program Status Registers
+    section: B1.4.1 The Arm core registers
+    page: 516
+    names: []
+    class: covered_family
+    reason: 'Points at B1.4.2, the special-purpose Program Status Registers: APSR, IPSR, EPSR and the
+      composite xPSR, all covered.'
+  count:5bf77cbbd3:
+    raw: 2        The special-purpose Program Status Registers
+    section: B1.4.2 The special-purpose Program Status Registers, xPSR
+    page: 516
+    names: []
+    class: covered_family
+    reason: 'B1.4.2, the xPSR file: APSR, IPSR and EPSR, all covered as views of xPSR.'
+  count:22adc1d84c:
+    raw: 2        FP extension System register
+    section: B1.6.1 Enabling floating-point support
+    page: 564
+    names: []
+    class: covered_family
+    reason: 'Points at B1.6.2, the FP extension System register: FPSCR, covered.'
+  count:e955cbe0a4:
+    raw: 2        FP extension System register
+    section: B1.6.2 FP extension System register
+    page: 564
+    names: []
+    class: covered_family
+    reason: B1.6.2 states the FP extension has a single System register, FPSCR, which is covered.
+  count:cff3a8f5d6:
+    raw: 10 shows the register map of the FP extension System register
+    section: B1.6.2 FP extension System register
+    page: 564
+    names: []
+    class: covered_family
+    reason: Cross-reference to Table B1-10, the FP extension System register map; FPSCR is covered and
+      the table is imported.
+  count:bc91c9360f:
+    raw: 17       Comparator Function registers
+    section: C1.8 The Data Watchpoint and Trace unit
+    page: 746
+    names: []
+    class: covered_family
+    reason: Points at C1.8.17, DWT_FUNCTIONn, covered as a conditional comparator array.
+  count:4f6fd3a878:
+    raw: 17       Comparator Function registers
+    section: C1.8.17 Comparator Function registers, DWT_FUNCTIONn
+    page: 746
+    names: []
+    class: covered_family
+    reason: C1.8.17 describes DWT_FUNCTIONn, covered as a conditional comparator array.
+  count:ffa177add3:
+    raw: 16        Comparator Mask registers
+    section: C1.8.15 Comparator registers, DWT_COMPn
+    page: 745
+    names: []
+    class: covered_family
+    reason: Points at C1.8.16, DWT_MASKn, covered as a conditional comparator array.
+  count:29b9686396:
+    raw: 16        Comparator Mask registers
+    section: C1.8.16 Comparator Mask registers, DWT_MASKn
+    page: 745
+    names: []
+    class: covered_family
+    reason: C1.8.16 describes DWT_MASKn, covered as a conditional comparator array.
+  count:023f0d5002:
+    raw: 3         Instructions to reverse bytes in a general-purpose register
+    section: A3.3.2 Element size and endianness
+    page: 69
+    names: []
+    class: false_positive
+    reason: The leading number is a section or table number that the 'N registers' pattern read as a count;
+      the text is a heading or a cross-reference, not a statement of a file's size.
+  count:04ba215b5b:
+    raw: 3         Instructions to reverse bytes in a general-purpose register
+    section: A3.3.3 Instructions to reverse bytes in a general-purpose register
+    page: 69
+    names: []
+    class: false_positive
+    reason: The leading number is a section or table number that the 'N registers' pattern read as a count;
+      the text is a heading or a cross-reference, not a statement of a file's size.
+  count:195c8785b0:
+    raw: 17 summarizes the general-purpose register
+    section: A4.6 Load and store instructions
+    page: 115
+    names: []
+    class: false_positive
+    reason: The leading number is a section or table number that the 'N registers' pattern read as a count;
+      the text is a heading or a cross-reference, not a statement of a file's size.
+  count:44e7ca93ad:
+    raw: 32-bit word, and writes it to a register
+    section: A7.7.47 LDRB (literal)
+    page: 254
+    names: []
+    class: false_positive
+    reason: Prose describing what LDRB does ('writes it to a register'); names no register.

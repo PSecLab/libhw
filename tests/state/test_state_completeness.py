@@ -162,12 +162,35 @@ def test_generated_def_matches_manifest(target):
         f"only-in-def={sorted(in_def - emitted)[:5]} only-in-manifest={sorted(emitted - in_def)[:5]}")
 
 
+def _hw_state_args(text: str):
+    """Yield the argument list of each HW_STATE line, quotes respected."""
+    for line in text.splitlines():
+        if not line.startswith("HW_STATE("):
+            continue
+        inner = line[len("HW_STATE("):line.rindex(")")]
+        args, cur, in_str = [], "", False
+        for ch in inner:
+            if ch == '"':
+                in_str = not in_str
+                cur += ch
+            elif ch == "," and not in_str:
+                args.append(cur.strip())
+                cur = ""
+            else:
+                cur += ch
+        args.append(cur.strip())
+        yield args
+
+
 @pytest.mark.parametrize("target", TARGETS)
 def test_snapshot_coverage(target):
     """Snapshot-required state ids == the state ids marked snapshot in the .def."""
     required = {e["canonical_name"] for e in entries(target) if e.get("snapshot")}
     text = (GEN_DIR / f"{target}.def").read_text()
-    in_def = set(re.findall(r'^HW_STATE\([A-Z0-9_]+,\s*"([^"]+)".*,\s*1,\s*"[^"]*"\)\s*$', text, re.M))
+    # Argument order: id, name, ns, access, enc, enc_kind, width, rd, wr, snap,
+    # feature, component. Parsed positionally from the end so that adding a
+    # trailing argument does not silently break the check.
+    in_def = {a[1].strip('"') for a in _hw_state_args(text) if a[-3] == "1"}
     assert in_def == required, (
         f"snapshot set mismatch: missing={sorted(required - in_def)[:5]} "
         f"extra={sorted(in_def - required)[:5]}")
@@ -328,3 +351,103 @@ def test_prose_documented_state_is_covered(target):
         [sys.executable, str(ROOT / "tools" / "state_prose_sweep.py"), "--target", target],
         capture_output=True, text=True)
     assert proc.returncode == 0, proc.stdout + proc.stderr
+
+
+# --- prose pass -------------------------------------------------------------
+
+@pytest.mark.skipif(not sources_available(), reason="licensed Arm documents not present on this machine")
+@pytest.mark.parametrize("target", TARGETS)
+def test_no_unclassified_prose_candidates(target):
+    """
+    Every construct the prose scanner finds must be classified.
+
+    Register tables and a document's index are not sufficient: the FP register
+    file is defined only in running text. The scanner emits candidates and
+    nothing is added automatically, so an unclassified candidate means a piece
+    of prose nobody has decided about.
+    """
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "tools" / "state_prose_candidates.py"), "--target", target],
+        capture_output=True, text=True)
+    assert proc.returncode == 0, proc.stdout + proc.stderr
+
+
+@pytest.mark.parametrize("target", TARGETS)
+def test_no_unresolved_register_ranges(target):
+    """A range expression must expand or be classified; never left dangling."""
+    p = ROOT / "build" / "state-coverage" / f"{target}.prose-candidates.json"
+    if not p.is_file():
+        pytest.skip("prose scan has not been run on this machine")
+    import json as _json
+    rows = _json.loads(p.read_text())["candidates"]
+    dangling = [r["raw"] for r in rows
+                if r["kind"] in ("range", "through") and not r.get("classification")]
+    assert dangling == [], f"unresolved register ranges: {dangling[:8]}"
+
+
+@pytest.mark.parametrize("target", TARGETS)
+def test_prose_classifications_are_valid(target):
+    """Every prose classification is one of the agreed categories, with a reason."""
+    p = ROOT / "build" / "state-coverage" / f"{target}.prose-candidates.json"
+    if not p.is_file():
+        pytest.skip("prose scan has not been run on this machine")
+    import json as _json
+    valid = {"state", "alias", "field", "block_name", "covered_family",
+             "already_covered", "false_positive"}
+    bad, noreason = [], []
+    for r in _json.loads(p.read_text())["candidates"]:
+        c = r.get("classification")
+        if c is None:
+            continue
+        if c not in valid:
+            bad.append((r["cid"], c))
+        if not (r.get("reason") or "").strip():
+            noreason.append(r["cid"])
+    assert bad == [], f"invalid classifications: {bad[:5]}"
+    assert noreason == [], f"classifications without a reason: {noreason[:5]}"
+
+
+@pytest.mark.parametrize("target", TARGETS)
+def test_coverage_reports_derivation_separately(target):
+    """
+    The report must not collapse table-derived and prose-derived state into one
+    number: the point of the prose pass is that the two are different evidence.
+    """
+    cov = coverage(target)
+    assert "by_derivation" in cov
+    assert sum(cov["by_derivation"].values()) == cov["total_entries"]
+    assert set(cov["by_derivation"]) <= {"table", "declared", "register_file", "prose"}
+
+
+# --- presence is not readability -------------------------------------------
+
+def test_presence_and_read_are_separate_in_the_api():
+    """
+    A successful read must not be able to express 'implemented'.
+
+    The two are separate enums with no shared member, so no caller can read a
+    clean transaction as evidence of presence.
+    """
+    header = (ROOT / "include" / "hw_state.h").read_text()
+    assert "hw_presence_t" in header and "hw_read_status_t" in header
+    # The old conflated enum must be gone.
+    assert "HW_STATE_AVAILABLE" not in header, \
+        "the old AVAILABLE status conflated a successful read with implementation"
+    for token in ("HW_PRESENCE_ARCHITECTURAL", "HW_PRESENCE_CONFIG_CONFIRMED",
+                  "HW_PRESENCE_CONFIG_DENIED", "HW_PRESENCE_DISCOVERED",
+                  "HW_READ_OK", "HW_READ_FAILED"):
+        assert token in header, f"{token} missing from the status model"
+
+
+def test_presence_never_derived_from_a_read():
+    """
+    hw_state_presence must not consult a data read. It may read ID registers
+    for CoreSight discovery, but it must not take a register's own value as
+    evidence that the register exists.
+    """
+    src = (ROOT / "core" / "hw_state.c").read_text()
+    start = src.index("hw_presence_t hw_state_presence(")
+    end = src.index("int hw_state_query(")
+    body = src[start:end]
+    assert "hw_state_read(" not in body, \
+        "presence must not be decided by reading the register itself"

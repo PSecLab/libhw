@@ -45,6 +45,17 @@ registers:
     requires: IMPDEF:DWT_CTRL.NUMCOMP
     reason: Comparator register array; the number implemented is IMPLEMENTATION DEFINED and is read at
       runtime from DWT_CTRL.NUMCOMP, so the architecture cannot fix a count
+  SP:
+    class: alias
+    alias_of: SP_main
+    bit_offset: 0
+    bit_width: 32
+    declare: true
+    address: null
+    provenance_section: B1.4.1 The Arm core registers
+    provenance_table: 'Prose: ''SP (R13)'' - the current stack pointer'
+    reason: SP names whichever of SP_main or SP_process CONTROL.SPSEL currently selects; a view of one
+      of them, not independent storage. DCRSR REGSEL 13 reaches it.
 register_files:
   fp_single:
     count: 32
