@@ -26,7 +26,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential libstlink-dev libusb-1.0-0-dev \
-            llvm python3-yaml python3-pytest valgrind
+            llvm python3-yaml python3-pytest python3-pip python3-venv valgrind
 
       - name: Tool versions
         run: |
@@ -35,7 +35,8 @@ jobs:
           python3 --version
 
       # Builds with -Werror, runs the mock-backend C suites, the Python
-      # binding tests, the state database invariants and the coverage report.
+      # binding tests, a wheel build installed into a throwaway virtualenv,
+      # the state database invariants and the coverage report.
       - name: make ci
         run: make ci
 

@@ -3,6 +3,11 @@ cscope*
 __pycache__/
 *.pyc
 *.egg-info/
+.pytest_cache/
+# The library copy that a wheel build drops into the package.
+utils/python/libhw/_lib/
+utils/python/dist/
+utils/python/build/
 
 # Build outputs are not tracked, with one exception: the state-coverage
 # artifacts are reviewable outputs, and committing them is what lets CI

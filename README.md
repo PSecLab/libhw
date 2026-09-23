@@ -97,14 +97,16 @@ resuming a core whose code just changed underneath it is the caller's decision.
 
 ## Python bindings
 
-ctypes bindings live in `utils/python/`. No build step and no dependencies
-beyond the shared library:
+ctypes bindings live in `utils/python/`, with no third-party dependencies:
 
 ```bash
-make                                    # produces out/libhw.so
-export PYTHONPATH=$PWD/utils/python
-python3 -c "from libhw import connect; print(connect('mock').flash.info())"
+pip install ./utils/python
+libhw-probe mock                        # installed console script
 ```
+
+The wheel bundles its own copy of `libhw.so`, so an installed package works
+from anywhere. `pip install -e ./utils/python` gives an editable install that
+keeps using the library you are building.
 
 ```python
 from libhw import connect

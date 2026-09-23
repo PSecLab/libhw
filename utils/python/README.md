@@ -1,37 +1,48 @@
 # Python bindings for libhw
 
-ctypes bindings over `out/libhw.so`. There is nothing to compile and no
-third-party dependency: build the library at the repository root and import
-the package.
-
-```bash
-cd ../..  &&  make          # produces out/libhw.so
-export PYTHONPATH=$PWD/utils/python
-python3 -c "from libhw import connect; print(connect('mock').flash.info())"
-```
-
-The library is found automatically by walking up to the repository's `out/`
-directory. Set `LIBHW_LIBRARY` to override, for an installed copy.
+ctypes bindings over `libhw.so`. No third-party dependency, and nothing to
+compile in the bindings themselves.
 
 ## Installing
 
-`PYTHONPATH` is enough for working in this tree. To depend on the bindings
-from another project, install them:
-
 ```bash
-pip install -e utils/python          # from the repository root
+pip install ./utils/python          # from a libhw checkout
 ```
 
-Install them **editable**. The package locates `out/libhw.so` by walking up
-from its own `__file__`, so an editable install keeps working against the
-build tree and picks up every rebuild. A regular install copies the package
-into `site-packages`, where that walk finds nothing -- the shared library is a
-build artifact and is not bundled in the wheel -- so point `LIBHW_LIBRARY` at
-it:
+The wheel carries its own copy of `libhw.so`, so an installed package works
+from anywhere with no repository in sight. If the library has not been built
+yet, the build runs `make` for you; that needs a compiler and the libstlink
+development headers (`libstlink-dev` on Debian/Ubuntu).
+
+For development, an editable install keeps using the library you are building:
 
 ```bash
-pip install utils/python
-export LIBHW_LIBRARY=/path/to/libhw/out/libhw.so
+pip install -e ./utils/python
+make                                 # rebuild; the editable install picks it up
+```
+
+The search order is `LIBHW_LIBRARY`, then a build tree above the package, then
+the copy bundled in the wheel, then the system. A build tree comes before the
+bundled copy on purpose: in an editable install both exist, and the one you
+just built is the one you meant.
+
+Without installing at all:
+
+```bash
+make && export PYTHONPATH=$PWD/utils/python
+```
+
+The sdist is not self-contained. The C sources live in the repository above
+this directory, and copying them in would mean maintaining a second copy, so
+building needs the checkout. That is how this package is used in practice; it
+is not published to PyPI.
+
+## Command line
+
+```bash
+libhw-probe                # identify the mock target and report its state
+libhw-probe stlink         # ... a real board
+libhw-probe stlink --verbose --resume
 ```
 
 ## Connecting
@@ -140,7 +151,9 @@ python3 examples/state_dump.py stlink    # ... against a real board
 ## Tests
 
 ```bash
-python3 -m pytest tests -q               # or: make python-check, from the root
+python3 -m pytest tests -q          # or, from the repository root:
+make python-check                   # tests against the source tree
+make python-install-check           # build a wheel, install it, test that
 ```
 
 Everything runs against the `mock` backend, so no board is needed.

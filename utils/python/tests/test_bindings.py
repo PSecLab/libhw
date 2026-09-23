@@ -21,7 +21,13 @@ import pytest
 HERE = pathlib.Path(__file__).resolve().parent
 PKG_ROOT = HERE.parent
 REPO_ROOT = PKG_ROOT.parents[1]
-sys.path.insert(0, str(PKG_ROOT))
+
+# Prefer an installed package, so this suite can validate a wheel as well as
+# the source tree. Only fall back to the checkout when nothing is installed.
+try:
+    import libhw  # noqa: F401
+except ImportError:
+    sys.path.insert(0, str(PKG_ROOT))
 
 libhw = pytest.importorskip("libhw")
 from libhw import (Access, EncodingKind, HwError, HwFlashError, Namespace,  # noqa: E402

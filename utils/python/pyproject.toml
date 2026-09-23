@@ -19,6 +19,19 @@ classifiers = [
 [project.optional-dependencies]
 test = ["pytest"]
 
+[project.scripts]
+# A small entry point so an installed package is useful from anywhere.
+libhw-probe = "libhw.cli:main"
+
+[project.urls]
+Source = "https://github.com/PSecLab/libhw"
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["libhw*"]
+
+[tool.setuptools.package-data]
+# The shared library is copied in by setup.py's build_py before the package is
+# collected, so the wheel is self-contained. py.typed marks the inline hints
+# as usable by type checkers (PEP 561).
+libhw = ["_lib/*.so", "py.typed"]

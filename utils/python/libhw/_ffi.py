@@ -17,6 +17,11 @@ import pathlib
 
 LIBRARY_ENV = "LIBHW_LIBRARY"
 
+# Where a wheel puts the shared library. An installed package carries its own
+# copy here, so it works from site-packages with no repository in sight.
+BUNDLED_DIR = pathlib.Path(__file__).resolve().parent / "_lib"
+LIBRARY_NAME = "libhw.so"
+
 
 class HwLibraryNotFound(RuntimeError):
     """libhw.so could not be located."""
@@ -29,13 +34,22 @@ def _candidate_paths() -> list[pathlib.Path]:
     if override:
         out.append(pathlib.Path(override).expanduser())
 
-    # The build tree: utils/python/libhw/_ffi.py -> repo root -> out/libhw.so
+    # A build tree is searched before the bundled copy, not after. In an
+    # editable install both exist, and the freshly built one is the one the
+    # developer means; a wheel in site-packages has no repository above it, so
+    # this finds nothing and the bundled copy is used.
+    # utils/python/libhw/_ffi.py -> ... -> <repo>/out/libhw.so
     here = pathlib.Path(__file__).resolve()
     for parent in here.parents:
-        candidate = parent / "out" / "libhw.so"
+        candidate = parent / "out" / LIBRARY_NAME
         if candidate.is_file():
             out.append(candidate)
             break
+
+    # The copy a wheel carries, so an installed package stands alone.
+    bundled = BUNDLED_DIR / LIBRARY_NAME
+    if bundled.is_file():
+        out.append(bundled)
 
     found = ctypes.util.find_library("hw")
     if found:
@@ -54,8 +68,8 @@ def load_library() -> ctypes.CDLL:
     raise HwLibraryNotFound(
         "Could not load libhw.so.\n"
         f"  Tried: {', '.join(str(p) for p in tried) or '(nothing)'}\n"
-        f"  Build it with 'make' at the repository root, or set {LIBRARY_ENV} "
-        f"to the shared library."
+        f"  Build it with 'make' at the repository root, reinstall this package "
+        f"so it bundles its own copy, or set {LIBRARY_ENV} to the shared library."
     )
 
 

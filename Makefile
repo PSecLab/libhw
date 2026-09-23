@@ -140,9 +140,34 @@ state-check:
 # --- Python bindings ------------------------------------------------------
 # ctypes over out/libhw.so, so they need the shared library but no build step
 # of their own. The tests run against the mock backend.
-.PHONY: python-check
+.PHONY: python-check python-wheel python-install-check
 python-check: $(ODIR)/$(SHARED_LIB)
 	@PYTHONPATH=utils/python python3 -m pytest utils/python/tests -q
+
+# Build a wheel. It carries its own copy of libhw.so, so it is tagged for the
+# platform rather than as pure Python.
+python-wheel: $(ODIR)/$(SHARED_LIB)
+	@rm -rf $(PYTHON_SRC)/dist
+	@python3 -m pip wheel --no-deps -w $(PYTHON_SRC)/dist $(PYTHON_SRC)
+	@ls -1 $(PYTHON_SRC)/dist
+
+# Prove the package really is installable: build a wheel, install it into a
+# throwaway virtualenv, and run the suite against the installed copy from a
+# directory where the source tree cannot shadow it.
+python-install-check: python-wheel
+	@set -e; \
+	tmp=$$(mktemp -d); \
+	trap 'rm -rf $$tmp' EXIT; \
+	if ! python3 -m venv $$tmp/venv >/dev/null 2>&1; then \
+	  echo "SKIP: python3-venv is not available"; exit 0; \
+	fi; \
+	$$tmp/venv/bin/pip install -q $(PYTHON_SRC)/dist/*.whl pytest; \
+	echo "installed from:"; \
+	(cd $$tmp && $$tmp/venv/bin/python -c "import libhw, os; \
+print('  ', libhw.__file__); \
+from libhw import _ffi; print('   library:', _ffi.lib()._name)"); \
+	(cd $$tmp && $$tmp/venv/bin/python -m pytest $(CURDIR)/$(PYTHON_SRC)/tests -q); \
+	(cd $$tmp && $$tmp/venv/bin/libhw-probe mock >/dev/null && echo "   libhw-probe: ok")
 
 # --- CI -----------------------------------------------------------------
 # Everything that can be checked without a board and without the licensed Arm
@@ -162,6 +187,9 @@ ci:
 	@echo
 	@echo "== python bindings (mock backend) =="
 	@$(MAKE) --no-print-directory python-check
+	@echo
+	@echo "== python package installs and works from a wheel =="
+	@$(MAKE) --no-print-directory python-install-check
 	@echo
 	@echo "== state database invariants =="
 	@python3 -m pytest tests/state -q -rs
